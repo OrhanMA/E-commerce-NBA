@@ -25,9 +25,16 @@ class ProductController extends Controller
         $productsQuery->join('categories', 'products.category_id', '=', 'categories.id')
             ->leftJoin('subcategories', 'products.subcategory_id', '=', 'subcategories.id');
 
+        // if ($query) {
+        //     $productsQuery->where('name', 'like', "%$query%")
+        //         ->orWhere('description', 'like', "%$query%");
+        // }
         if ($query) {
-            $productsQuery->where('name', 'like', "%$query%")
-                ->orWhere('description', 'like', "%$query%");
+            $productsQuery->where(function ($q) use ($query) {
+                $q->where('products.name', 'like', "%$query%")
+                    ->orWhere('products.description', 'like', "%$query%");
+            });
+
         }
 
 
@@ -49,8 +56,13 @@ class ProductController extends Controller
         if ($sortBy === 'price') {
             $productsQuery->orderBy('price', $sortOrder);
         } else {
-            $productsQuery->orderBy($sortBy, $sortOrder);
+            $productsQuery->orderBy('products.name', $sortOrder);
         }
+
+        // ...&sort_order=desc is sort z to a no price sort
+        // ...&sort_order=asc and ...(no sort_order specified) sort a to z
+        // ...&sort_by=price sort price - to +
+        //    ...&sort_by=price&sort_order=desc sort price + to -
 
         $products = $productsQuery->get([
             'products.*',
@@ -63,6 +75,7 @@ class ProductController extends Controller
         return Inertia::render('SearchResults', [
             'products' => $products,
             'query' => $query,
+            'category' => $category,
             'sortBy' => $sortBy,
             'sortOrder' => $sortOrder,
         ]);

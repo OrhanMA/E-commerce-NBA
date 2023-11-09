@@ -305,7 +305,7 @@ class ProductSeeder extends Seeder
                 "description" => "The basketball celebrating the NBA's 75th anniversary",
                 "category_id" => 3,
                 "subcategory_id" => 5,
-                "price" => 50,
+                "price" => 75,
                 "stock" => 50,
                 "image_path" => "product_images/basketballs/wilson-75-anniversary.avif"
             ],
