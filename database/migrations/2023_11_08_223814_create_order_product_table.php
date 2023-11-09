@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('order_product', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('order_id');
-            $table->uuid('product_id');
+            $table->foreignId('product_id');
             $table->unsignedInteger('quantity');
             $table->timestamps();
 

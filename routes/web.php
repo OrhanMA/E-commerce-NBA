@@ -16,7 +16,7 @@ use App\Http\Controllers\ProductController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/search', [ProductController::class, 'search']);
+Route::get('/products', [ProductController::class, 'search']);
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

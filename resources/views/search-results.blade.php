@@ -1,7 +1,8 @@
-{{-- <!-- resources/views/search_results.blade.php -->
+<!-- resources/views/search_results.blade.php -->
 
 <h1>Search Results for "{{ $query }}"</h1>
 
 @foreach($products as $product)
     <p>{{ $product->name }}</p>
-@endforeach --}}
+    <p>{{ $product->id }}</p>
+@endforeach

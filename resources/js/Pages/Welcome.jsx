@@ -48,21 +48,36 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                             products
                         </p>
                         <div className="mt-16 w-full flex flex-col gap-2 items-start text-lg md:text-xl font-semibold">
-                            <p className="hover:text-red-500 duration-200">
+                            <a
+                                href="/products?category=Jerseys"
+                                className="hover:text-red-500 duration-200"
+                            >
                                 Jerseys
-                            </p>
-                            <p className="hover:text-red-500 duration-200">
+                            </a>
+                            <a
+                                href="/products?category=Cloting"
+                                className="hover:text-red-500 duration-200"
+                            >
                                 Clothing
-                            </p>
-                            <p className="hover:text-red-500 duration-200">
+                            </a>
+                            <a
+                                href="/products?category=Basketballs"
+                                className="hover:text-red-500 duration-200"
+                            >
                                 Basketballs
-                            </p>
-                            <p className="hover:text-red-500 duration-200">
+                            </a>
+                            <a
+                                href="/products?category=Goodies"
+                                className="hover:text-red-500 duration-200"
+                            >
                                 Goodies
-                            </p>
-                            <p className="hover:text-red-500 duration-200">
+                            </a>
+                            <a
+                                href="/products?category=Other"
+                                className="hover:text-red-500 duration-200"
+                            >
                                 Other
-                            </p>
+                            </a>
                         </div>
                     </div>
                 </div>

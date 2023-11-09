@@ -294,7 +294,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Authentic Wilson Indoor Ball",
                 "description" => "The authentic Wilson Indoor Ball made by Wilson. Ready for NBA games.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 1,
                 "price" => 50,
                 "stock" => 50,
@@ -303,7 +303,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Wilson NBA 75th Anniversary Ball",
                 "description" => "The basketball celebrating the NBA's 75th anniversary",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 5,
                 "price" => 50,
                 "stock" => 50,
@@ -312,7 +312,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Lakers Composite Ball",
                 "description" => "A composite basketball for the Lakers fans looking for high-quality balls.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => 50,
                 "stock" => 50,
@@ -321,7 +321,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Warriors Composite Ball",
                 "description" => "A composite basketball for the Warriors fans looking for high-quality balls.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => 50,
                 "stock" => 50,
@@ -330,7 +330,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Wilson DRV-PRO Ball",
                 "description" => "A Wilson basketball for indoor and outdoor ",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 3,
                 "price" => 50,
                 "stock" => 50,
@@ -339,7 +339,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Bulls Wilson Ball",
                 "description" => "A Wilson Indoor Ball for Bulls fans.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => 50,
                 "stock" => 50,
@@ -348,7 +348,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Celtics Wilson Ball",
                 "description" => "A Wilson Indoor Ball for Celtics fans.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => 50,
                 "stock" => 50,
@@ -357,7 +357,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Lakers Wilson Ball",
                 "description" => "A Wilson Indoor Ball for Lakers fans.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => 50,
                 "stock" => 50,
@@ -366,7 +366,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Nets Wilson Ball",
                 "description" => "A Wilson Indoor Ball for Nets fans.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => 50,
                 "stock" => 50,
@@ -375,7 +375,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Bucks City Edition Ball",
                 "description" => "The City Edition basketball for all Bucks fans.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 2,
                 "price" => 50,
                 "stock" => 50,
@@ -384,7 +384,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Spurs City Edition Ball",
                 "description" => "The City Edition basketball for all Spurs fans.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 2,
                 "price" => 50,
                 "stock" => 50,
@@ -393,7 +393,7 @@ class ProductSeeder extends Seeder
             [
                 "name" => "Suns City Edition Ball",
                 "description" => "The City Edition basketball for all Suns fans.",
-                "category_id" => 2,
+                "category_id" => 3,
                 "subcategory_id" => 2,
                 "price" => 50,
                 "stock" => 50,
@@ -579,7 +579,7 @@ class ProductSeeder extends Seeder
         $timestamp = Carbon::now();
 
         foreach ($products as $productData) {
-            $productData['id'] = Str::uuid();
+            // $productData['id'] = Str::uuid();
             $productData['created_at'] = $timestamp;
             $productData['updated_at'] = $timestamp;
 
