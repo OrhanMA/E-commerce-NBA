@@ -20,6 +20,12 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "react-icons": "^4.11.0"
+        "@radix-ui/react-toast": "^1.1.5",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.0.0",
+        "lucide-react": "^0.292.0",
+        "react-icons": "^4.11.0",
+        "tailwind-merge": "^2.0.0",
+        "tailwindcss-animate": "^1.0.7"
     }
 }

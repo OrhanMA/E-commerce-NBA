@@ -1,32 +1,62 @@
 import PrimaryButton from "@/Components/PrimaryButton";
 import { Link, Head } from "@inertiajs/react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-
+import { useState } from "react";
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
+    const routes = [
+        { route: "Jerseys", image: "kobe-jersey.jpg" },
+        { route: "Basketballs", image: "basketballs.jpg" },
+        { route: "Clothing", image: "apparel.jpg" },
+        { route: "Goodies", image: "goodies.jpg" },
+        { route: "Other", image: "badges.jpg" },
+    ];
     return (
         <>
             <Head title="Welcome" />
-            <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-white dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white flex flex-col">
+            <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
                 <div className="bg-white w-full sm:sticky sm:top-0 sm:right-0 p-6 text-end">
                     {auth.user ? (
-                        <Link
-                            href={route("dashboard")}
-                            className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                        >
-                            Dashboard
-                        </Link>
+                        <div className="flex justify-around gap-4">
+                            <div className="flex justify-center gap-4">
+                                {routes.map((route) => {
+                                    return (
+                                        <Link
+                                            key={route.route}
+                                            className="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                            href={`/products/${route.route}`}
+                                        >
+                                            {route.route}
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+                            <div className="flex gap-6">
+                                <Link
+                                    href={route("dashboard")}
+                                    className="font-semibold text-gray-600 hover:text-gray-900  focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                >
+                                    Dashboard
+                                </Link>
+                                <Link
+                                    href={route("profile.edit")}
+                                    className="font-semibold text-gray-600 hover:text-gray-900  focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                >
+                                    Profile
+                                </Link>
+                            </div>
+                        </div>
                     ) : (
                         <>
                             <Link
                                 href={route("login")}
-                                className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                className="font-semibold text-gray-600 hover:text-gray-900  focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                             >
                                 Log in
                             </Link>
 
                             <Link
                                 href={route("register")}
-                                className="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                className="ms-4 font-semibold text-gray-600 hover:text-gray-900  focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                             >
                                 Register
                             </Link>
@@ -45,39 +75,28 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         </h1>
                         <p className="md:text-xl text-center mt-6">
                             Show your love for the game with your favorite NBA
-                            products
                         </p>
-                        <div className="mt-16 w-full flex flex-col gap-2 items-start text-lg md:text-xl font-semibold">
-                            <a
-                                href="/products?category=Jerseys"
-                                className="hover:text-red-500 duration-200"
-                            >
-                                Jerseys
-                            </a>
-                            <a
-                                href="/products?category=Cloting"
-                                className="hover:text-red-500 duration-200"
-                            >
-                                Clothing
-                            </a>
-                            <a
-                                href="/products?category=Basketballs"
-                                className="hover:text-red-500 duration-200"
-                            >
-                                Basketballs
-                            </a>
-                            <a
-                                href="/products?category=Goodies"
-                                className="hover:text-red-500 duration-200"
-                            >
-                                Goodies
-                            </a>
-                            <a
-                                href="/products?category=Other"
-                                className="hover:text-red-500 duration-200"
-                            >
-                                Other
-                            </a>
+                        <div className="my-16 w-full flex  gap-6 items-center flex-wrap justify-evenly text-lg md:text-xl font-semibold">
+                            {routes.map((route) => {
+                                return (
+                                    <Link
+                                        key={route.route}
+                                        href={`/products/${route.route}`}
+                                        className="lg:w-[20%] duration-200 text-gray-400 hover:text-gray-900 "
+                                    >
+                                        <div className="flex flex-col items-center">
+                                            <p className="text-lg md:text-2xl mb-6">
+                                                {route.route}
+                                            </p>
+                                            <img
+                                                className="w-[100px] h-[100px] lg:w-[340px] lg:h-[360px] object-cover"
+                                                src={`/welcome/${route.image}`}
+                                                alt=""
+                                            />
+                                        </div>
+                                    </Link>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -86,22 +105,52 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
     );
 }
 
-function SearchBar() {
+export function SearchBar() {
+    const [category, setCategory] = useState("jerseys");
+    const [query, setQuery] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle the form submission, e.g., make an API request or update the state
+        console.log("Category:", category);
+        console.log("Query:", query);
+    };
+
     return (
-        <div className="my-2">
-            <form className="flex items-center gap-4" action="">
-                <select defaultValue={"jerseys"} name="category" id="category">
-                    <option value="jerseys">Jerseys</option>
-                    <option value="clothing">Clothing</option>
-                    <option value="basketballs">Basketballs</option>
-                    <option value="goodies">Goodies</option>
-                    <option value="other">Other</option>
+        <div className="w-full flex justify-center mt-2 mb-6">
+            {/* <div className="flex justify-center  gap-4">
+                <p>caté:{category}</p>
+                <p>query:{query}</p>
+            </div> */}
+            <form className="flex items-center gap-4" onSubmit={handleSubmit}>
+                <select
+                    className="rounded-md text-sm p-2"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    name="category"
+                    id="category"
+                >
+                    <option value="Jerseys">Jerseys</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Basketballs">Basketballs</option>
+                    <option value="Goodies">Goodies</option>
+                    <option value="Other">Other</option>
                 </select>
                 <input
-                    className="border-2 border-black rounded-md"
+                    className="w-[125px] text-sm md:text-md rounded-md border p-2"
                     type="text"
-                ></input>
-                <PrimaryButton type="submit">Search</PrimaryButton>
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                />
+                <Link href={`/search?query=${query}&category=${category}`}>
+                    <button
+                        className="bg-gray-200 px-4 py-2 rounded-md disabled:bg-gray-50 disabled:text-gray-300 duration-200"
+                        disabled={query === "" ? true : false}
+                        type="submit"
+                    >
+                        Search
+                    </button>
+                </Link>
             </form>
         </div>
     );
