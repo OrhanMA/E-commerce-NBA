@@ -5,6 +5,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,9 @@ use App\Http\Controllers\ProductController;
 */
 Route::get('/search', [ProductController::class, 'search']);
 Route::get('/products', [ProductController::class, 'getAll']);
-Route::get('/products/{category}', [App\Http\Controllers\ProductController::class, 'getCategoryProducts']);
+Route::get('/products/{category}', [ProductController::class, 'getCategoryProducts']);
+
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -37,6 +41,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::get('/checkout', [CheckoutController::class, 'index']);
 });
 
 require __DIR__ . '/auth.php';

@@ -19,7 +19,7 @@ class ProductController extends Controller
             'products' => $products,
         ]);
     }
-    // In your ProductController or SearchController
+    // In your ProductController or SearchControllerm rn
     public function getCategoryProducts(Request $request, string $category)
     {
         $sortBy = $request->input('sort_by', 'name'); // Default to sorting by name

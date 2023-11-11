@@ -4,9 +4,11 @@ import { useState } from "react";
 import { SearchBar } from "./Welcome";
 import SecondaryButton from "@/Components/SecondaryButton";
 import { ProductCard } from "@/Components/ProductCard";
+import { Head } from "@inertiajs/react";
 const SearchResults = ({ products }) => {
     return (
-        <div>
+        <>
+            <Head title="All products" />
             <div>
                 {products.links.map((link) => {
                     <div key={link}>
@@ -30,7 +32,7 @@ const SearchResults = ({ products }) => {
                     </div>
                 </>
             )}
-        </div>
+        </>
     );
 };
 
