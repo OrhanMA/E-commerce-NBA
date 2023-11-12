@@ -1,7 +1,9 @@
 import { Head, Link } from "@inertiajs/react";
 import React, { useState, useEffect } from "react";
-
+import { useForm } from "react-hook-form";
+import { router } from "@inertiajs/react";
 export default function Checkout() {
+    const { register, handleSubmit } = useForm();
     const [cartData, setCartData] = useState([]);
 
     useEffect(() => {
@@ -17,7 +19,12 @@ export default function Checkout() {
             0
         );
     };
-
+    const onSubmit = async (data) => {
+        // Send the form data along with the product data to the backend to place the order
+        await router.post("/checkout", { ...data, products: cartData });
+        // Redirect or show a success message as needed
+        // You can use Inertia's page() or visit() to redirect
+    };
     return (
         <>
             <Head title="Checkout" />
@@ -42,27 +49,34 @@ export default function Checkout() {
                     Edit order?
                 </Link>
                 <div className="mt-6">
-                    <form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         {/* Add form elements for payment and delivery methods */}
                         {/* Example: */}
                         <label>
                             Payment Method:
-                            <select name="paimentMethod">
-                                <option value="store_paiement">
-                                    In-store paiement
-                                </option>
-                                <option value="delivery_paiement">
-                                    Paiement at delivery
-                                </option>
+                            <select
+                                name="paimentMethod"
+                                {...register("paiementMethod")}
+                            >
+                                <option value="Card">Card</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Transfert">Transfert</option>
                                 {/* Add more payment methods as needed */}
                             </select>
                         </label>
                         <br />
                         <label>
                             Delivery Method:
-                            <select name="deliveryMethod">
-                                <option value="standard">Standard</option>
-                                <option value="express">Express</option>
+                            <select
+                                name="deliveryMethod"
+                                {...register("deliveryMethod")}
+                            >
+                                <option value="standard">
+                                    Standard shipping
+                                </option>
+                                <option value="express">
+                                    Express shipping
+                                </option>
                                 <option value="click&collect">
                                     Click&collect
                                 </option>

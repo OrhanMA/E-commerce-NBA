@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->decimal('total_price', 8, 2);
             $table->text('customer_info');
             $table->timestamps();
@@ -19,8 +19,8 @@ return new class extends Migration {
             $table->uuid('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->unsignedBigInteger('paiement_method_id');
-            $table->unsignedBigInteger('delivery_method_id');
+            $table->unsignedBigInteger('paiement_method_id')->default(1);
+            $table->unsignedBigInteger('delivery_method_id')->default(3);
 
             // Add foreign key constraints
             $table->foreign('paiement_method_id')->references('id')->on('paiement_methods');

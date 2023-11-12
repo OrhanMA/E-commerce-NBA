@@ -18,13 +18,13 @@ class DeliveryMethodSeeder extends Seeder
         //
         $delivery_methods = [
             [
-                "name" => "Shipping - home",
+                "name" => "standard",
             ],
             [
-                "name" => "Shipping - relay point",
+                "name" => "express",
             ],
             [
-                "name" => "Click&Collect",
+                "name" => "click&collect",
             ],
         ];
 

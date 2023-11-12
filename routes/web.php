@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/cart', [CartController::class, 'index']);
     Route::get('/checkout', [CheckoutController::class, 'index']);
+    Route::post('/checkout', [CheckoutController::class, 'placeOrder']);
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/order-confirmation/{id}', [OrderController::class, 'confirmation'])
+        ->name('order.confirmation');
 });
 
 require __DIR__ . '/auth.php';
