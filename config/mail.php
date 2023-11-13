@@ -15,6 +15,8 @@ return [
 
     'default' => env('MAIL_MAILER', 'smtp'),
 
+
+
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
@@ -44,6 +46,8 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
+            'auth_mode' => null,
+            'verify_peer' => false
         ],
 
         'ses' => [
@@ -100,8 +104,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'noreply@jerseyshop.com'),
+        'name' => env('MAIL_FROM_NAME', 'Jersey Shop'),
     ],
 
     /*

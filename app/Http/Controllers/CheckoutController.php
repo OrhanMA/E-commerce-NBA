@@ -11,6 +11,9 @@ use App\Models\OrderProduct;
 use App\Models\PaiementMethod;
 use App\Models\DeliveryMethod;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Models\User;
+use App\Mail\OrderPlaced;
 
 class CheckoutController extends Controller
 {
@@ -64,6 +67,8 @@ class CheckoutController extends Controller
         // unset($_SESSION['cart']);
 
         $orderId = $order->id;
+        // dd($order);
+        Mail::to($request->user()->email)->send(new OrderPlaced($order));
 
         // Redirect to the order confirmation page with the order ID
         return redirect()->route('order.confirmation', ['id' => $orderId]);
