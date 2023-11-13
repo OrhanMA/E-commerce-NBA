@@ -57,21 +57,14 @@ class ProductController extends Controller
     {
         $query = $request->input('query');
         $category = $request->input('category');
-        // dump($category);
-        $sortBy = $request->input('sort_by', 'name'); // Default to sorting by name
-        $sortOrder = $request->input('sort_order', 'asc'); // Default to ascending order
+        $sortBy = $request->input('sort_by', 'name');
+        $sortOrder = $request->input('sort_order', 'asc');
 
         $productsQuery = Product::query();
 
-
-        // Join categories and subcategories
         $productsQuery->join('categories', 'products.category_id', '=', 'categories.id')
             ->leftJoin('subcategories', 'products.subcategory_id', '=', 'subcategories.id');
 
-        // if ($query) {
-        //     $productsQuery->where('name', 'like', "%$query%")
-        //         ->orWhere('description', 'like', "%$query%");
-        // }
         if ($query) {
             $productsQuery->where(function ($q) use ($query) {
                 $q->where('products.name', 'like', "%$query%")
@@ -80,13 +73,10 @@ class ProductController extends Controller
 
         }
 
-
         if ($category) {
-            // Check if $category is a numeric value (assumed to be category ID)
             if (is_numeric($category)) {
                 $productsQuery->where('category_id', $category);
             } else {
-                // If $category is a string, assume it's the category name
                 $categoryId = Category::where('name', $category)->value('id');
 
                 if ($categoryId) {
@@ -102,19 +92,12 @@ class ProductController extends Controller
             $productsQuery->orderBy('products.name', $sortOrder);
         }
 
-        // ...&sort_order=desc is sort z to a no price sort
-        // ...&sort_order=asc and ...(no sort_order specified) sort a to z
-        // ...&sort_by=price sort price - to +
-        //    ...&sort_by=price&sort_order=desc sort price + to -
-
         $products = $productsQuery->get([
             'products.*',
-            // Select all columns from products
             'categories.name as category_name',
             'subcategories.name as subcategory_name',
         ]);
 
-        // dump($products);
         return Inertia::render('SearchResults', [
             'products' => $products,
             'query' => $query,
@@ -125,3 +108,8 @@ class ProductController extends Controller
     }
 
 }
+
+// ...&sort_order=desc is sort z to a no price sort
+// ...&sort_order=asc and ...(no sort_order specified) sort a to z
+// ...&sort_by=price sort price - to +
+//    ...&sort_by=price&sort_order=desc sort price + to -

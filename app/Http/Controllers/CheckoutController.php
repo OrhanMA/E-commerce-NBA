@@ -43,10 +43,8 @@ class CheckoutController extends Controller
         # code...        // Create a new order
         $order = Order::create([
             'total_price' => $totalPrice,
-            'customer_info' => 'Customer info placeholder',
-            // You can replace this with actual customer info
+            // 'customer_info' => 'Customer info placeholder',
             'user_id' => Auth::id(),
-            // Assuming you are using Laravel's built-in authentication
             'paiement_method_id' => $paiementMethodId,
             'delivery_method_id' => $deliveryMethodId,
         ]);

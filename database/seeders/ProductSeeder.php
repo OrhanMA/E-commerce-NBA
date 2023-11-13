@@ -579,7 +579,6 @@ class ProductSeeder extends Seeder
         $timestamp = Carbon::now();
 
         foreach ($products as $productData) {
-            // $productData['id'] = Str::uuid();
             $productData['created_at'] = $timestamp;
             $productData['updated_at'] = $timestamp;
 

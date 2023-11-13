@@ -17,7 +17,7 @@ class Order extends Model
         'total_price',
         'paiement_method',
         'delivery_method',
-        'customer_info',
+        // 'customer_info',
     ];
 
     public function user()
