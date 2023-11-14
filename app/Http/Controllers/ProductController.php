@@ -44,7 +44,6 @@ class ProductController extends Controller
         }
 
         $products = $productsQuery->get();
-
         return Inertia::render('CategoryResults', [
             'products' => $products,
             'category' => $category,

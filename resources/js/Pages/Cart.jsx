@@ -11,17 +11,50 @@ export default function CartPage() {
         setCartData(parsedData);
     }, []); // Empty dependency array to run the effect only once
 
+    const clearCart = () => {
+        // Clear all products from local storage
+        localStorage.removeItem("cart");
+        setCartData([]);
+    };
+
     return (
         <div className="flex flex-col items-center m-12">
             <Head title="Cart" />
-            <h1 className="text-2xl font-bold ">Your Cart</h1>
-            <h2 className="text-xl font-semibold">Product list:</h2>
+            <h1 className="text-2xl font-bold mb-6"> Cart:</h1>
+            {cartData.length <= 0 && (
+                <>
+                    <h2 className="text-xl font-semibold mb-4">
+                        Your cart is empty...
+                    </h2>
+                    <Link
+                        className="border hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
+                        href="/products"
+                    >
+                        Go to the products page
+                    </Link>
+                </>
+            )}
+            {cartData.length > 0 && (
+                <button
+                    className="mt-4 bg-yellow-500 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
+                    onClick={clearCart}
+                >
+                    Clear Cart
+                </button>
+            )}
             <ul className="flex flex-col gap-6 my-6">
                 {cartData.map((product) => (
                     <CartProductCard product={product} key={product.id} />
                 ))}
             </ul>
-            <Link href="/checkout">Continue to checkout</Link>
+            {cartData.length > 0 && (
+                <Link
+                    className="border hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
+                    href="/checkout"
+                >
+                    Continue to checkout
+                </Link>
+            )}
         </div>
     );
 }
@@ -53,11 +86,35 @@ function CartProductCard({ product }) {
 
     return (
         <div className="flex items-center gap-6">
-            <p>name: {product.name}</p>
-            <p>quantity: {quantity}</p>
-            <p>price: {quantity * product.price}</p>
-            <button onClick={handleIncrement}>+</button>
-            <button onClick={handleDecrement}>-</button>
+            <img
+                className="max-h-[100px]"
+                src={`/${product.image_path}`}
+                alt="product image"
+            />
+            <p className="font-semibold">{product.name}</p>
+            <p className="flex items-center gap-2">
+                quantity: <span className="font-semibold">{quantity}</span>
+            </p>
+            <p className="flex items-center gap-2">
+                price:
+                <span className="font-semibold">
+                    {quantity * product.price}
+                </span>
+            </p>
+            <div className="flex items-center gap-2">
+                <button
+                    className="flex justify-center items-center bg-green-500 p-1 w-[25px] h-[25px] rounded text-white"
+                    onClick={handleIncrement}
+                >
+                    +
+                </button>
+                <button
+                    className="flex justify-center items-center bg-red-500 p-1 w-[25px] h-[25px] rounded text-white"
+                    onClick={handleDecrement}
+                >
+                    -
+                </button>
+            </div>
         </div>
     );
 }

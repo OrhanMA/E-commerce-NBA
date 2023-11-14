@@ -12,6 +12,7 @@ export default function ContactPage() {
     };
     return (
         <div>
+            <Head title="Contact" />
             <h1>Contact page</h1>
             <h2>Please fill the form to send a message to the support:</h2>
             <form onSubmit={handleSubmit(onSubmit)}>

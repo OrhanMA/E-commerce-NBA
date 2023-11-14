@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SearchBar } from "./Welcome";
 import { ProductCard } from "@/Components/ProductCard";
 import { Head } from "@inertiajs/react";
+
 const SearchResults = ({ products, category, sort_by, sort_order }) => {
     // console.log(products);
     function setSorting(value) {
@@ -31,11 +32,12 @@ const SearchResults = ({ products, category, sort_by, sort_order }) => {
             <Head title={`${category}`} />
             <div>
                 {/* <h1>Search Results for "{query}"</h1> */}
-                <p>cat:{category}</p>
+                {/* <p>cat:{category}</p>
                 <p>{category}</p>
                 <p>{sort_by}</p>
-                <p>{sort_order}</p>
+            <p>{sort_order}</p> */}
                 <SearchBar />
+
                 {products.length <= 0 ? (
                     <>
                         <p>

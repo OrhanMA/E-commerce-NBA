@@ -2,6 +2,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import { Link, Head } from "@inertiajs/react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { useState } from "react";
+
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const routes = [
         { route: "Jerseys", image: "kobe-jersey.jpg" },
@@ -117,7 +118,7 @@ export function SearchBar() {
     };
 
     return (
-        <div className="w-full flex justify-center mt-2 mb-6">
+        <div className="w-full flex justify-center my-6">
             {/* <div className="flex justify-center  gap-4">
                 <p>caté:{category}</p>
                 <p>query:{query}</p>

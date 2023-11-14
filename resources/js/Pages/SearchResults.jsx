@@ -32,7 +32,7 @@ const SearchResults = ({ products, query, category, sortBy, sortOrder }) => {
         <>
             <Head title={`"${query}" ${category}`} />
             <div>
-                <h1>Search Results for "{query}"</h1>
+                {/* <h1>Search Results for "{query}"</h1> */}
                 {/* <p>cat:{category}</p>
                 <p>{category}</p>
                 <p>{sortBy}</p>

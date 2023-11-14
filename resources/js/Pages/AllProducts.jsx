@@ -9,6 +9,7 @@ const SearchResults = ({ products }) => {
     return (
         <>
             <Head title="All products" />
+            <SearchBar />
             <div>
                 {products.links.map((link) => {
                     <div key={link}>
