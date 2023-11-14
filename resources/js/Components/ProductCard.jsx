@@ -1,6 +1,7 @@
 import { useToast } from "./ui/use-toast";
 import { Toaster } from "@/Components/ui/toaster";
 import { ToastAction } from "@/components/ui/toast";
+import { Link } from "@inertiajs/react";
 export function ProductCard({ product }) {
     const { toast } = useToast();
     const addToCart = () => {
@@ -28,7 +29,11 @@ export function ProductCard({ product }) {
             variant: "success",
             title: `${product.name} added successfully to the cart !`,
             description: `Click on 'check cart' to see all your products.`,
-            action: <ToastAction altText="See cart">See cart</ToastAction>,
+            action: (
+                <Link href={"/cart"}>
+                    <ToastAction altText="See cart">See cart</ToastAction>
+                </Link>
+            ),
         });
 
         fetch("/api/cart", {
@@ -43,7 +48,7 @@ export function ProductCard({ product }) {
         });
     };
     return (
-        <div className="w-4/5 sm:w-2/5 lg:w-1/4  m-2   flex flex-col items-start gap-4 ">
+        <div className="w-4/5 sm:w-2/5 lg:w-1/4  m-2   flex flex-col items-start bg-gray-200 bg-opacity-40 p-6 gap-4 ">
             <Toaster />
             <div className="w-full flex justify-center bg-white rounded-md">
                 <img
@@ -54,7 +59,9 @@ export function ProductCard({ product }) {
                 />
             </div>
             <p className="h-[50px] text-xl font-bold">{product.name}</p>
-            <p className=" text-lg text-gray-500">{product.description}</p>
+            <p className=" text-lg text-gray-500 h-[50px]">
+                {product.description}
+            </p>
             <div className="flex items-center gap-4">
                 <p className="bg-slate-200 text-sm text-gray-500 px-2 rounded-md">
                     {product.category_name}

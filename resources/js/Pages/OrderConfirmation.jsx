@@ -1,15 +1,17 @@
 // OrderConfirmation.jsx
 
 // OrderConfirmation.jsx
-
-import React from "react";
-
+import React, { useEffect } from "react";
 export default function OrderConfirmation({
     order,
     paiementMethodName,
     deliveryMethodName,
     orderProducts,
 }) {
+    useEffect(() => {
+        localStorage.removeItem("cart");
+    }, []);
+
     return (
         <div>
             <h1>Order Confirmation</h1>

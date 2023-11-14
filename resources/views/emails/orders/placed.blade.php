@@ -5,6 +5,6 @@ Order confirmed!
 
 Your order for a total of {{ $order->total_price }}€ is confirmed. 
 
-Thanks for you purchased,<br>
+Thanks for you purchase,<br>
 {{ config('app.name') }}
 </x-mail::message>
