@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/cart', [CartController::class, 'index']);
     Route::get('/checkout', [CheckoutController::class, 'index']);
     Route::post('/checkout', [CheckoutController::class, 'placeOrder']);
+
+    Route::get('/contact', [ContactController::class, 'contact']);
+    Route::post('/contact', [ContactController::class, 'sendEmail']);
+    Route::get('/contact-confirmation', [ContactController::class, 'contactConfirmation']);
 });
 
 Route::middleware(['auth'])->group(function () {
