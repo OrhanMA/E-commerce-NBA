@@ -9,6 +9,8 @@ use App\Models\Order;
 use Inertia\Inertia;
 use App\Models\PaiementMethod;
 use App\Models\DeliveryMethod;
+use App\Models\OrderProduct;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -35,6 +37,42 @@ class OrderController extends Controller
             'paiementMethodName' => $paiementMethodName,
             'deliveryMethodName' => $deliveryMethodName,
             'orderProducts' => $orderProducts,
+        ]);
+    }
+
+    public function getOrders(Request $request)
+    {
+        $user_id = Auth::id();
+        $orders = Order::with(['paiementMethod', 'deliveryMethod'])
+            ->where('user_id', $user_id)
+            ->get();
+
+        // dd($orders);
+
+        // foreach ($orders as $order) {
+        //     $paiementMethod = PaiementMethod::find($order->paiement_method_id)->name;
+        //     $deliveryMethod = DeliveryMethod::find($order->delivery_method_id)->name;
+        // }
+
+        return Inertia::render('SeeOrders', [
+            'orders' => $orders,
+        ]);
+    }
+    public function getOrder($id, Request $request)
+    {
+        $user_id = Auth::id();
+        $order = Order::with(['products', 'paiementMethod', 'deliveryMethod'])
+            ->where('id', $id)->where('user_id', $user_id)->get();
+
+        // dd($orders);
+
+        // foreach ($orders as $order) {
+        //     $paiementMethod = PaiementMethod::find($order->paiement_method_id)->name;
+        //     $deliveryMethod = DeliveryMethod::find($order->delivery_method_id)->name;
+        // }
+
+        return Inertia::render('ShowOrder', [
+            'order' => $order,
         ]);
     }
 }

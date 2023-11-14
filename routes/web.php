@@ -49,8 +49,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/order-confirmation/{id}', [OrderController::class, 'confirmation'])
-        ->name('order.confirmation');
+    Route::get('/order-confirmation/{id}', [OrderController::class, 'confirmation'])->name('order.confirmation');
+    Route::get('/orders', [OrderController::class, 'getOrders']);
+    Route::get('/order/{id}', [OrderController::class, 'getOrder']);
 });
 
 require __DIR__ . '/auth.php';
