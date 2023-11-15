@@ -26,7 +26,7 @@ export default function OrderConfirmation({
                 ))}
             </ul>
 
-            <p>Total Price: {order.total_price}€</p>
+            <p>Total Price: {order.total_price}$</p>
             <p>Delivery Method: {deliveryMethodName}</p>
             <p>Payment Method: {paiementMethodName}</p>
         </>

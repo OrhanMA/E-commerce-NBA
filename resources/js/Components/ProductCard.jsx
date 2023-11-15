@@ -72,7 +72,7 @@ export function ProductCard({ product }) {
             </div>
 
             <div className="mt-4 flex items-center w-full justify-between">
-                <p className="text-lg font-bold ">{product.price}€</p>
+                <p className="text-lg font-bold ">{product.price}$</p>
                 <button
                     onClick={addToCart}
                     className="bg-black text-white px-6 py-2 font-semibold"

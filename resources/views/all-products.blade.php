@@ -20,7 +20,7 @@
   </div>
 
   <div className="mt-4 flex items-center w-full justify-between">
-      <p className="text-lg font-bold ">{{$product->price}}€</p>
+      <p className="text-lg font-bold ">{{$product->price}}$</p>
       <button className="bg-black text-white px-6 py-2 font-semibold">
           Buy
       </button>

@@ -21,8 +21,8 @@ export default function CartPage({ auth }) {
     return (
         <>
             <Header auth={auth} />
+            <Head title="Cart" />
             <div className="flex flex-col items-center m-12">
-                <Head title="Cart" />
                 <h1 className="text-2xl font-bold mb-6"> Cart:</h1>
                 {cartData.length <= 0 && (
                     <>
@@ -45,7 +45,7 @@ export default function CartPage({ auth }) {
                         Clear Cart
                     </button>
                 )}
-                <ul className="flex flex-col gap-6 my-6">
+                <ul className="flex flex-col border-2 p-6 sm:p-12 gap-6 my-6 rounded-md">
                     {cartData.map((product) => (
                         <CartProductCard product={product} key={product.id} />
                     ))}
@@ -62,7 +62,7 @@ export default function CartPage({ auth }) {
         </>
     );
 }
-function CartProductCard({ product }) {
+export function CartProductCard({ product }) {
     const [quantity, setQuantity] = useState(product.quantity);
 
     const handleIncrement = () => {
@@ -89,23 +89,26 @@ function CartProductCard({ product }) {
     };
 
     return (
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col sm:flex-row items-center last:border-none border-b pb-6 gap-6">
             <img
                 className="max-h-[100px]"
                 src={`/${product.image_path}`}
                 alt="product image"
             />
             <p className="font-semibold">{product.name}</p>
-            <p className="flex items-center gap-2">
-                quantity: <span className="font-semibold">{quantity}</span>
-            </p>
-            <p className="flex items-center gap-2">
-                price:
-                <span className="font-semibold">
-                    {quantity * product.price}
-                </span>
-            </p>
-            <div className="flex items-center gap-2">
+            <div className="flex gap-4">
+                <p className="flex items-center gap-2">
+                    quantity: <span className="font-semibold">{quantity}</span>
+                </p>
+                {" - "}
+                <p className="flex items-center gap-2">
+                    price:
+                    <span className="font-semibold">
+                        {quantity * product.price}$
+                    </span>
+                </p>
+            </div>
+            <div className="flex items-center gap-6">
                 <button
                     className="flex justify-center items-center bg-green-500 p-1 w-[25px] h-[25px] rounded text-white"
                     onClick={handleIncrement}

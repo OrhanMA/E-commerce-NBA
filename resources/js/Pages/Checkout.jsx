@@ -31,74 +31,96 @@ export default function Checkout({ auth }) {
             <Header auth={auth} />
             <Head title="Checkout" />
             <div className="flex flex-col items-center m-12">
-                <h1 className="text-2xl font-bold">Checkout</h1>
+                <h1 className="text-2xl lg:text-4xl font-bold mb-12">
+                    Checkout
+                </h1>
 
                 {cartData.length > 0 ? (
-                    <>
-                        <h2 className="text-xl font-semibold">
-                            Order Summary:
-                        </h2>
-                        <ul className="flex flex-col gap-6 my-6">
-                            {cartData.map((product) => (
-                                <CheckoutProductCard
-                                    product={product}
-                                    key={product.id}
-                                />
-                            ))}
-                        </ul>
-                        <div className="mt-6">
-                            <p className="text-lg font-semibold">
-                                Total Price: {calculateTotalPrice()}€
+                    <div className="w-full flex flex-col gap-12 sm:gap-0 sm:flex-row justify-evenly">
+                        <div className="w-full sm:w-1/2 flex flex-col items-center">
+                            <h2 className="text-xl">Order Summary:</h2>
+                            <ul className="flex flex-col gap-6 my-6">
+                                {cartData.map((product) => (
+                                    <CheckoutProductCard
+                                        product={product}
+                                        key={product.id}
+                                    />
+                                ))}
+                            </ul>
+                            <Link
+                                href="/cart"
+                                className="w-2/3 text-center text-md px-4 py-2 duration-200 text-white bg-blue-500 hover:bg-gray-400 hover:text-white "
+                            >
+                                Edit order?
+                            </Link>
+                        </div>
+                        <div className="w-full sm:w-1/2 flex flex-col items-center">
+                            <p className="text-xl  mb-6">
+                                Total Price:{" "}
+                                <span className="font-bold">
+                                    {calculateTotalPrice()}$
+                                </span>
                             </p>
-                        </div>
-                        <Link
-                            href="/cart"
-                            className="text-sm underline text-blue-500"
-                        >
-                            Edit order?
-                        </Link>
-                        <div className="mt-6">
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                {/* Add form elements for payment and delivery methods */}
-                                {/* Example: */}
-                                <label>
-                                    Payment Method:
-                                    <select
-                                        name="paimentMethod"
-                                        {...register("paiementMethod")}
+
+                            <div className=" w-full">
+                                <form
+                                    onSubmit={handleSubmit(onSubmit)}
+                                    className="flex flex-col items-center gap-4 text-center"
+                                >
+                                    {/* Add form elements for payment and delivery methods */}
+                                    {/* Example: */}
+                                    <label
+                                        required
+                                        className="flex w-full flex-col items-center gap-2"
                                     >
-                                        <option value="Card">Card</option>
-                                        <option value="Cash">Cash</option>
-                                        <option value="Transfert">
-                                            Transfert
-                                        </option>
-                                        {/* Add more payment methods as needed */}
-                                    </select>
-                                </label>
-                                <br />
-                                <label>
-                                    Delivery Method:
-                                    <select
-                                        name="deliveryMethod"
-                                        {...register("deliveryMethod")}
+                                        Payment Method:
+                                        <select
+                                            name="paimentMethod"
+                                            {...register("paiementMethod")}
+                                            className="p-2 w-2/3 lg:w-2/3  bg-gray-100 rounded-sm"
+                                        >
+                                            <option value="Card">Card</option>
+                                            <option value="Cash">Cash</option>
+                                            <option value="Transfert">
+                                                Transfert
+                                            </option>
+                                            {/* Add more payment methods as needed */}
+                                        </select>
+                                    </label>
+                                    <br />
+                                    <label
+                                        required
+                                        className="flex w-full flex-col items-center gap-2"
                                     >
-                                        <option value="standard">
-                                            Standard shipping
-                                        </option>
-                                        <option value="express">
-                                            Express shipping
-                                        </option>
-                                        <option value="click&collect">
-                                            Click&collect
-                                        </option>
-                                        {/* Add more delivery methods as needed */}
-                                    </select>
-                                </label>
-                                <br />
-                                <button type="submit">Place Order</button>
-                            </form>
+                                        Delivery Method:
+                                        <select
+                                            name="deliveryMethod"
+                                            {...register("deliveryMethod")}
+                                            className="p-2 w-2/3 lg:w-2/3  bg-gray-100 rounded-sm"
+                                        >
+                                            <option value="standard">
+                                                Standard shipping
+                                            </option>
+                                            <option value="express">
+                                                Express shipping
+                                            </option>
+                                            <option value="click&collect">
+                                                Click&collect
+                                            </option>
+                                            {/* Add more delivery methods as needed */}
+                                        </select>
+                                    </label>
+                                    <br />
+                                    <button
+                                        type="submit"
+                                        className="w-2/3 bg-black text-white py-2"
+                                    >
+                                        Place Order
+                                    </button>
+                                </form>
+                            </div>
                         </div>
-                    </>
+                    </div>
                 ) : (
                     <>
                         <h2 className="text-xl font-semibold">
@@ -119,10 +141,10 @@ export default function Checkout({ auth }) {
 
 function CheckoutProductCard({ product }) {
     return (
-        <div className="flex items-center gap-6">
-            <p>name: {product.name}</p>
-            <p>quantity: {product.quantity}</p>
-            <p>price: {product.quantity * product.price}</p>
+        <div className="flex items-center gap-6  border-b pb-6 last:border-none">
+            <p className="font-bold w-2/3">{product.name}</p>
+            <p>x{product.quantity}</p>
+            <p>{product.quantity * product.price}$</p>
         </div>
     );
 }
