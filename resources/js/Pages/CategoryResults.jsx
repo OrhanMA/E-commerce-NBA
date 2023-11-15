@@ -1,11 +1,11 @@
 // Create a SearchResults component
 
 import { useState } from "react";
-import { SearchBar } from "./Welcome";
+import SearchBar from "@/Components/SearchBar";
 import { ProductCard } from "@/Components/ProductCard";
 import { Head } from "@inertiajs/react";
-
-const SearchResults = ({ products, category, sort_by, sort_order }) => {
+import Header from "@/Layouts/Header";
+const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
     // console.log(products);
     function setSorting(value) {
         if (value === "name_asc") {
@@ -29,6 +29,7 @@ const SearchResults = ({ products, category, sort_by, sort_order }) => {
 
     return (
         <>
+            <Header auth={auth} />
             <Head title={`${category}`} />
             <div>
                 {/* <h1>Search Results for "{query}"</h1> */}

@@ -1,6 +1,9 @@
 import { Head, Link } from "@inertiajs/react";
-export default function () {
+import Header from "@/Layouts/Header";
+export default function ContactConfirmation({auth}) {
     return (
+        <>
+        <Header auth={auth}/>
         <div className="bg-green-300 m-8">
             <Head title="Email confirmed" />
             <h1 className="text-2xl font-bold text-green-600">Message sent</h1>
@@ -10,5 +13,6 @@ export default function () {
                 Go back to landing page
             </Link>
         </div>
+        </>
     );
 }

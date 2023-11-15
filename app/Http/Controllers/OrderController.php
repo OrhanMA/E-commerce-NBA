@@ -43,9 +43,8 @@ class OrderController extends Controller
     public function getOrders(Request $request)
     {
         $user_id = Auth::id();
-        $orders = Order::with(['paiementMethod', 'deliveryMethod'])
-            ->where('user_id', $user_id)
-            ->get();
+        $orders = Order::with(['products', 'paiementMethod', 'deliveryMethod'])
+            ->where('user_id', $user_id)->get();
 
         // dd($orders);
 
@@ -64,7 +63,7 @@ class OrderController extends Controller
         $order = Order::with(['products', 'paiementMethod', 'deliveryMethod'])
             ->where('id', $id)->where('user_id', $user_id)->get();
 
-        // dd($orders);
+        // dd($order);
 
         // foreach ($orders as $order) {
         //     $paiementMethod = PaiementMethod::find($order->paiement_method_id)->name;

@@ -1,9 +1,11 @@
 import { Head } from "@inertiajs/react";
-export default function SeeOrders({ order }) {
+import Header from "@/Layouts/Header";
+export default function SeeOrders({ auth, order }) {
     const newOrder = order[0];
     console.log(newOrder);
     return (
         <>
+            <Header auth={auth} />
             <Head title={`Your order n°${newOrder.id}`} />
             <h1 className="max-w-xl">Your placed order</h1>
             <div>

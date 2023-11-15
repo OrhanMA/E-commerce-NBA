@@ -2,7 +2,8 @@ import { Head, Link } from "@inertiajs/react";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { router } from "@inertiajs/react";
-export default function Checkout() {
+import Header from "@/Layouts/Header";
+export default function Checkout({ auth }) {
     const { register, handleSubmit } = useForm();
     const [cartData, setCartData] = useState([]);
 
@@ -27,6 +28,7 @@ export default function Checkout() {
     };
     return (
         <>
+            <Header auth={auth} />
             <Head title="Checkout" />
             <div className="flex flex-col items-center m-12">
                 <h1 className="text-2xl font-bold">Checkout</h1>

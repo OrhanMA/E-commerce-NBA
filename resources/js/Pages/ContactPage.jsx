@@ -2,8 +2,8 @@ import { Head, Link } from "@inertiajs/react";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { router } from "@inertiajs/react";
-
-export default function ContactPage() {
+import Header from "@/Layouts/Header";
+export default function ContactPage({auth}) {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
@@ -11,7 +11,8 @@ export default function ContactPage() {
         await router.post("/contact", { ...data });
     };
     return (
-        <div>
+        <>
+        <Header auth={auth}/>
             <Head title="Contact" />
             <h1>Contact page</h1>
             <h2>Please fill the form to send a message to the support:</h2>
@@ -54,6 +55,6 @@ export default function ContactPage() {
                 </div>
                 <button type="submit">Send</button>
             </form>
-        </div>
+        </>
     );
 }

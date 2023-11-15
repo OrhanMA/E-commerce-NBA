@@ -1,10 +1,24 @@
+// import Authenticated from "./AuthenticatedLayout";
+// import Guest from "./GuestLayout";
+// export default function Header({ auth }) {
+//     return (
+//         <div className="mb-6">
+//             {auth.user !== null ? (
+//                 <Authenticated user={auth.user}></Authenticated>
+//             ) : (
+//                 <Guest />
+//             )}
+//         </div>
+//     );
+// }
+
 import { useState } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link, usePage } from "@inertiajs/react";
-export default function Authenticated({ user, header, children }) {
+export default function Authenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
     const routes = [
@@ -16,7 +30,8 @@ export default function Authenticated({ user, header, children }) {
     ];
     // Access the page object provided by Inertia.js
     const { url } = usePage();
-
+    let user = auth.user;
+    // console.log(auth.user);
     // Do something with the current URL
     // console.log("Current URL:", url);
     return (
@@ -25,11 +40,11 @@ export default function Authenticated({ user, header, children }) {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
-                            {/* <div className="shrink-0 flex items-center">
+                            <div className="shrink-0 flex items-center">
                                 <Link href="/">
                                     <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
                                 </Link>
-                            </div> */}
+                            </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink href={"/"} active={url == "/"}>
@@ -63,7 +78,7 @@ export default function Authenticated({ user, header, children }) {
                                                 type="button"
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                {user.name}
+                                                {user && <>{user.name}</>}
 
                                                 <svg
                                                     className="ms-2 -me-0.5 h-4 w-4"
@@ -85,18 +100,42 @@ export default function Authenticated({ user, header, children }) {
                                         <Dropdown.Link href={"/cart"}>
                                             Cart
                                         </Dropdown.Link>
-                                        <Dropdown.Link
-                                            href={route("profile.edit")}
-                                        >
-                                            Profile
-                                        </Dropdown.Link>
-                                        <Dropdown.Link
-                                            href={route("logout")}
-                                            method="post"
-                                            as="button"
-                                        >
-                                            Log Out
-                                        </Dropdown.Link>
+                                        {user ? (
+                                            <>
+                                                <Dropdown.Link
+                                                    href={"my-orders"}
+                                                >
+                                                    My Orders
+                                                </Dropdown.Link>
+                                                <Dropdown.Link
+                                                    href={route("profile.edit")}
+                                                >
+                                                    Profile
+                                                </Dropdown.Link>
+                                                <Dropdown.Link
+                                                    href={route("logout")}
+                                                    method="post"
+                                                    as="button"
+                                                >
+                                                    Log Out
+                                                </Dropdown.Link>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Dropdown.Link
+                                                    href={route("login")}
+                                                >
+                                                    Log in
+                                                </Dropdown.Link>
+                                                <Dropdown.Link
+                                                    href={"/register"}
+                                                    method="get"
+                                                    as="button"
+                                                >
+                                                    Register
+                                                </Dropdown.Link>
+                                            </>
+                                        )}
                                     </Dropdown.Content>
                                 </Dropdown>
                             </div>
@@ -174,31 +213,58 @@ export default function Authenticated({ user, header, children }) {
                     </div>
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
-                        <div className="px-4">
-                            <div className="font-medium text-base text-gray-800">
-                                {user.name}{" "}
-                                {user.is_admin == 1 && <span>(admin)</span>}
-                            </div>
-                            <div className="font-medium text-sm text-gray-500">
-                                {user.email}
-                            </div>
-                        </div>
-
-                        <div className="mt-3 space-y-1">
-                            <ResponsiveNavLink href={"/admin/login"}>
-                                Admin dashboard
-                            </ResponsiveNavLink>
-                            <ResponsiveNavLink href={route("profile.edit")}>
-                                Profile
-                            </ResponsiveNavLink>
-                            <ResponsiveNavLink
-                                method="post"
-                                href={route("logout")}
-                                as="button"
-                            >
-                                Log Out
-                            </ResponsiveNavLink>
-                        </div>
+                        {user ? (
+                            <>
+                                <div className="px-4">
+                                    <div className="font-medium text-base text-gray-800">
+                                        {user.name}{" "}
+                                        {user.is_admin == 1 && (
+                                            <span>(admin)</span>
+                                        )}
+                                    </div>
+                                    <div className="font-medium text-sm text-gray-500">
+                                        {user.email}
+                                    </div>
+                                </div>
+                                <div className="mt-3 space-y-1">
+                                    <ResponsiveNavLink href={"/admin/login"}>
+                                        Admin dashboard
+                                    </ResponsiveNavLink>
+                                    <ResponsiveNavLink
+                                        href={route("profile.edit")}
+                                    >
+                                        Profile
+                                    </ResponsiveNavLink>
+                                    <ResponsiveNavLink
+                                        method="post"
+                                        href={route("logout")}
+                                        as="button"
+                                    >
+                                        Log Out
+                                    </ResponsiveNavLink>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                {" "}
+                                <div className="mt-3 space-y-1">
+                                    <ResponsiveNavLink
+                                        method="get"
+                                        href={route("login")}
+                                        as="button"
+                                    >
+                                        Log In
+                                    </ResponsiveNavLink>
+                                    <ResponsiveNavLink
+                                        method="get"
+                                        href={"/register"}
+                                        as="button"
+                                    >
+                                        Register
+                                    </ResponsiveNavLink>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
             </nav>

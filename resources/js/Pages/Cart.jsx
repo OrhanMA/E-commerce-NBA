@@ -1,7 +1,8 @@
 // Assuming you're using React
 import React, { useState, useEffect } from "react";
 import { Head, Link } from "@inertiajs/react";
-export default function CartPage() {
+import Header from "@/Layouts/Header";
+export default function CartPage({ auth }) {
     const [cartData, setCartData] = useState([]);
 
     useEffect(() => {
@@ -18,44 +19,47 @@ export default function CartPage() {
     };
 
     return (
-        <div className="flex flex-col items-center m-12">
-            <Head title="Cart" />
-            <h1 className="text-2xl font-bold mb-6"> Cart:</h1>
-            {cartData.length <= 0 && (
-                <>
-                    <h2 className="text-xl font-semibold mb-4">
-                        Your cart is empty...
-                    </h2>
+        <>
+            <Header auth={auth} />
+            <div className="flex flex-col items-center m-12">
+                <Head title="Cart" />
+                <h1 className="text-2xl font-bold mb-6"> Cart:</h1>
+                {cartData.length <= 0 && (
+                    <>
+                        <h2 className="text-xl font-semibold mb-4">
+                            Your cart is empty...
+                        </h2>
+                        <Link
+                            className="border hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
+                            href="/products"
+                        >
+                            Go to the products page
+                        </Link>
+                    </>
+                )}
+                {cartData.length > 0 && (
+                    <button
+                        className="mt-4 bg-yellow-500 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
+                        onClick={clearCart}
+                    >
+                        Clear Cart
+                    </button>
+                )}
+                <ul className="flex flex-col gap-6 my-6">
+                    {cartData.map((product) => (
+                        <CartProductCard product={product} key={product.id} />
+                    ))}
+                </ul>
+                {cartData.length > 0 && (
                     <Link
                         className="border hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
-                        href="/products"
+                        href="/checkout"
                     >
-                        Go to the products page
+                        Continue to checkout
                     </Link>
-                </>
-            )}
-            {cartData.length > 0 && (
-                <button
-                    className="mt-4 bg-yellow-500 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
-                    onClick={clearCart}
-                >
-                    Clear Cart
-                </button>
-            )}
-            <ul className="flex flex-col gap-6 my-6">
-                {cartData.map((product) => (
-                    <CartProductCard product={product} key={product.id} />
-                ))}
-            </ul>
-            {cartData.length > 0 && (
-                <Link
-                    className="border hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
-                    href="/checkout"
-                >
-                    Continue to checkout
-                </Link>
-            )}
-        </div>
+                )}
+            </div>
+        </>
     );
 }
 function CartProductCard({ product }) {
