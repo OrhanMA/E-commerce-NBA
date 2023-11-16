@@ -5,6 +5,7 @@ import SearchBar from "@/Components/SearchBar";
 import { ProductCard } from "@/Components/ProductCard";
 import { Head } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
+import SortFilter from "@/Components/SortFilter";
 const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
     // console.log(products);
     function setSorting(value) {
@@ -49,23 +50,8 @@ const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
                 ) : (
                     <>
                         <div className="h-full justify-between flex flex-col flex-nowrap">
-                            <div className="flex gap-6 p-6 bg-gray-50 w-full">
-                                <p className="font-semibold">Sort by:</p>
-                                <div className="flex gap-6">
-                                    <a href={generateSortUrl("name", "asc")}>
-                                        Name A-Z
-                                    </a>
-                                    <a href={generateSortUrl("name", "desc")}>
-                                        Name Z-A
-                                    </a>
-                                    <a href={generateSortUrl("price", "asc")}>
-                                        Price - to +
-                                    </a>
-                                    <a href={generateSortUrl("price", "desc")}>
-                                        Price + - -
-                                    </a>
-                                </div>
-                            </div>
+                            <SortFilter generateSortUrl={generateSortUrl} />
+
                             <div className="flex flex-wrap justify-center w-full m-2 p-2 gap-6">
                                 {products.map((product) => (
                                     <ProductCard
