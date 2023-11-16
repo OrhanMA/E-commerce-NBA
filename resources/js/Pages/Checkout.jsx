@@ -36,7 +36,7 @@ export default function Checkout({ auth }) {
                 </h1>
 
                 {cartData.length > 0 ? (
-                    <div className="w-full flex flex-col gap-12 sm:gap-0 sm:flex-row justify-evenly">
+                    <div className="w-full flex flex-col items-center gap-12 sm:gap-0 sm:flex-row justify-evenly">
                         <div className="w-full sm:w-1/2 flex flex-col items-center">
                             <h2 className="text-xl">Order Summary:</h2>
                             <ul className="flex flex-col gap-6 my-6">
@@ -47,6 +47,12 @@ export default function Checkout({ auth }) {
                                     />
                                 ))}
                             </ul>
+                            <p className="text-xl  mb-6">
+                                Total Price:{" "}
+                                <span className="font-bold">
+                                    {calculateTotalPrice()}$
+                                </span>
+                            </p>
                             <Link
                                 href="/cart"
                                 className="w-2/3 text-center text-md px-4 py-2 duration-200 text-white bg-blue-500 hover:bg-gray-400 hover:text-white "
@@ -55,13 +61,6 @@ export default function Checkout({ auth }) {
                             </Link>
                         </div>
                         <div className="w-full sm:w-1/2 flex flex-col items-center">
-                            <p className="text-xl  mb-6">
-                                Total Price:{" "}
-                                <span className="font-bold">
-                                    {calculateTotalPrice()}$
-                                </span>
-                            </p>
-
                             <div className=" w-full">
                                 <form
                                     onSubmit={handleSubmit(onSubmit)}

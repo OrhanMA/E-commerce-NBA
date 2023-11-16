@@ -1,4 +1,4 @@
-import { Head } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 export default function SeeOrders({ auth, order }) {
     const newOrder = order[0];
@@ -7,23 +7,66 @@ export default function SeeOrders({ auth, order }) {
         <>
             <Header auth={auth} />
             <Head title={`Your order n°${newOrder.id}`} />
-            <h1 className="max-w-xl">Your placed order</h1>
-            <div>
-                <p>Order id:{newOrder.id}</p>
-                <p>{newOrder.total_price}</p>
-                <p>{newOrder.delivery_method.name}</p>
-                <p>{newOrder.paiement_method.name}</p>
-                <p>{newOrder.created_at}</p>
-                {newOrder.products.map((product, index) => {
-                    return (
-                        <div key={index}>
-                            <p>item: {product.name}</p>
-                            <p>quantity: {product.pivot.quantity}</p>
-                        </div>
-                    );
-                })}
+            <div className="flex flex-col items-center my-6">
+                <h1 className="max-w-xl text-2xl font-bold mb-6">
+                    Your placed order
+                </h1>
+                <Link href="/contact" className="hover:text-blue-500 underline">
+                    Cliquez ici pour contacter le support
+                </Link>
+                <div className="border p-6 flex flex-col gap-6 m-6 md:w-2/3">
+                    <div className="flex flex-col gap-2">
+                        <p>
+                            Order n°{" "}
+                            <span className="font-semibold">{newOrder.id}</span>
+                        </p>
+                        <p>
+                            <span className="font-semibold">total: </span>
+                            {newOrder.total_price}$
+                        </p>
+                        <p>
+                            <span className="font-semibold">shipping: </span>
+                            {newOrder.delivery_method.name}
+                        </p>
+                        <p>
+                            <span className="font-semibold">paid by: </span>
+                            {newOrder.paiement_method.name}
+                        </p>
+                        <p>
+                            <span className="font-semibold">placed on: </span>
+                            {new Intl.DateTimeFormat("en-US", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                                hour: "numeric",
+                                minute: "numeric",
+                                second: "numeric",
+                                timeZone: "UTC", // Assuming your date string is in UTC
+                            }).format(new Date(newOrder.created_at))}
+                        </p>
+                    </div>
+                    <ul className="flex flex-col gap-6 my-6">
+                        {newOrder.products.map((product, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    className="flex items-center justify-between gap-4 border-b pb-6 last:border-none"
+                                >
+                                    <img
+                                        src={`/${product.image_path}`}
+                                        alt={`image for product:${product.name}`}
+                                        className="h-[50px] max-w-1/3"
+                                    />
+                                    <p className="font-semibold w-1/3">
+                                        {product.name}
+                                    </p>
+                                    <p>x{product.pivot.quantity}</p>
+                                </div>
+                            );
+                        })}
+                    </ul>
+                </div>
             </div>
-            <div>Envoyer un message au support:</div>
         </>
     );
 }

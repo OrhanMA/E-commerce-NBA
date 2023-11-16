@@ -78,7 +78,7 @@ const SearchResults = ({
                 ) : (
                     <>
                         <div className="h-full justify-between flex flex-col flex-nowrap">
-                            <div className="flex gap-6 p-6 bg-slate-200 w-full">
+                            <div className="flex gap-6 p-6 bg-gray-50 w-full">
                                 <p className="font-semibold">Sort by:</p>
                                 <div className="flex gap-6">
                                     <a href={generateSortUrl("name", "asc")}>

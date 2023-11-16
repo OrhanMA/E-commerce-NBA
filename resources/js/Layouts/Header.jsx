@@ -108,6 +108,11 @@ export default function Authenticated({ auth, header, children }) {
                                                     My Orders
                                                 </Dropdown.Link>
                                                 <Dropdown.Link
+                                                    href={"/admin/login"}
+                                                >
+                                                    Admin dashboard
+                                                </Dropdown.Link>
+                                                <Dropdown.Link
                                                     href={route("profile.edit")}
                                                 >
                                                     Profile

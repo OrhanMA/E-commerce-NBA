@@ -28,10 +28,10 @@ export function ProductCard({ product }) {
         toast({
             variant: "success",
             title: `${product.name} added successfully to the cart !`,
-            description: `Click on 'check cart' to see all your products.`,
+            // description: `Click on 'check cart' to see all your products.`,
             action: (
                 <Link href={"/cart"}>
-                    <ToastAction altText="See cart">See cart</ToastAction>
+                    <ToastAction altText="See cart">cart</ToastAction>
                 </Link>
             ),
         });

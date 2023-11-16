@@ -38,25 +38,28 @@ export default function CartPage({ auth }) {
                     </>
                 )}
                 {cartData.length > 0 && (
-                    <button
-                        className="mt-4 bg-yellow-500 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
-                        onClick={clearCart}
-                    >
-                        Clear Cart
-                    </button>
-                )}
-                <ul className="flex flex-col border-2 p-6 sm:p-12 gap-6 my-6 rounded-md">
-                    {cartData.map((product) => (
-                        <CartProductCard product={product} key={product.id} />
-                    ))}
-                </ul>
-                {cartData.length > 0 && (
-                    <Link
-                        className="border hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
-                        href="/checkout"
-                    >
-                        Continue to checkout
-                    </Link>
+                    <>
+                        <button
+                            className="mt-4 bg-yellow-500 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
+                            onClick={clearCart}
+                        >
+                            Clear Cart
+                        </button>
+                        <ul className="flex flex-col border-2 p-6 sm:p-12 gap-6 my-6 rounded-md">
+                            {cartData.map((product) => (
+                                <CartProductCard
+                                    product={product}
+                                    key={product.id}
+                                />
+                            ))}
+                        </ul>
+                        <Link
+                            className="border hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
+                            href="/checkout"
+                        >
+                            Continue to checkout
+                        </Link>
+                    </>
                 )}
             </div>
         </>
