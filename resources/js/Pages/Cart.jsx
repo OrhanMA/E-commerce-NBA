@@ -6,14 +6,12 @@ export default function CartPage({ auth }) {
     const [cartData, setCartData] = useState([]);
 
     useEffect(() => {
-        // Retrieve products from local storage using the key "cart"
         const localStorageData = localStorage.getItem("cart");
         const parsedData = localStorageData ? JSON.parse(localStorageData) : [];
         setCartData(parsedData);
-    }, []); // Empty dependency array to run the effect only once
+    }, []);
 
     const clearCart = () => {
-        // Clear all products from local storage
         localStorage.removeItem("cart");
         setCartData([]);
     };

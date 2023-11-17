@@ -42,11 +42,6 @@ const SearchResults = ({
             <Header auth={auth} />
             <Head title={`"${query}" ${category}`} />
             <div>
-                {/* <h1>Search Results for "{query}"</h1> */}
-                {/* <p>cat:{category}</p>
-                <p>{category}</p>
-                <p>{sortBy}</p>
-                <p>{sortOrder}</p> */}
                 <SearchBar />
                 {products.length <= 0 ? (
                     <div className="p-6">

@@ -21,10 +21,7 @@ export default function Checkout({ auth }) {
         );
     };
     const onSubmit = async (data) => {
-        // Send the form data along with the product data to the backend to place the order
         await router.post("/checkout", { ...data, products: cartData });
-        // Redirect or show a success message as needed
-        // You can use Inertia's page() or visit() to redirect
     };
     return (
         <>
@@ -106,7 +103,6 @@ export default function Checkout({ auth }) {
                                             <option value="click&collect">
                                                 Click&collect
                                             </option>
-                                            {/* Add more delivery methods as needed */}
                                         </select>
                                     </label>
                                     <br />

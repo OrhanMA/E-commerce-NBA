@@ -4,31 +4,25 @@ import { ToastAction } from "@/components/ui/toast";
 import { Link } from "@inertiajs/react";
 export function ProductCard({ product }) {
     const { toast } = useToast();
+
     const addToCart = () => {
-        // Get existing cart data from local storage or initialize an empty array
         const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        // Check if the product is already in the cart
         const existingProduct = existingCart.find(
             (item) => item.id === product.id
         );
 
         if (existingProduct) {
-            // If the product is already in the cart, increment the quantity
             existingProduct.quantity += 1;
         } else {
-            // If the product is not in the cart, add it with a quantity of 1
             existingCart.push({ ...product, quantity: 1 });
         }
 
-        // Save the updated cart back to local storage
         localStorage.setItem("cart", JSON.stringify(existingCart));
 
-        // Show a toast notification
         toast({
             variant: "success",
             title: `${product.name} added successfully to the cart !`,
-            // description: `Click on 'check cart' to see all your products.`,
             action: (
                 <Link href={"/cart"}>
                     <ToastAction altText="See cart">cart</ToastAction>
@@ -62,7 +56,7 @@ export function ProductCard({ product }) {
             <p className=" text-lg text-gray-500 h-[50px]">
                 {product.description}
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center mt-6 gap-4">
                 <p className="bg-slate-200 text-sm text-gray-500 px-2 rounded-md">
                     {product.category_name}
                 </p>
@@ -79,25 +73,6 @@ export function ProductCard({ product }) {
                 >
                     Buy
                 </button>
-                {/* <button
-                    onClick={(e) => {
-                        e.preventDefault();
-                        console.log(product.id);
-                        toast({
-                            variant: "success",
-                            title: `${product.name} added successfully to the cart !`,
-                            description: `Click on 'check cart' to see all your products.`,
-                            action: (
-                                <ToastAction altText="See cart">
-                                    See cart
-                                </ToastAction>
-                            ),
-                        });
-                    }}
-                    className="bg-black text-white px-6 py-2 font-semibold"
-                >
-                    Buy
-                </button> */}
             </div>
         </div>
     );

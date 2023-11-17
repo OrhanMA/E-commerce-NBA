@@ -1,6 +1,6 @@
 import Header from "@/Layouts/Header";
 import React, { useEffect } from "react";
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 export default function OrderConfirmation({
     auth,
     order,
@@ -15,6 +15,7 @@ export default function OrderConfirmation({
     return (
         <>
             <Header auth={auth} />
+            <Head title="Order confirmation" />
             <div className="flex flex-col items-center my-6">
                 <h1 className="my-6 font-bold text-2xl">Order Confirmation</h1>
                 <div className="flex flex-col items-center my-6 w-full">

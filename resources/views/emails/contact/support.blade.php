@@ -1,5 +1,4 @@
 <x-mail::message>
-# Introduction
 
 Message received from: {{ $email }}
 

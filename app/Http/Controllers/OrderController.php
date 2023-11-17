@@ -57,18 +57,11 @@ class OrderController extends Controller
             'orders' => $orders,
         ]);
     }
-    public function getOrder($id, Request $request)
+    public function getOrder($id)
     {
         $user_id = Auth::id();
         $order = Order::with(['products', 'paiementMethod', 'deliveryMethod'])
             ->where('id', $id)->where('user_id', $user_id)->get();
-
-        // dd($order);
-
-        // foreach ($orders as $order) {
-        //     $paiementMethod = PaiementMethod::find($order->paiement_method_id)->name;
-        //     $deliveryMethod = DeliveryMethod::find($order->delivery_method_id)->name;
-        // }
 
         return Inertia::render('ShowOrder', [
             'order' => $order,
