@@ -1,17 +1,3 @@
-// import Authenticated from "./AuthenticatedLayout";
-// import Guest from "./GuestLayout";
-// export default function Header({ auth }) {
-//     return (
-//         <div className="mb-6">
-//             {auth.user !== null ? (
-//                 <Authenticated user={auth.user}></Authenticated>
-//             ) : (
-//                 <Guest />
-//             )}
-//         </div>
-//     );
-// }
-
 import { useState } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
@@ -28,28 +14,24 @@ export default function Authenticated({ auth, header, children }) {
         { route: "Goodies", image: "goodies.jpg" },
         { route: "Other", image: "badges.jpg" },
     ];
-    // Access the page object provided by Inertia.js
     const { url } = usePage();
     let user = auth.user;
-    // console.log(auth.user);
-    // Do something with the current URL
-    // console.log("Current URL:", url);
     return (
         <div className="bg-gray-100">
             <nav className="bg-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
-                            <div className="sm:hidden shrink-0 flex items-center">
+                            <div className="mr-6 shrink-0 flex items-center">
                                 <Link href="/">
                                     <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
                                 </Link>
                             </div>
 
                             <div className="hidden  space-x-8 sm:-my-px md:ms-10 sm:flex">
-                                <NavLink href={"/"} active={url == "/"}>
+                                {/* <NavLink href={"/"} active={url == "/"}>
                                     Home
-                                </NavLink>
+                                </NavLink> */}
                                 {routes.map((route, index) => {
                                     return (
                                         <NavLink
@@ -96,6 +78,9 @@ export default function Authenticated({ auth, header, children }) {
                                     <Dropdown.Content>
                                         <Dropdown.Link href={"/cart"}>
                                             Cart
+                                        </Dropdown.Link>
+                                        <Dropdown.Link href={"/contact"}>
+                                            Contact
                                         </Dropdown.Link>
                                         {user ? (
                                             <>
@@ -208,12 +193,9 @@ export default function Authenticated({ auth, header, children }) {
                         <ResponsiveNavLink href={"/cart"}>
                             Cart
                         </ResponsiveNavLink>
-                        {/* <ResponsiveNavLink
-                            href={route("dashboard")}
-                            active={route().current("dashboard")}
-                        >
-                            Dashboard
-                        </ResponsiveNavLink> */}
+                        <ResponsiveNavLink href={"/contact"}>
+                            Contact
+                        </ResponsiveNavLink>
                     </div>
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
