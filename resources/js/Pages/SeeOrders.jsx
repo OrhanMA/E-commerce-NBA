@@ -1,7 +1,7 @@
 import { Link, Head } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
+import OrderComponent from "@/Components/OrderComponent";
 export default function SeeOrders({ auth, orders }) {
-    // console.log(orders);
     return (
         <>
             <Header auth={auth} />
@@ -9,58 +9,10 @@ export default function SeeOrders({ auth, orders }) {
             {orders.length > 0 ? (
                 <div className="flex flex-col items-center my-12">
                     <h1 className="max-w-xl text-2xl font-bold">My orders</h1>
-                    <ul className="my-6 flex flex-col md:flex-row md:flex-wrap">
+                    <ul className="my-6 flex flex-col items-center justify-center md:flex-row md:flex-wrap">
                         {orders.map((order) => {
                             return (
-                                <div
-                                    key={order.id}
-                                    className="flex flex-col gap-2 border p-6 m-4"
-                                >
-                                    <p>
-                                        Order n°{" "}
-                                        <span className="font-semibold">
-                                            {order.id}
-                                        </span>
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">
-                                            total:{" "}
-                                        </span>
-                                        {order.total_price}$
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">
-                                            shipping:{" "}
-                                        </span>
-                                        {order.delivery_method.name}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">
-                                            paid by:{" "}
-                                        </span>
-                                        {order.paiement_method.name}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">
-                                            placed on:{" "}
-                                        </span>
-                                        {new Intl.DateTimeFormat("en-US", {
-                                            year: "numeric",
-                                            month: "long",
-                                            day: "numeric",
-                                            hour: "numeric",
-                                            minute: "numeric",
-                                            second: "numeric",
-                                            timeZone: "UTC", // Assuming your date string is in UTC
-                                        }).format(new Date(order.created_at))}
-                                    </p>
-                                    <Link
-                                        className="text-center py-2 bg-black text-white mt-2"
-                                        href={`/order/${order.id}`}
-                                    >
-                                        see order details
-                                    </Link>
-                                </div>
+                                <OrderComponent order={order} key={order.id} />
                             );
                         })}
                     </ul>

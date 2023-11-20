@@ -52,11 +52,11 @@ export function ProductCard({ product }) {
                     alt={product.name}
                 />
             </div>
-            <p className="h-[50px] text-xl font-bold">{product.name}</p>
-            <p className=" text-lg text-gray-500 h-[50px]">
+            <p className="h-[50px] text-lg font-bold">{product.name}</p>
+            <p className="text-md text-gray-500 h-[50px]">
                 {product.description}
             </p>
-            <div className="flex items-center mt-6 gap-4">
+            <div className="flex items-center gap-4">
                 <p className="bg-slate-200 text-sm text-gray-500 px-2 rounded-md">
                     {product.category_name}
                 </p>

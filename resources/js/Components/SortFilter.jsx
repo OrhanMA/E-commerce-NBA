@@ -1,12 +1,27 @@
+import {
+    TbSortAscendingNumbers,
+    TbSortDescendingNumbers,
+    TbSortAscendingLetters,
+    TbSortDescendingLetters,
+} from "react-icons/tb";
+
 export default function SortFilter({ generateSortUrl }) {
     return (
-        <div className="flex gap-6 p-6 bg-gray-50 w-full">
-            <p className="font-semibold">Sort by:</p>
+        <div className="flex items-center gap-6 p-6 bg-gray-100 w-full">
+            <p className="text-sm">Sort by:</p>
             <div className="flex gap-6">
-                <a href={generateSortUrl("name", "asc")}>A-Z</a>
-                <a href={generateSortUrl("name", "desc")}>Z-A</a>
-                <a href={generateSortUrl("price", "asc")}>- to +</a>
-                <a href={generateSortUrl("price", "desc")}>+ to -</a>
+                <a href={generateSortUrl("name", "asc")}>
+                    <TbSortAscendingLetters />
+                </a>
+                <a href={generateSortUrl("name", "desc")}>
+                    <TbSortDescendingLetters />
+                </a>
+                <a href={generateSortUrl("price", "asc")}>
+                    <TbSortAscendingNumbers />
+                </a>
+                <a href={generateSortUrl("price", "desc")}>
+                    <TbSortDescendingNumbers />
+                </a>
             </div>
         </div>
     );

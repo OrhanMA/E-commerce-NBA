@@ -19,7 +19,7 @@ export default function SearchBar() {
           </div> */}
             <form className="flex items-center gap-4" onSubmit={handleSubmit}>
                 <select
-                    className="rounded-md text-sm p-2 lg:w-[150px]"
+                    className="rounded-md bg-gray-100 text-sm p-2 lg:w-[150px]"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                     name="category"
