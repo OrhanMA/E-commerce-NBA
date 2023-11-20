@@ -1,29 +1,9 @@
-// Create a SearchResults component
-
-import { useState } from "react";
 import SearchBar from "@/Components/SearchBar";
 import { ProductCard } from "@/Components/ProductCard";
 import { Head } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import SortFilter from "@/Components/SortFilter";
 const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
-    // console.log(products);
-    function setSorting(value) {
-        if (value === "name_asc") {
-            setSortBy("name");
-            setSortOrder("asc");
-        } else if (value === "name_desc") {
-            setSortBy("name");
-            setSortOrder("desc");
-        } else if (value === "price_asc") {
-            setSortBy("price");
-            setSortOrder("asc");
-        } else if (value === "price_desc") {
-            setSortBy("price");
-            setSortOrder("desc");
-        }
-    }
-
     const generateSortUrl = (newSortBy, newSortOrder) => {
         return `/products/${category}?sort_by=${newSortBy}&sort_order=${newSortOrder}`;
     };
@@ -33,11 +13,6 @@ const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
             <Header auth={auth} />
             <Head title={`${category}`} />
             <div>
-                {/* <h1>Search Results for "{query}"</h1> */}
-                {/* <p>cat:{category}</p>
-                <p>{category}</p>
-                <p>{sort_by}</p>
-            <p>{sort_order}</p> */}
                 <SearchBar />
 
                 {products.length <= 0 ? (

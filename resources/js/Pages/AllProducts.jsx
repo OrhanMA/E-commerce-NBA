@@ -1,8 +1,4 @@
-// Create a SearchResults component
-
-import { useState } from "react";
 import SearchBar from "@/Components/SearchBar";
-import SecondaryButton from "@/Components/SecondaryButton";
 import { ProductCard } from "@/Components/ProductCard";
 import { Head } from "@inertiajs/react";
 import Header from "@/Layouts/Header";

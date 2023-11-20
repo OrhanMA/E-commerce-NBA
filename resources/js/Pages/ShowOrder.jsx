@@ -41,7 +41,7 @@ export default function SeeOrders({ auth, order }) {
                                 hour: "numeric",
                                 minute: "numeric",
                                 second: "numeric",
-                                timeZone: "UTC", // Assuming your date string is in UTC
+                                timeZone: "UTC",
                             }).format(new Date(newOrder.created_at))}
                         </p>
                     </div>

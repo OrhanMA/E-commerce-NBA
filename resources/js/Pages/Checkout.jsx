@@ -8,11 +8,10 @@ export default function Checkout({ auth }) {
     const [cartData, setCartData] = useState([]);
 
     useEffect(() => {
-        // Retrieve products from local storage using the key "cart"
         const localStorageData = localStorage.getItem("cart");
         const parsedData = localStorageData ? JSON.parse(localStorageData) : [];
         setCartData(parsedData);
-    }, []); // Empty dependency array to run the effect only once
+    }, []); 
 
     const calculateTotalPrice = () => {
         return cartData.reduce(
@@ -63,8 +62,6 @@ export default function Checkout({ auth }) {
                                     onSubmit={handleSubmit(onSubmit)}
                                     className="flex flex-col items-center gap-4 text-center"
                                 >
-                                    {/* Add form elements for payment and delivery methods */}
-                                    {/* Example: */}
                                     <label
                                         required
                                         className="flex w-full flex-col items-center gap-2"
@@ -80,7 +77,6 @@ export default function Checkout({ auth }) {
                                             <option value="Transfert">
                                                 Transfert
                                             </option>
-                                            {/* Add more payment methods as needed */}
                                         </select>
                                     </label>
                                     <br />
