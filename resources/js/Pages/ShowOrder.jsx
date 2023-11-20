@@ -11,7 +11,7 @@ export default function SeeOrders({ auth, order }) {
                 <h1 className="max-w-xl text-2xl font-bold mb-6">
                     Your placed order
                 </h1>
-                <Link href="/contact" className="hover:text-blue-500 underline">
+                <Link href="/contact" className="hover:text-blue-900 underline">
                     Cliquez ici pour contacter le support
                 </Link>
                 <div className="border p-6 flex flex-col gap-6 m-6 md:w-2/3">

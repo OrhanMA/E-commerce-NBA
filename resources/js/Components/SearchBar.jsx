@@ -1,5 +1,7 @@
 import { Link } from "@inertiajs/react";
 import React, { useState } from "react";
+import PrimaryButton from "./PrimaryButton";
+import TextInput from "./TextInput";
 export default function SearchBar() {
     const [category, setCategory] = useState("jerseys");
     const [query, setQuery] = useState("");
@@ -31,20 +33,20 @@ export default function SearchBar() {
                     <option value="Goodies">Goodies</option>
                     <option value="Other">Other</option>
                 </select>
-                <input
+                <TextInput
                     className="w-[125px] sm:w-[250px] lg:w-[500px] text-sm md:text-md rounded-md border p-2"
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                 />
                 <Link href={`/search?query=${query}&category=${category}`}>
-                    <button
-                        className="bg-gray-200 lg:w-[200px] px-4 py-2 rounded-md disabled:bg-gray-50 disabled:text-gray-300 duration-200"
+                    <PrimaryButton
+                        className="px-4 py-2 rounded-md disabled:bg-gray-50 disabled:text-gray-300 duration-200"
                         disabled={query === "" ? true : false}
                         type="submit"
                     >
                         Search
-                    </button>
+                    </PrimaryButton>
                 </Link>
             </form>
         </div>

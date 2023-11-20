@@ -2,6 +2,7 @@ import { useToast } from "./ui/use-toast";
 import { Toaster } from "@/Components/ui/toaster";
 import { ToastAction } from "@/components/ui/toast";
 import { Link } from "@inertiajs/react";
+import PrimaryButton from "./PrimaryButton";
 export function ProductCard({ product }) {
     const { toast } = useToast();
 
@@ -67,12 +68,7 @@ export function ProductCard({ product }) {
 
             <div className="mt-4 flex items-center w-full justify-between">
                 <p className="text-lg font-bold ">{product.price}$</p>
-                <button
-                    onClick={addToCart}
-                    className="bg-black text-white px-6 py-2 font-semibold"
-                >
-                    Buy
-                </button>
+                <PrimaryButton onClick={addToCart}>Buy</PrimaryButton>
             </div>
         </div>
     );

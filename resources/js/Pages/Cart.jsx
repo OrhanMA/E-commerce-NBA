@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Head, Link } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
+import PrimaryButton from "@/Components/PrimaryButton";
 export default function CartPage({ auth }) {
     const [cartData, setCartData] = useState([]);
 
@@ -37,12 +38,12 @@ export default function CartPage({ auth }) {
                 )}
                 {cartData.length > 0 && (
                     <>
-                        <button
+                        <PrimaryButton
                             className="mt-4 bg-yellow-500 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
                             onClick={clearCart}
                         >
                             Clear Cart
-                        </button>
+                        </PrimaryButton>
                         <ul className="flex flex-col border-2 p-6 sm:p-12 gap-6 my-6 rounded-md">
                             {cartData.map((product) => (
                                 <CartProductCard
@@ -110,18 +111,18 @@ export function CartProductCard({ product }) {
                 </p>
             </div>
             <div className="flex items-center gap-6">
-                <button
+                <PrimaryButton
                     className="flex justify-center items-center bg-green-500 p-1 w-[25px] h-[25px] rounded text-white"
                     onClick={handleIncrement}
                 >
                     +
-                </button>
-                <button
+                </PrimaryButton>
+                <PrimaryButton
                     className="flex justify-center items-center bg-red-500 p-1 w-[25px] h-[25px] rounded text-white"
                     onClick={handleDecrement}
                 >
                     -
-                </button>
+                </PrimaryButton>
             </div>
         </div>
     );
