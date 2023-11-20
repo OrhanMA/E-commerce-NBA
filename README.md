@@ -1,66 +1,113 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Projet final DWWM - E-commece NBA
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Voici mon projet final pour la formation développement web et web mobile (DWWM) que j'ai suivi sur l'année 2023.
 
-## About Laravel
+Ce projet constitue la conclusion de la formation mais aussi une condition du passage à l'examen du titre profesionnel (titre RNCP de niveau 5).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Stack technique
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Pour le projet, j'ai décidé d'utiliser [React](https://react.dev/) (avec [Inertia](https://inertiajs.com/)) en front et [Laravel](https://laravel.com/) en back, les deux framework avec lesquels j'ai le plus d'expérience au moment de la réalisation du projet.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Pour la base de données, j'ai utilisé [MySQL](https://www.mysql.com/fr/) car c'est avec elle que j'ai le plus de facilité pour l'instant. En dehors de mes considérations personnelles, MySQL s'intègre très facilement à MySQL, ce qui en a fait un choix facile.
 
-## Learning Laravel
+Pour le style, j'ai utilisé [Tailwind CSS](https://tailwindcss.com/). Tailwind permet de créer des interfaces très rapidement grâces à ces classes utilitaires.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Le combo Tailwind-React est très intéressant pour ce genre de projet.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+J'ai aussi utilisé [Mailtrap](https://mailtrap.io/) pour intercepter les mails. Vous aurez besoin de le mettre en place pour que le système de mail fonctionne.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Vous pouvez consulter la liste des dépendances dans le fichier ```package.json``````.
 
-## Laravel Sponsors
+## Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Pour installer le projet, veuillez suivre les étapes suivantes:
 
-### Premium Partners
+```
+git clone git@github.com:OrhanMA/E-commerce-NBA.git
+cd E-commerce-NBA
+npm install
+composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Modifiez le .env
 
-## Contributing
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=<port>
+DB_DATABASE=<database-name>
+DB_USERNAME=<database-username>
+DB_PASSWORD=<database-password>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=<votre port>
+MAIL_USERNAME=<voir votre mailtrap>
+MAIL_PASSWORD=<voir votre mailtrap>
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=<mettre votre adresse>
+MAIL_FROM_NAME="${APP_NAME}"
+```
 
-## Code of Conduct
+### config/filesystems.php
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+'links' => [
+        public_path('storage') => storage_path('app/public'),
+    ],
+```
 
-## Security Vulnerabilities
+Vous aurez peut-être besoin de créer un lien de storage avec
+`php artisan storage:link`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### config/mail.php
 
-## License
+```
+    'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'votre adresse par défault'),
+        'name' => env('MAIL_FROM_NAME', 'Nom du E-commerce'),
+    ],
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Run les migrations:
+
+```
+php artisan migrate
+```
+
+### Exécutez les fixtures:
+
+```
+php artisan migrate:refresh --seed
+```
+
+### Vérifier sa connexion MySQL
+
+vous pouvez vérifier votre connexion avec MySQL avec ces commandes:
+
+```
+php artisan tinker
+```
+
+Cela va vous ouvrir une session dans le terminal. Entrez cette commande:
+
+```
+DB::connection()->getPDO();
+```
+
+Vous pouvez quitter cette sesssion avec `exit;` ou CTRL+C.
+
+### Ajoutez un administrateur
+
+Vous pouvez ajouter un utilisateur en tant qu'admin en modifiant son champ is_admin dans votre base de données.
+
+### Lancez le projet
+
+Ouvrez deux instances pour pouvoir lancer les deux commandes suivantes.
+
+```
+npm run dev
+php artisan serve
+```
+
+Vous aurez peut-être besoin d'exécuter ces commandes en tant qu'utilisateur.
