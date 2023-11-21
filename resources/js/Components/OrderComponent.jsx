@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/react";
 export default function OrderComponent({ order }) {
     return (
-        <div className="flex bg-gray-100 flex-col gap-2 border p-6 m-4">
+        <div className="flex flex-col gap-2 border bg-white p-6 m-4">
             <p>
                 Order n° <span className="font-semibold">{order.id}</span>
             </p>
@@ -30,7 +30,7 @@ export default function OrderComponent({ order }) {
                 }).format(new Date(order.created_at))}
             </p>
             <Link
-                className="text-center py-2 bg-white  hover:bg-black hover:text-white duration-200 rounded-md mt-2"
+                className="text-center py-2 bg-gray-100 hover:bg-black hover:text-white duration-200 rounded-md mt-2"
                 href={`/order/${order.id}`}
             >
                 order details

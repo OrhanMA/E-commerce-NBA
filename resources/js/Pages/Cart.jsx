@@ -39,12 +39,12 @@ export default function CartPage({ auth }) {
                 {cartData.length > 0 && (
                     <>
                         <PrimaryButton
-                            className="mt-4 bg-yellow-500 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
+                            className="mt-4 bg-gray-300 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
                             onClick={clearCart}
                         >
                             Clear Cart
                         </PrimaryButton>
-                        <ul className="flex flex-col border-2 p-6 sm:p-12 gap-6 my-6 rounded-md">
+                        <ul className="flex flex-col border p-6 sm:p-12 gap-6 my-6 rounded-md">
                             {cartData.map((product) => (
                                 <CartProductCard
                                     product={product}

@@ -7,7 +7,7 @@ export default function SeeOrders({ auth, orders }) {
             <Header auth={auth} />
             <Head title="My orders" />
             {orders.length > 0 ? (
-                <div className="flex flex-col items-center my-12">
+                <div className="p-4 sm:p-8 bg-gray-50 shadow sm:rounded-lg">
                     <h1 className="max-w-xl text-2xl font-bold">My orders</h1>
                     <ul className="my-6 flex flex-col items-center justify-center md:flex-row md:flex-wrap">
                         {orders.map((order) => {

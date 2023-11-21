@@ -9,3 +9,4 @@
 <x-backpack::menu-item title="Products" icon="la la-question" :link="backpack_url('product')" />
 <x-backpack::menu-item title="Subcategories" icon="la la-question" :link="backpack_url('subcategory')" />
 <x-backpack::menu-item title="Users" icon="la la-question" :link="backpack_url('user')" />
+<x-backpack::menu-item title="Tags" icon="la la-question" :link="backpack_url('tag')" />
