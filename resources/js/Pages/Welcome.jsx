@@ -38,7 +38,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     <Link
                                         key={route.route}
                                         href={`/products/${route.route}`}
-                                        className="lg:w-[20%] duration-200 text-gray-400 hover:text-gray-900 "
+                                        className="lg:w-[20%] duration-200 hover:scale-105 text-gray-400 hover:text-gray-900 "
                                     >
                                         <div className="flex flex-col items-center">
                                             <p className="text-lg md:text-2xl mb-6">
