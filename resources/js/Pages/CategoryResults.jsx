@@ -9,7 +9,7 @@ const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
     };
 
     return (
-        <>
+        <div className="dark:bg-zinc-900">
             <Header auth={auth} />
             <Head title={`${category}`} />
             <div>
@@ -39,7 +39,7 @@ const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
                     </>
                 )}
             </div>
-        </>
+        </div>
     );
 };
 

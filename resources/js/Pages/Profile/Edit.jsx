@@ -6,13 +6,13 @@ import Header from "@/Layouts/Header";
 import { Head } from "@inertiajs/react";
 export default function Edit({ auth, mustVerifyEmail, status }) {
     return (
-        <>
+        <div className="min-h-screen dark:bg-zinc-900">
             <Header auth={auth} />
             <Head title="Profile" />
 
-            <div className="p-6 mb-[250px]">
+            <div className="p-6 mb-[250px] sm:mb-0 dark:bg-zinc-900 h-full">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-                    <div className="p-6 sm:p-8 mx-4 bg-gray-200 shadow sm:rounded-lg">
+                    <div className="p-6 sm:p-8 mx-4 bg-gray-200 dark:bg-zinc-700 shadow sm:rounded-lg">
                         <UpdateProfileInformationForm
                             mustVerifyEmail={mustVerifyEmail}
                             status={status}
@@ -20,15 +20,15 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                         />
                     </div>
 
-                    <div className="p-6 sm:p-8 mx-4 bg-gray-200 shadow sm:rounded-lg">
+                    <div className="p-6 sm:p-8 mx-4 bg-gray-200 dark:bg-zinc-700 shadow sm:rounded-lg">
                         <UpdatePasswordForm className="max-w-xl" />
                     </div>
 
-                    <div className="p-6 sm:p-8 mx-4 bg-gray-200 shadow sm:rounded-lg">
+                    <div className="p-6 sm:p-8 mx-4 bg-gray-200 dark:bg-zinc-700 shadow sm:rounded-lg">
                         <DeleteUserForm className="max-w-xl" />
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

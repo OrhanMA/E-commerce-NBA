@@ -13,7 +13,7 @@ export default function SearchBar() {
     };
 
     return (
-        <div className="w-full flex justify-center my-4 sm:my-6 pt-6 sm:mb-6 sm:my-0">
+        <div className="w-full flex justify-center my-4 sm:my-6 pt-6 sm:mb-6">
             {/* <div className="flex justify-center  gap-4">
               <p>caté:{category}</p>
               <p>query:{query}</p>
@@ -24,7 +24,7 @@ export default function SearchBar() {
             >
                 <div className="w-full sm:w-1/3">
                     <select
-                        className="rounded-md w-full bg-gray-100 text-sm p-2 lg:w-[150px]"
+                        className="rounded-md w-full bg-gray-100 dark:bg-white dark:text-black text-sm p-2 lg:w-[150px]"
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         name="category"
@@ -39,14 +39,14 @@ export default function SearchBar() {
                 </div>
                 <div className="flex gap-6">
                     <TextInput
-                        className="w-[125px] sm:w-[250px] lg:w-[500px] text-sm md:text-md rounded-md border p-2"
+                        className="w-[125px] sm:w-[250px] lg:w-[500px] text-sm md:text-md rounded-md border p-2 dark:text-black"
                         type="search"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                     />
                     <Link href={`/search?query=${query}&category=${category}`}>
                         <PrimaryButton
-                            className="px-4 py-2 rounded-md disabled:bg-gray-200 disabled:text-black duration-200"
+                            className="px-4 py-2 rounded-md disabled:bg-gray-200 dark:bg-zinc-700 disabled:text-black dark:disabled:text-gray-500 duration-200"
                             disabled={query === "" ? true : false}
                             type="submit"
                         >

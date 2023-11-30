@@ -25,18 +25,21 @@ export default function CartPage({ auth }) {
         setCartData(newProductArray);
     }
     return (
-        <>
+        <div className="dark:bg-zinc-900 min-h-screen">
             <Header auth={auth} />
             <Head title="Cart" />
-            <div className="flex flex-col items-center m-12">
-                <h1 className="text-2xl font-bold mb-6"> Cart:</h1>
+            <div className="flex flex-col items-center py-12">
+                <h1 className="text-2xl font-bold mb-6 dark:text-gray-200">
+                    {" "}
+                    Cart:
+                </h1>
                 {cartData.length <= 0 && (
                     <>
-                        <h2 className="text-xl font-semibold mb-4">
+                        <h2 className="text-xl font-semibold mb-4 dark:text-gray-200">
                             Your cart is empty...
                         </h2>
                         <Link
-                            className="border hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
+                            className="border dark:bg-zinc-700 dark:text-gray-200 dark:border-none dark:hover:bg-zinc-400 hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
                             href="/products"
                         >
                             Go to the products page
@@ -46,12 +49,12 @@ export default function CartPage({ auth }) {
                 {cartData.length > 0 && (
                     <>
                         <PrimaryButton
-                            className="mt-4 bg-gray-300 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
+                            className="mt-4 bg-gray-300 dark:bg-zinc-700 text-sm text-white px-2 py-1 rounded-md hover:bg-red-600"
                             onClick={clearCart}
                         >
                             Clear Cart
                         </PrimaryButton>
-                        <ul className="flex flex-col border p-6 sm:p-12 gap-6 my-6 rounded-md">
+                        <ul className=" dark:border-zinc-500 flex flex-col border p-6 sm:p-12 gap-6 my-6 rounded-md">
                             {cartData.map((product) => (
                                 <CartProductCard
                                     product={product}
@@ -63,7 +66,7 @@ export default function CartPage({ auth }) {
                             ))}
                         </ul>
                         <Link
-                            className="border hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
+                            className="border dark:bg-zinc-700 dark:text-gray-200 dark:border-none dark:hover:bg-zinc-400 hover:bg-black hover:text-white px-4 py-2 rounded-md bg-white text-black hover:border-black duration-200"
                             href="/checkout"
                         >
                             Continue to checkout
@@ -71,7 +74,7 @@ export default function CartPage({ auth }) {
                     </>
                 )}
             </div>
-        </>
+        </div>
     );
 }
 export function CartProductCard({ product, handleProductDeletion }) {
@@ -107,40 +110,43 @@ export function CartProductCard({ product, handleProductDeletion }) {
     };
 
     return (
-        <div className="flex flex-col sm:flex-row items-center last:border-none border-b pb-6 gap-6">
+        <div className="dark:text-gray-200 flex flex-col sm:flex-row items-center last:border-none border-b dark:border-zinc-500 pb-6 gap-6">
             <img
-                className="max-h-[100px]"
+                className="max-h-[100px] rounded-md"
                 src={`/${product.image_path}`}
                 alt="product image"
             />
             <p className="font-semibold">{product.name}</p>
             <div className="flex gap-4">
                 <p className="flex items-center gap-2">
-                    quantity: <span className="font-semibold">{quantity}</span>
+                    quantity:{" "}
+                    <span className="font-semibold dark:text-white">
+                        {quantity}
+                    </span>
                 </p>
                 {" - "}
                 <p className="flex items-center gap-2">
                     price:
-                    <span className="font-semibold">
+                    <span className="font-semibold dark:text-white">
                         {quantity * product.price}$
                     </span>
                 </p>
             </div>
             <div className="flex items-center gap-6">
                 <PrimaryButton
-                    className="flex justify-center items-center bg-green-500 p-1 w-[25px] h-[25px] rounded text-white"
+                    className="flex justify-center items-center dark:hover:bg-green-500 dark:bg-green-700 bg-green-500 p-1 w-[25px] h-[25px] rounded text-white"
                     onClick={handleIncrement}
                 >
                     +
                 </PrimaryButton>
                 <PrimaryButton
-                    className="flex justify-center items-center bg-red-500 p-1 w-[25px] h-[25px] rounded text-white"
+                    className="flex justify-center items-center dark:hover:bg-red-500 dark:bg-red-700 p-1 w-[25px] h-[25px] rounded text-white"
                     onClick={handleDecrement}
                 >
                     -
                 </PrimaryButton>
                 <PrimaryButton
-                    className="flex justify-center items-center bg-black p-1 w-[25px] h-[25px] rounded text-white"
+                    className="flex justify-center items-center dark:hover:bg-zinc-500 dark:bg-zinc-700 bg-black p-1 w-[25px] h-[25px] rounded text-white"
                     onClick={handleDeletion}
                 >
                     X

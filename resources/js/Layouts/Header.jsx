@@ -19,7 +19,7 @@ export default function Authenticated({ auth, header, children }) {
     let user = auth.user;
     return (
         <div>
-            <nav className="bg-white border-b border-gray-100">
+            <nav className="bg-white dark:bg-zinc-700 dark:text-gray-200 border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
@@ -30,7 +30,7 @@ export default function Authenticated({ auth, header, children }) {
                                 </Link>
                             </div>
 
-                            <div className="hidden  space-x-8 sm:-my-px md:ms-10 sm:flex">
+                            <div className="hidden space-x-8 sm:-my-px md:ms-10 sm:flex">
                                 {/* <NavLink href={"/"} active={url == "/"}>
                                     Home
                                 </NavLink> */}
@@ -57,9 +57,13 @@ export default function Authenticated({ auth, header, children }) {
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white dark:bg-zinc-400 dark:text-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                {user && <>{user.name}</>}
+                                                {user ? (
+                                                    <>{user.name}</>
+                                                ) : (
+                                                    <p>Guest</p>
+                                                )}
 
                                                 <svg
                                                     className="ms-2 -me-0.5 h-4 w-4"
@@ -205,13 +209,13 @@ export default function Authenticated({ auth, header, children }) {
                         {user ? (
                             <>
                                 <div className="px-4">
-                                    <div className="font-medium text-base text-gray-800">
+                                    <div className="font-medium text-base text-gray-800 dark:text-white">
                                         {user.name}{" "}
                                         {user.is_admin == 1 && (
                                             <span>(admin)</span>
                                         )}
                                     </div>
-                                    <div className="font-medium text-sm text-gray-500">
+                                    <div className="font-medium text-sm text-gray-400">
                                         {user.email}
                                     </div>
                                 </div>
@@ -225,9 +229,11 @@ export default function Authenticated({ auth, header, children }) {
                                                     Admin dashboard
                                                 </ResponsiveNavLink>
                                             )}
-                                            <Dropdown.Link href={"my-orders"}>
+                                            <ResponsiveNavLink
+                                                href={"my-orders"}
+                                            >
                                                 My Orders
-                                            </Dropdown.Link>
+                                            </ResponsiveNavLink>
                                         </>
                                     )}
 

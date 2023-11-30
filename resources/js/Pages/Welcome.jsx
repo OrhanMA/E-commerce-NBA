@@ -17,7 +17,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
         <>
             <Header auth={auth} />
             <Head title="Welcome" />
-            <div className="mb-[250px] sm:mb-0 relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
+            <div className="mb-[250px] sm:mb-0 relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center dark:bg-zinc-900 dark:text-white bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
                 <div className="flex flex-col items-center">
                     <SearchBar />
                     <img
@@ -38,7 +38,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     <Link
                                         key={route.route}
                                         href={`/products/${route.route}`}
-                                        className="lg:w-[20%] duration-200 hover:scale-105 text-gray-400 hover:text-gray-900 "
+                                        className="lg:w-[20%] duration-200 hover:scale-105 text-gray-400 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white "
                                     >
                                         <div className="flex flex-col items-center">
                                             <p className="text-lg md:text-2xl mb-6">

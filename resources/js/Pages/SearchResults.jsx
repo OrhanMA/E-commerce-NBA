@@ -38,20 +38,20 @@ const SearchResults = ({
 
     const routes = ["Jerseys", "Basketballs", "Clothing", "Goodies", "Other"];
     return (
-        <>
+        <div className="dark:bg-zinc-900">
             <Header auth={auth} />
             <Head title={`"${query}" ${category}`} />
             <div>
                 <SearchBar />
                 {products.length <= 0 ? (
                     <div className="p-6">
-                        <h1 className="text-2xl font-semibold mb-6 text-center">
+                        <h1 className="text-2xl dark:text-gray-200 font-semibold mb-6 text-center">
                             No product found. Please make a new search or select
                             a new product category.
                         </h1>
                         <div className="flex flex-col text-2xl gap-2">
                             <Link
-                                className="duration-200 text-gray-400 hover:text-gray-900"
+                                className="duration-200 text-gray-400 dark:text-gray-400 dark:hover:text-white hover:text-gray-900"
                                 href="/"
                             >
                                 Accueil
@@ -60,7 +60,7 @@ const SearchResults = ({
                                 return (
                                     <>
                                         <Link
-                                            className="duration-200 text-gray-400 hover:text-gray-900"
+                                            className="duration-200 text-gray-400 dark:text-gray-400 dark:hover:text-white hover:text-gray-900"
                                             key={route}
                                             href={`/products/${route}`}
                                         >
@@ -75,7 +75,7 @@ const SearchResults = ({
                     <>
                         <div className="pb-[250px] sm:mb-0 justify-between flex flex-col flex-nowrap">
                             <SortFilter generateSortUrl={generateSortUrl} />
-                            <h1 className="text-xl m-6">
+                            <h1 className="text-xl m-6 dark:text-gray-200">
                                 Search Results for "{query}"
                             </h1>
                             <div className="flex flex-wrap justify-center w-full m-2 p-2 gap-6">
@@ -90,7 +90,7 @@ const SearchResults = ({
                     </>
                 )}
             </div>
-        </>
+        </div>
     );
 };
 

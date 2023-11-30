@@ -13,10 +13,10 @@ export default function OrderConfirmation({
     }, []);
 
     return (
-        <>
+        <div className="dark:bg-zinc-900 dark:text-gray-200">
             <Header auth={auth} />
             <Head title="Order confirmation" />
-            <div className="flex flex-col items-center my-6">
+            <div className="flex flex-col items-center mt-6">
                 <h1 className="my-6 font-bold text-2xl">Order Confirmation</h1>
                 <div className="flex flex-col items-center my-6 w-full">
                     <h1 className="max-w-xl text-2xl font-bold mb-6">
@@ -28,7 +28,7 @@ export default function OrderConfirmation({
                     >
                         Click here to contact the support.
                     </Link>
-                    <div className="border p-6 flex flex-col gap-6 m-6 md:w-2/3">
+                    <div className="border rounded-md dark:bg-zinc-700 p-6 flex flex-col gap-6 m-6 md:w-2/3">
                         <div className="flex flex-col gap-2">
                             <p>
                                 Order n°{" "}
@@ -88,6 +88,6 @@ export default function OrderConfirmation({
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

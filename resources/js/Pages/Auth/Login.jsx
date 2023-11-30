@@ -37,7 +37,7 @@ export default function Login({ status, canResetPassword }) {
             )}
             <form
                 onSubmit={submit}
-                className="bg-gray-200 flex flex-col items-center p-6 w-screen h-screen"
+                className="bg-gray-200 dark:bg-zinc-900 dark:text-gray-200 flex flex-col items-center p-6 w-screen h-screen"
             >
                 <h1 className="text-2xl lg:text-4xl font-bold my-6">Login</h1>
                 <div className="w-full md:w-2/3 lg:w-1/3">
@@ -101,19 +101,22 @@ export default function Login({ status, canResetPassword }) {
                         {canResetPassword && (
                             <Link
                                 href={route("password.request")}
-                                className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                className="underline text-sm text-gray-600 dark:hover:text-gray-200 duration-150 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                                 Forgot your password?
                             </Link>
                         )}
                         <Link
                             href={"/register"}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="underline text-sm text-gray-600 dark:hover:text-gray-200 duration-150 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Doesn't have an account?
                         </Link>
                     </div>
-                    <PrimaryButton className="ms-4" disabled={processing}>
+                    <PrimaryButton
+                        className="ms-4 dark:bg-zinc-700"
+                        disabled={processing}
+                    >
                         Log in
                     </PrimaryButton>
                 </div>

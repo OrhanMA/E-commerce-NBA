@@ -2,7 +2,7 @@ import { Head, Link } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 export default function ContactConfirmation({ auth }) {
     return (
-        <>
+        <div className="dark:bg-zinc-900">
             <Header auth={auth} />
             <div className="bg-green-500 m-8 p-12">
                 <Head title="Email confirmed" />
@@ -15,6 +15,6 @@ export default function ContactConfirmation({ auth }) {
                     Go back to landing page
                 </Link>
             </div>
-        </>
+        </div>
     );
 }

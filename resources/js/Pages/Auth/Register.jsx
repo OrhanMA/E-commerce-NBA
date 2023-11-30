@@ -31,7 +31,7 @@ export default function Register() {
             <Head title="Register" />
 
             <form
-                className="p-6 h-screen flex flex-col items-center gap-2"
+                className="dark:bg-zinc-900 dark:text-gray-200 p-6 h-screen flex flex-col items-center gap-2"
                 onSubmit={submit}
             >
                 <h1 className="text-2xl lg:text-4xl font-bold my-6 text-center">
@@ -116,12 +116,15 @@ export default function Register() {
                 <div className="flex items-center justify-end mt-4 w-full sm:w-3/4 lg:w-1/2">
                     <Link
                         href={route("login")}
-                        className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="underline text-sm text-gray-600 dark:hover:text-gray-200 duration-150 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         Already registered?
                     </Link>
 
-                    <PrimaryButton className="ms-4" disabled={processing}>
+                    <PrimaryButton
+                        className="ms-4 dark:bg-zinc-700"
+                        disabled={processing}
+                    >
                         Register
                     </PrimaryButton>
                 </div>

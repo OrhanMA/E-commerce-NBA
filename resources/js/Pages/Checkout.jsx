@@ -25,7 +25,7 @@ export default function Checkout({ auth }) {
         await router.post("/checkout", { ...data, products: cartData });
     };
     return (
-        <>
+        <div className="dark:bg-zinc-900 dark:text-gray-200 min-h-screen">
             <Header auth={auth} />
             <Head title="Checkout" />
             <div className="flex flex-col items-center m-12">
@@ -53,7 +53,7 @@ export default function Checkout({ auth }) {
                             </p>
                             <Link
                                 href="/cart"
-                                className="w-2/3 text-center text-md px-4 py-2 duration-200 text-white bg-blue-500 hover:bg-gray-400 hover:text-white "
+                                className="w-2/3 text-center text-md px-4 py-2 duration-200 dark:bg-zinc-700 text-white bg-blue-500 hover:bg-gray-400 hover:text-white "
                             >
                                 Edit order?
                             </Link>
@@ -72,7 +72,7 @@ export default function Checkout({ auth }) {
                                         <select
                                             name="paiementMethod"
                                             {...register("paiementMethod")}
-                                            className="p-2 w-2/3 lg:w-2/3  bg-gray-100 rounded-sm"
+                                            className="p-2 w-2/3 lg:w-2/3 dark:text-black  bg-gray-100 rounded-sm"
                                         >
                                             <option value="1">Card</option>
                                             <option value="2">Cash</option>
@@ -93,7 +93,7 @@ export default function Checkout({ auth }) {
                                         <select
                                             name="deliveryMethod"
                                             {...register("deliveryMethod")}
-                                            className="p-2 w-2/3 lg:w-2/3  bg-gray-100 rounded-sm"
+                                            className="p-2 w-2/3 lg:w-2/3 dark:text-black  bg-gray-100 rounded-sm"
                                         >
                                             <option value="1">
                                                 Standard shipping
@@ -118,7 +118,7 @@ export default function Checkout({ auth }) {
                                     <br />
                                     <PrimaryButton
                                         type="submit"
-                                        className="w-2/3 flex justify-center disabled:cursor-not-allowed"
+                                        className="dark:bg-zinc-700 w-2/3 flex justify-center disabled:cursor-not-allowed"
                                         disabled={
                                             orderInProcess === true
                                                 ? true
@@ -138,14 +138,14 @@ export default function Checkout({ auth }) {
                         </h2>
                         <Link
                             href="/"
-                            className="text-sm underline text-blue-500"
+                            className="text-sm underline mt-6 duration-200 dark:text-gray-200 dark:hover:text-zinc-400 text-blue-500"
                         >
                             Back to home page
                         </Link>
                     </>
                 )}
             </div>
-        </>
+        </div>
     );
 }
 
