@@ -93,7 +93,7 @@ export default function Authenticated({ auth, header, children }) {
                                                 </Dropdown.Link>
                                                 {user.is_admin == 1 && (
                                                     <Dropdown.Link
-                                                        href={"/admin/login"}
+                                                        href={"/admin"}
                                                     >
                                                         Admin dashboard
                                                     </Dropdown.Link>

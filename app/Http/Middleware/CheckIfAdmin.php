@@ -32,6 +32,7 @@ class CheckIfAdmin
     // }
     private function checkIfUserIsAdmin($user)
     {
+        // dd($user);
         return ($user && $user->is_admin == 1);
     }
 
@@ -43,11 +44,11 @@ class CheckIfAdmin
      */
     private function respondToUnauthorizedRequest($request)
     {
-        if ($request->ajax() || $request->wantsJson()) {
-            return response(trans('backpack::base.unauthorized'), 401);
-        } else {
-            return redirect()->guest(backpack_url('login'));
-        }
+        // if ($request->ajax() || $request->wantsJson()) {
+        //     return response(trans('backpack::base.unauthorized'), 401);
+        // } else {
+        return redirect()->guest(backpack_url('login'));
+        // }
     }
 
     /**
