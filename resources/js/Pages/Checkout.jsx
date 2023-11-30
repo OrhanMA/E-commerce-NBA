@@ -3,10 +3,11 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { router } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
+import PrimaryButton from "@/Components/PrimaryButton";
 export default function Checkout({ auth }) {
     const { register, handleSubmit } = useForm();
     const [cartData, setCartData] = useState([]);
-
+    const [orderInProcess, setOrderInProcess] = useState(false);
     useEffect(() => {
         const localStorageData = localStorage.getItem("cart");
         const parsedData = localStorageData ? JSON.parse(localStorageData) : [];
@@ -20,6 +21,7 @@ export default function Checkout({ auth }) {
         );
     };
     const onSubmit = async (data) => {
+        setOrderInProcess(true);
         await router.post("/checkout", { ...data, products: cartData });
     };
     return (
@@ -114,12 +116,17 @@ export default function Checkout({ auth }) {
                                         </select>
                                     </label>
                                     <br />
-                                    <button
+                                    <PrimaryButton
                                         type="submit"
-                                        className="w-2/3 bg-black text-white py-2"
+                                        className="w-2/3 flex justify-center disabled:cursor-not-allowed"
+                                        disabled={
+                                            orderInProcess === true
+                                                ? true
+                                                : false
+                                        }
                                     >
-                                        Place Order
-                                    </button>
+                                        Place order
+                                    </PrimaryButton>
                                 </form>
                             </div>
                         </div>

@@ -17,6 +17,13 @@ export default function CartPage({ auth }) {
         setCartData([]);
     };
 
+    function handleProductDeletion(product) {
+        const newProductArray = cartData.filter(
+            (element) => element.id !== product.id
+        );
+        localStorage.setItem("cart", JSON.stringify(newProductArray));
+        setCartData(newProductArray);
+    }
     return (
         <>
             <Header auth={auth} />
@@ -49,6 +56,9 @@ export default function CartPage({ auth }) {
                                 <CartProductCard
                                     product={product}
                                     key={product.id}
+                                    handleProductDeletion={
+                                        handleProductDeletion
+                                    }
                                 />
                             ))}
                         </ul>
@@ -64,7 +74,7 @@ export default function CartPage({ auth }) {
         </>
     );
 }
-export function CartProductCard({ product }) {
+export function CartProductCard({ product, handleProductDeletion }) {
     const [quantity, setQuantity] = useState(product.quantity);
 
     const handleIncrement = () => {
@@ -76,7 +86,13 @@ export function CartProductCard({ product }) {
         if (quantity > 1) {
             setQuantity(quantity - 1);
             updateCart(product.id, quantity - 1);
+        } else if (quantity === 1) {
+            handleProductDeletion(product);
         }
+    };
+
+    const handleDeletion = () => {
+        handleProductDeletion(product);
     };
 
     const updateCart = (productId, updatedQuantity) => {
@@ -122,6 +138,12 @@ export function CartProductCard({ product }) {
                     onClick={handleDecrement}
                 >
                     -
+                </PrimaryButton>
+                <PrimaryButton
+                    className="flex justify-center items-center bg-black p-1 w-[25px] h-[25px] rounded text-white"
+                    onClick={handleDeletion}
+                >
+                    X
                 </PrimaryButton>
             </div>
         </div>
