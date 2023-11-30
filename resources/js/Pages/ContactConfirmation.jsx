@@ -2,9 +2,9 @@ import { Head, Link } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 export default function ContactConfirmation({ auth }) {
     return (
-        <div className="dark:bg-zinc-900">
+        <div className="dark:bg-zinc-900 min-h-screen">
             <Header auth={auth} />
-            <div className="bg-green-500 m-8 p-12">
+            <div className="bg-green-500 dark:bg-green-600 dark:text-gray-200 m-8 p-12">
                 <Head title="Email confirmed" />
                 <h1 className="text-2xl font-bold mb-6">Message sent</h1>
                 <p className="font-semibold mb-6">

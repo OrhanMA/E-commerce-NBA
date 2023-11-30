@@ -8,7 +8,7 @@ export default function ContactPage({ auth }) {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data);
+        // console.log(data);
         await router.post("/contact", { ...data });
     };
     return (

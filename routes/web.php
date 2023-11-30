@@ -24,7 +24,8 @@ Route::get('/search', [ProductController::class, 'search']);
 Route::get('/products', [ProductController::class, 'getAll']);
 Route::get('/products/{category}', [ProductController::class, 'getCategoryProducts']);
 
-
+Route::get('/contact', [ContactController::class, 'contact']);
+Route::post('/contact', [ContactController::class, 'sendEmail']);
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -48,8 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'index']);
     Route::post('/checkout', [CheckoutController::class, 'placeOrder']);
 
-    Route::get('/contact', [ContactController::class, 'contact']);
-    Route::post('/contact', [ContactController::class, 'sendEmail']);
+
     Route::get('/contact-confirmation', [ContactController::class, 'contactConfirmation']);
 });
 

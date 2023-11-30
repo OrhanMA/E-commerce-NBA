@@ -8,8 +8,8 @@ export default function SearchBar() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Category:", category);
-        console.log("Query:", query);
+        // console.log("Category:", category);
+        // console.log("Query:", query);
     };
 
     return (

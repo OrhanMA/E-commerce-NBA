@@ -140,7 +140,7 @@ export function CartProductCard({ product, handleProductDeletion }) {
                     +
                 </PrimaryButton>
                 <PrimaryButton
-                    className="flex justify-center items-center dark:hover:bg-red-500 dark:bg-red-700 p-1 w-[25px] h-[25px] rounded text-white"
+                    className="flex justify-center items-center hover:bg-red-500 bg-red-700 dark:hover:bg-red-500 dark:bg-red-700 p-1 w-[25px] h-[25px] rounded text-white"
                     onClick={handleDecrement}
                 >
                     -
