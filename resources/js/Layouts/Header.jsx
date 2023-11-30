@@ -1,5 +1,6 @@
 import { useState } from "react";
-import ApplicationLogo from "@/Components/ApplicationLogo";
+// import ApplicationLogo from "@/Components/ApplicationLogo";
+import { SiBigbasket } from "react-icons/si";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
@@ -24,7 +25,8 @@ export default function Authenticated({ auth, header, children }) {
                         <div className="flex">
                             <div className="mr-6 shrink-0 flex items-center">
                                 <Link href="/">
-                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
+                                    {/* <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" /> */}
+                                    <SiBigbasket size={40} />
                                 </Link>
                             </div>
 

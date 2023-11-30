@@ -8,7 +8,6 @@ export default function SearchBar() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle the form submission, e.g., make an API request or update the state
         console.log("Category:", category);
         console.log("Query:", query);
     };

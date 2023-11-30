@@ -25,7 +25,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         alt="City jerseys campagne"
                     />
                     <div className="w-full px-12 flex flex-col items-center">
-                        <h1 className="text-2xl md:text-4xl lg:text-6xl lg:mb-6 text-blue-700 font-bold mt-16">
+                        <h1 className="text-2xl md:text-4xl lg:text-6xl lg:mb-6 font-bold mt-16">
                             Jersey Shop
                         </h1>
                         <h2 className="md:text-xl lg:text-2xl text-center mt-6">

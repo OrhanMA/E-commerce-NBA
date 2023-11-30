@@ -11,7 +11,7 @@ export default function Checkout({ auth }) {
         const localStorageData = localStorage.getItem("cart");
         const parsedData = localStorageData ? JSON.parse(localStorageData) : [];
         setCartData(parsedData);
-    }, []); 
+    }, []);
 
     const calculateTotalPrice = () => {
         return cartData.reduce(
@@ -68,15 +68,18 @@ export default function Checkout({ auth }) {
                                     >
                                         Payment Method:
                                         <select
-                                            name="paimentMethod"
+                                            name="paiementMethod"
                                             {...register("paiementMethod")}
                                             className="p-2 w-2/3 lg:w-2/3  bg-gray-100 rounded-sm"
                                         >
-                                            <option value="Card">Card</option>
+                                            <option value="1">Card</option>
+                                            <option value="2">Cash</option>
+                                            <option value="3">Transfert</option>
+                                            {/* <option value="Card">Card</option>
                                             <option value="Cash">Cash</option>
                                             <option value="Transfert">
                                                 Transfert
-                                            </option>
+                                            </option> */}
                                         </select>
                                     </label>
                                     <br />
@@ -90,7 +93,16 @@ export default function Checkout({ auth }) {
                                             {...register("deliveryMethod")}
                                             className="p-2 w-2/3 lg:w-2/3  bg-gray-100 rounded-sm"
                                         >
-                                            <option value="standard">
+                                            <option value="1">
+                                                Standard shipping
+                                            </option>
+                                            <option value="2">
+                                                Express shipping
+                                            </option>
+                                            <option value="3">
+                                                Click&collect
+                                            </option>
+                                            {/* <option value="standard">
                                                 Standard shipping
                                             </option>
                                             <option value="express">
@@ -98,7 +110,7 @@ export default function Checkout({ auth }) {
                                             </option>
                                             <option value="click&collect">
                                                 Click&collect
-                                            </option>
+                                            </option> */}
                                         </select>
                                     </label>
                                     <br />

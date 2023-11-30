@@ -31,11 +31,17 @@ class CheckoutController extends Controller
             return $product['quantity'] * $product['price'];
         });
 
-        $paiementMethod = PaiementMethod::where('name', $request->input('paiementMethod'))->first();
-        $paiementMethodId = $paiementMethod ? $paiementMethod->id : 1;
+        $paiementInput = $request->paiementMethod;
+        $deliveryInput = $request->deliveryMethod;
 
-        $deliveryMethod = DeliveryMethod::where('name', $request->input('deliveryMethod'))->first();
-        $deliveryMethodId = $deliveryMethod ? $deliveryMethod->id : 3;
+
+        $paiementMethod = PaiementMethod::findOrFail($paiementInput);
+        $deliveryMethod = DeliveryMethod::findOrFail($deliveryInput);
+
+        $paiementMethodId = $paiementMethod->id;
+        $deliveryMethodId = $deliveryMethod->id;
+
+
 
         $order = Order::create([
             'total_price' => $totalPrice,
@@ -43,7 +49,6 @@ class CheckoutController extends Controller
             'paiement_method_id' => $paiementMethodId,
             'delivery_method_id' => $deliveryMethodId,
         ]);
-
         foreach ($cartData as $product) {
             OrderProduct::create([
                 'order_id' => $order->id,

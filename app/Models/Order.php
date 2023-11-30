@@ -17,8 +17,8 @@ class Order extends Model
         'id',
         'user_id',
         'total_price',
-        'paiement_method',
-        'delivery_method',
+        'paiement_method_id',
+        'delivery_method_id',
         // 'customer_info',
     ];
 
@@ -33,11 +33,11 @@ class Order extends Model
     }
     public function paiementMethod()
     {
-        return $this->belongsTo(PaiementMethod::class, 'paiement_method_id'); // Change to match your actual column name
+        return $this->belongsTo(PaiementMethod::class, 'paiement_method_id');
     }
 
     public function deliveryMethod()
     {
-        return $this->belongsTo(DeliveryMethod::class, 'delivery_method_id'); // Change to match your actual column name
+        return $this->belongsTo(DeliveryMethod::class, 'delivery_method_id');
     }
 }

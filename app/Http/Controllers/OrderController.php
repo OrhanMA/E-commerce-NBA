@@ -24,9 +24,10 @@ class OrderController extends Controller
             abort(403, 'Unauthorized');
         }
 
-        // Retrieve paiement method and delivery method names based on their IDs
         $paiementMethodName = PaiementMethod::find($order->paiement_method_id)->name;
         $deliveryMethodName = DeliveryMethod::find($order->delivery_method_id)->name;
+
+
 
         // Retrieve order products
         $orderProducts = $order->products;
