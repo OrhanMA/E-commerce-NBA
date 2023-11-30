@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -43,6 +44,9 @@ class ProfileController extends Controller
     /**
      * Delete the user's account.
      */
+
+    // ...
+
     public function destroy(Request $request): RedirectResponse
     {
         $request->validate([
@@ -53,6 +57,15 @@ class ProfileController extends Controller
 
         Auth::logout();
 
+        // Retrieve all orders associated with the user
+        $userOrders = $user->orders;
+
+        // Delete each order
+        foreach ($userOrders as $order) {
+            $order->delete();
+        }
+
+        // Now delete the user
         $user->delete();
 
         $request->session()->invalidate();
@@ -60,4 +73,5 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
 }

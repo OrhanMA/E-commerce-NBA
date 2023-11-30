@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->timestamps();
 
             $table->uuid('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->unsignedBigInteger('paiement_method_id')->default(1);
             $table->unsignedBigInteger('delivery_method_id')->default(3);
