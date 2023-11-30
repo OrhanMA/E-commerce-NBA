@@ -12,7 +12,7 @@ export default function SeeOrders({ auth, order }) {
                     Your placed order
                 </h1>
                 <Link href="/contact" className="hover:text-blue-900 underline">
-                    Cliquez ici pour contacter le support
+                    Click here to contact the support
                 </Link>
                 <div className="border p-6 flex flex-col gap-6 m-6 md:w-2/3">
                     <div className="flex flex-col gap-2">

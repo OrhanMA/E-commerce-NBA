@@ -17,7 +17,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
         <>
             <Header auth={auth} />
             <Head title="Welcome" />
-            <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
+            <div className="mb-[250px] sm:mb-0 relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
                 <div className="flex flex-col items-center">
                     <SearchBar />
                     <img
@@ -45,7 +45,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                                 {route.route}
                                             </p>
                                             <img
-                                                className="w-[100px] h-[100px] lg:w-[340px] lg:h-[360px] object-cover"
+                                                className="rounded-md w-[100px] h-[100px] lg:w-[340px] lg:h-[360px] object-cover"
                                                 src={`/welcome/${route.image}`}
                                                 alt=""
                                             />

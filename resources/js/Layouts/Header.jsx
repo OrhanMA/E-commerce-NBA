@@ -18,7 +18,7 @@ export default function Authenticated({ auth, header, children }) {
     const { url } = usePage();
     let user = auth.user;
     return (
-        <div className="bg-gray-100">
+        <div>
             <nav className="bg-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -192,6 +192,7 @@ export default function Authenticated({ auth, header, children }) {
                                 </ResponsiveNavLink>
                             );
                         })}
+
                         <ResponsiveNavLink href={"/cart"}>
                             Cart
                         </ResponsiveNavLink>
@@ -215,9 +216,21 @@ export default function Authenticated({ auth, header, children }) {
                                     </div>
                                 </div>
                                 <div className="mt-3 space-y-1">
-                                    <ResponsiveNavLink href={"/admin/login"}>
-                                        Admin dashboard
-                                    </ResponsiveNavLink>
+                                    {user && (
+                                        <>
+                                            {user.is_admin == 1 && (
+                                                <ResponsiveNavLink
+                                                    href={"/admin"}
+                                                >
+                                                    Admin dashboard
+                                                </ResponsiveNavLink>
+                                            )}
+                                            <Dropdown.Link href={"my-orders"}>
+                                                My Orders
+                                            </Dropdown.Link>
+                                        </>
+                                    )}
+
                                     <ResponsiveNavLink
                                         href={route("profile.edit")}
                                     >

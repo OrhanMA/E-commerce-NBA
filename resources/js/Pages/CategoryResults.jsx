@@ -24,7 +24,7 @@ const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
                     </>
                 ) : (
                     <>
-                        <div className="h-full justify-between flex flex-col flex-nowrap">
+                        <div className="mb-[250px] sm:mb-0 h-full justify-between flex flex-col flex-nowrap">
                             <SortFilter generateSortUrl={generateSortUrl} />
 
                             <div className="flex flex-wrap justify-center w-full m-2 p-2 gap-6">

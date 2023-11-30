@@ -10,9 +10,9 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
             <Header auth={auth} />
             <Head title="Profile" />
 
-            <div className="py-12">
+            <div className="p-6 mb-[250px]">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-                    <div className="p-4 sm:p-8 bg-gray-50 shadow sm:rounded-lg">
+                    <div className="p-6 sm:p-8 mx-4 bg-gray-200 shadow sm:rounded-lg">
                         <UpdateProfileInformationForm
                             mustVerifyEmail={mustVerifyEmail}
                             status={status}
@@ -20,11 +20,11 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                         />
                     </div>
 
-                    <div className="p-4 sm:p-8 bg-gray-50 shadow sm:rounded-lg">
+                    <div className="p-6 sm:p-8 mx-4 bg-gray-200 shadow sm:rounded-lg">
                         <UpdatePasswordForm className="max-w-xl" />
                     </div>
 
-                    <div className="p-4 sm:p-8 bg-gray-50 shadow sm:rounded-lg">
+                    <div className="p-6 sm:p-8 mx-4 bg-gray-200 shadow sm:rounded-lg">
                         <DeleteUserForm className="max-w-xl" />
                     </div>
                 </div>

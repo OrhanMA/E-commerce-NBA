@@ -37,7 +37,7 @@ export default function Login({ status, canResetPassword }) {
             )}
             <form
                 onSubmit={submit}
-                className="bg-gray-50 flex flex-col items-center p-6 w-screen h-screen"
+                className="bg-gray-200 flex flex-col items-center p-6 w-screen h-screen"
             >
                 <h1 className="text-2xl lg:text-4xl font-bold my-6">Login</h1>
                 <div className="w-full md:w-2/3 lg:w-1/3">

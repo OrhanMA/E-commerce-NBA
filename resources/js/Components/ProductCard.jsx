@@ -43,33 +43,35 @@ export function ProductCard({ product }) {
         });
     };
     return (
-        <div className="w-4/5 sm:w-2/5 lg:w-1/4  m-2 hover:scale-105 hover:bg-gray-300 duration-200  flex flex-col items-start rounded-md bg-gray-200 bg-opacity-40 p-6 gap-4 ">
+        <>
             <Toaster />
-            <div className="w-full flex justify-center bg-white rounded-md">
-                <img
-                    className="my-6"
-                    width={200}
-                    src={`/${product.image_path}`}
-                    alt={product.name}
-                />
-            </div>
-            <p className="h-[50px] text-lg font-bold">{product.name}</p>
-            <p className="text-md text-gray-500 h-[50px]">
-                {product.description}
-            </p>
-            <div className="flex items-center gap-4">
-                <p className="bg-slate-200 text-sm text-gray-500 px-2 rounded-md">
-                    {product.category_name}
+            <div className="w-4/5 sm:w-2/5 lg:w-1/4  m-2 hover:scale-105 hover:bg-gray-300 duration-200  flex flex-col items-start rounded-md bg-gray-200 bg-opacity-40 p-6 gap-4 ">
+                <div className="w-full flex justify-center bg-white rounded-md">
+                    <img
+                        className="my-6"
+                        width={200}
+                        src={`/${product.image_path}`}
+                        alt={product.name}
+                    />
+                </div>
+                <p className="h-[50px] text-lg font-bold">{product.name}</p>
+                <p className="text-md text-gray-500 h-[50px]">
+                    {product.description}
                 </p>
-                <p className="bg-slate-200 text-sm text-gray-500 px-2 rounded-md">
-                    {product.subcategory_name}
-                </p>
-            </div>
+                <div className="flex items-center gap-4">
+                    <p className="bg-slate-200 text-sm text-gray-500 px-2 rounded-md">
+                        {product.category_name}
+                    </p>
+                    <p className="bg-slate-200 text-sm text-gray-500 px-2 rounded-md">
+                        {product.subcategory_name}
+                    </p>
+                </div>
 
-            <div className="mt-4 flex items-center w-full justify-between">
-                <p className="text-lg font-bold ">{product.price}$</p>
-                <PrimaryButton onClick={addToCart}>Buy</PrimaryButton>
+                <div className="mt-4 flex items-center w-full justify-between">
+                    <p className="text-lg font-bold ">{product.price}$</p>
+                    <PrimaryButton onClick={addToCart}>Buy</PrimaryButton>
+                </div>
             </div>
-        </div>
+        </>
     );
 }

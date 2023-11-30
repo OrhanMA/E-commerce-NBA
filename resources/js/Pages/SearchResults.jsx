@@ -73,7 +73,7 @@ const SearchResults = ({
                     </div>
                 ) : (
                     <>
-                        <div className="h-full justify-between flex flex-col flex-nowrap">
+                        <div className="pb-[250px] sm:mb-0 justify-between flex flex-col flex-nowrap">
                             <SortFilter generateSortUrl={generateSortUrl} />
                             <h1 className="text-xl m-6">
                                 Search Results for "{query}"

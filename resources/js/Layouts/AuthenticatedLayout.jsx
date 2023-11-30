@@ -185,9 +185,13 @@ export default function Authenticated({ user, header, children }) {
                         </div>
 
                         <div className="mt-3 space-y-1">
-                            <ResponsiveNavLink href={"/admin/login"}>
-                                Admin dashboard
-                            </ResponsiveNavLink>
+                            {user.is_admin == 1 && (
+                                <>
+                                    <ResponsiveNavLink href={"/admin/login"}>
+                                        Admin dashboard
+                                    </ResponsiveNavLink>
+                                </>
+                            )}
                             <ResponsiveNavLink href={route("profile.edit")}>
                                 Profile
                             </ResponsiveNavLink>
