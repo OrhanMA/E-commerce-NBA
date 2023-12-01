@@ -3,7 +3,6 @@ import Header from "@/Layouts/Header";
 import Footer from "@/Components/Footer";
 export default function SeeOrders({ auth, order }) {
     const newOrder = order[0];
-    // console.log(newOrder);
     return (
         <div className="dark:bg-zinc-900 dark:text-gray-200 min-h-screen ">
             <Header auth={auth} />

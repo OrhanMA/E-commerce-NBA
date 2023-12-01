@@ -1,5 +1,3 @@
-// Create a SearchResults component
-import { useState } from "react";
 import SearchBar from "@/Components/SearchBar";
 import { ProductCard } from "@/Components/ProductCard";
 import { Head, Link } from "@inertiajs/react";

@@ -14,7 +14,6 @@ class SubcategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
         $subcategories = [
             [
                 "name" => 'authentic'

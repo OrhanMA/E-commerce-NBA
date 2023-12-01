@@ -7,7 +7,6 @@ use Inertia\Inertia;
 
 class CartController extends Controller
 {
-    //
     public function index(Request $request)
     {
 

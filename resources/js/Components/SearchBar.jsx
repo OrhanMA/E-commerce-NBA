@@ -8,16 +8,11 @@ export default function SearchBar() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log("Category:", category);
-        // console.log("Query:", query);
+       
     };
 
     return (
         <div className="w-full flex justify-center my-4 sm:my-6 pt-6 sm:mb-6">
-            {/* <div className="flex justify-center  gap-4">
-              <p>caté:{category}</p>
-              <p>query:{query}</p>
-          </div> */}
             <form
                 className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap sm:m-6 items-center gap-4"
                 onSubmit={handleSubmit}

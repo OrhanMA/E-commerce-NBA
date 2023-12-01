@@ -1,4 +1,3 @@
-// Assuming you're using React
 import React, { useState, useEffect } from "react";
 import { Head, Link } from "@inertiajs/react";
 import Header from "@/Layouts/Header";

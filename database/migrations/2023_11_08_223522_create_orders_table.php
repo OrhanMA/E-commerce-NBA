@@ -13,7 +13,6 @@ return new class extends Migration {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->decimal('total_price', 8, 2);
-            // $table->text('customer_info');
             $table->timestamps();
 
             $table->uuid('user_id');
@@ -22,7 +21,6 @@ return new class extends Migration {
             $table->unsignedBigInteger('paiement_method_id')->default(1);
             $table->unsignedBigInteger('delivery_method_id')->default(3);
 
-            // Add foreign key constraints
             $table->foreign('paiement_method_id')->references('id')->on('paiement_methods');
             $table->foreign('delivery_method_id')->references('id')->on('delivery_methods');
         });

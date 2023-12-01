@@ -13,6 +13,6 @@ class DeliveryMethod extends Model
     use HasFactory;
     public function orders()
     {
-        return $this->hasMany(Order::class, 'delivery_method_id'); // Change to match your actual column name
+        return $this->hasMany(Order::class, 'delivery_method_id');
     }
 }

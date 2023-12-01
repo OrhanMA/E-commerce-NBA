@@ -15,7 +15,6 @@ class PaiementMethodSeeder extends Seeder
      */
     public function run(): void
     {
-        //
         $paiement_methods = [
             [
                 "name" => "Card",

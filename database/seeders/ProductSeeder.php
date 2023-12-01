@@ -16,7 +16,6 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        // Sample product data
         $products = [
             [
                 "name" => "Altanta Hawks NBA Jersey",
@@ -572,10 +571,8 @@ class ProductSeeder extends Seeder
             ],
 
 
-            // Add more products as needed
         ];
 
-        // Add timestamps to each product
         $timestamp = Carbon::now();
 
         foreach ($products as $productData) {
@@ -585,7 +582,5 @@ class ProductSeeder extends Seeder
             Product::create($productData);
         }
 
-        // Insert data into the products table
-        // DB::table('products')->insert($products);
     }
 }

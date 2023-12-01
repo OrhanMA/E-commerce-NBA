@@ -37,7 +37,7 @@ export default function OrderComponent({ order }) {
                     hour: "numeric",
                     minute: "numeric",
                     second: "numeric",
-                    timeZone: "UTC", // Assuming your date string is in UTC
+                    timeZone: "UTC",
                 }).format(new Date(order.created_at))}
             </p>
             <Link

@@ -18,7 +18,6 @@ return new class extends Migration {
             $table->unsignedInteger('quantity');
             $table->timestamps();
 
-            // Foreign key relationships
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }

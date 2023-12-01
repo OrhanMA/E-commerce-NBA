@@ -15,7 +15,6 @@ class DeliveryMethodSeeder extends Seeder
      */
     public function run(): void
     {
-        //
         $delivery_methods = [
             [
                 "name" => "standard",

@@ -9,26 +9,21 @@ use App\Models\Category;
 
 class ProductController extends Controller
 {
-    //
     public function getAll(Request $request)
     {
         $products = Product::query()->paginate(10);
-        // $products = Product::query()->get();
-        // dump($products);
         return Inertia::render('AllProducts', [
             'products' => $products,
         ]);
     }
-    // In your ProductController or SearchControllerm rn
     public function getCategoryProducts(Request $request, string $category)
     {
-        $sortBy = $request->input('sort_by', 'name'); // Default to sorting by name
-        $sortOrder = $request->input('sort_order', 'asc'); // Default to ascending order
+        $sortBy = $request->input('sort_by', 'name');
+        $sortOrder = $request->input('sort_order', 'asc');
 
         $categoryModel = Category::where('name', $category)->first();
 
         if (!$categoryModel) {
-            // Handle case where category does not exist
             return response()->json(['error' => 'Category not found'], 404);
         }
 
@@ -36,7 +31,6 @@ class ProductController extends Controller
 
         $productsQuery = Product::where('category_id', $categoryId);
 
-        // Add sorting by price
         if ($sortBy === 'price') {
             $productsQuery->orderBy('price', $sortOrder);
         } else {
@@ -84,7 +78,6 @@ class ProductController extends Controller
             }
         }
 
-        // Add sorting by price
         if ($sortBy === 'price') {
             $productsQuery->orderBy('price', $sortOrder);
         } else {
@@ -107,8 +100,3 @@ class ProductController extends Controller
     }
 
 }
-
-// ...&sort_order=desc is sort z to a no price sort
-// ...&sort_order=asc and ...(no sort_order specified) sort a to z
-// ...&sort_by=price sort price - to +
-//    ...&sort_by=price&sort_order=desc sort price + to -

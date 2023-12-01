@@ -57,15 +57,12 @@ class ProfileController extends Controller
 
         Auth::logout();
 
-        // Retrieve all orders associated with the user
         $userOrders = $user->orders;
 
-        // Delete each order
         foreach ($userOrders as $order) {
             $order->delete();
         }
 
-        // Now delete the user
         $user->delete();
 
         $request->session()->invalidate();

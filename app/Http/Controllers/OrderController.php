@@ -1,7 +1,5 @@
 <?php
 
-// OrderController.php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -16,10 +14,8 @@ class OrderController extends Controller
 {
     public function confirmation($id)
     {
-        // Retrieve the order based on the provided ID
         $order = Order::findOrFail($id);
 
-        // Check if the authenticated user is the owner of the order
         if (auth()->id() !== $order->user_id) {
             abort(403, 'Unauthorized');
         }
@@ -29,10 +25,8 @@ class OrderController extends Controller
 
 
 
-        // Retrieve order products
         $orderProducts = $order->products;
 
-        // Return the order confirmation view with the order data and method names
         return Inertia::render('OrderConfirmation', [
             'order' => $order,
             'paiementMethodName' => $paiementMethodName,
@@ -46,13 +40,6 @@ class OrderController extends Controller
         $user_id = Auth::id();
         $orders = Order::with(['products', 'paiementMethod', 'deliveryMethod'])
             ->where('user_id', $user_id)->get();
-
-        // dd($orders);
-
-        // foreach ($orders as $order) {
-        //     $paiementMethod = PaiementMethod::find($order->paiement_method_id)->name;
-        //     $deliveryMethod = DeliveryMethod::find($order->delivery_method_id)->name;
-        // }
 
         return Inertia::render('SeeOrders', [
             'orders' => $orders,

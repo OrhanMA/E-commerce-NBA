@@ -9,7 +9,6 @@ use App\Mail\ContactEmail;
 
 class ContactController extends Controller
 {
-    //
     public function contact(Request $request)
     {
         return Inertia::render("ContactPage");
@@ -20,7 +19,6 @@ class ContactController extends Controller
         $email = $request->email;
         $subject = $request->email;
         $message = $request->message;
-        // dd($message);
         Mail::to('support@jerseyshop.com')->send(new ContactEmail($email, $subject, $message));
 
         return redirect('/contact-confirmation');

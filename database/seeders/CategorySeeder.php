@@ -15,7 +15,6 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
         $categories = [
             [
                 "name" => "Jerseys"
@@ -43,6 +42,5 @@ class CategorySeeder extends Seeder
             Category::create($categoryData);
         }
 
-        // DB::table('categories')->insert($categories);
     }
 }

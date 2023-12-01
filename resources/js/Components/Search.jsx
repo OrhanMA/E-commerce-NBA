@@ -1,10 +1,4 @@
-// Create a Search component
-
 import { useState } from "react";
-
-// Modify your Search component to include filters
-
-// Modify your Search component to include sorting
 
 const Search = ({ onSearch, onFilter, onSort }) => {
     const [query, setQuery] = useState("");
