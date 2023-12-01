@@ -45,7 +45,7 @@ export function ProductCard({ product }) {
     return (
         <>
             <Toaster />
-            <div className="w-4/5 sm:w-2/5 lg:w-1/4  m-2 hover:scale-105 hover:bg-gray-300 dark:bg-zinc-700 dark:hover:bg-zinc-500 duration-200  flex flex-col items-start rounded-md bg-gray-200 bg-opacity-40 p-6 gap-4 ">
+            <div className="w-[70%] sm:w-2/5 lg:w-1/4 xl:w-1/5  m-2 hover:scale-105 hover:bg-gray-300 dark:bg-zinc-700 dark:hover:bg-zinc-500 duration-200  flex flex-col items-start rounded-md bg-gray-200 bg-opacity-40 p-6 gap-4 ">
                 <div className="w-full flex justify-center bg-white rounded-md">
                     <img
                         className="my-6"
@@ -57,14 +57,14 @@ export function ProductCard({ product }) {
                 <p className="h-[50px] dark:text-white text-lg font-bold">
                     {product.name}
                 </p>
-                <p className="text-md text-gray-500 dark:text-gray-200 h-[50px]">
+                <p className="text-md text-gray-500 dark:text-gray-200  h-[50px]">
                     {product.description}
                 </p>
-                <div className="flex items-center gap-4">
-                    <p className="bg-slate-200 text-sm text-gray-500 dark:text-gray-200 px-2 rounded-md">
+                <div className="flex items-center gap-4 mt-4">
+                    <p className="bg-slate-200 text-sm text-gray-500  px-2 rounded-md dark:text-black">
                         {product.category_name}
                     </p>
-                    <p className="bg-slate-200 text-sm text-gray-500 dark:text-gray-200 px-2 rounded-md">
+                    <p className="bg-slate-200 text-sm text-gray-500  px-2 rounded-md dark:text-black">
                         {product.subcategory_name}
                     </p>
                 </div>

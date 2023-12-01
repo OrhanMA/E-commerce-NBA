@@ -5,6 +5,7 @@ import { ProductCard } from "@/Components/ProductCard";
 import { Head, Link } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import SortFilter from "@/Components/SortFilter";
+import Footer from "@/Components/Footer";
 const SearchResults = ({
     auth,
     products,
@@ -90,6 +91,7 @@ const SearchResults = ({
                     </>
                 )}
             </div>
+            <Footer auth={auth} />
         </div>
     );
 };

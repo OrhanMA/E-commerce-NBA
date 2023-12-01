@@ -5,6 +5,7 @@ import Authenticated from "@/Layouts/AuthenticatedLayout";
 import SearchBar from "@/Components/SearchBar";
 import Guest from "@/Layouts/GuestLayout";
 import Header from "@/Layouts/Header";
+import Footer from "@/Components/Footer";
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const routes = [
         { route: "Jerseys", image: "kobe-jersey.jpg" },
@@ -17,7 +18,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
         <>
             <Header auth={auth} />
             <Head title="Welcome" />
-            <div className="mb-[250px] sm:mb-0 relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center dark:bg-zinc-900 dark:text-white bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
+            <div className=" sm:mb-0 relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center dark:bg-zinc-900 dark:text-white bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
                 <div className="flex flex-col items-center">
                     <SearchBar />
                     <img
@@ -57,6 +58,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     </div>
                 </div>
             </div>
+            <Footer auth={auth} />
         </>
     );
 }

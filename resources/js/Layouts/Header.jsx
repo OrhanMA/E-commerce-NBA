@@ -19,7 +19,7 @@ export default function Authenticated({ auth, header, children }) {
     let user = auth.user;
     return (
         <div>
-            <nav className="bg-white dark:bg-zinc-700 dark:text-gray-200 border-b border-gray-100">
+            <nav className="bg-white dark:bg-zinc-700 dark:text-gray-200 border-b border-gray-400">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
@@ -30,7 +30,7 @@ export default function Authenticated({ auth, header, children }) {
                                 </Link>
                             </div>
 
-                            <div className="hidden space-x-8 sm:-my-px md:ms-10 sm:flex">
+                            <div className="hidden space-x-4 md:space-x-8 sm:-my-px md:ms-10 sm:flex">
                                 {/* <NavLink href={"/"} active={url == "/"}>
                                     Home
                                 </NavLink> */}

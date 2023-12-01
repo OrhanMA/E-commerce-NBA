@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { router } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import PrimaryButton from "@/Components/PrimaryButton";
+import Footer from "@/Components/Footer";
 export default function Checkout({ auth }) {
     const { register, handleSubmit } = useForm();
     const [cartData, setCartData] = useState([]);
@@ -28,7 +29,7 @@ export default function Checkout({ auth }) {
         <div className="dark:bg-zinc-900 dark:text-gray-200 min-h-screen">
             <Header auth={auth} />
             <Head title="Checkout" />
-            <div className="flex flex-col items-center m-12">
+            <div className="flex flex-col min-h-screen items-center m-12">
                 <h1 className="text-2xl lg:text-4xl font-bold mb-12">
                     Checkout
                 </h1>
@@ -145,6 +146,7 @@ export default function Checkout({ auth }) {
                     </>
                 )}
             </div>
+            <Footer auth={auth} />
         </div>
     );
 }

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { router } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import PrimaryButton from "@/Components/PrimaryButton";
+import Footer from "@/Components/Footer";
 export default function ContactPage({ auth }) {
     const { register, handleSubmit } = useForm();
 
@@ -15,7 +16,7 @@ export default function ContactPage({ auth }) {
         <div className="dark:bg-zinc-900 dark:text-gray-200 min-h-screen">
             <Header auth={auth} />
             <Head title="Contact" />
-            <div className="flex flex-col items-center gap-6 my-6">
+            <div className="flex flex-col items-center gap-6 my-6 min-h-screen">
                 <h1 className="max-w-xl text-2xl font-bold my-6">
                     Contact page
                 </h1>
@@ -73,6 +74,7 @@ export default function ContactPage({ auth }) {
                     </PrimaryButton>
                 </form>
             </div>
+            <Footer auth={auth} />
         </div>
     );
 }

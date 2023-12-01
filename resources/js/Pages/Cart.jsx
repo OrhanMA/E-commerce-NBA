@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Head, Link } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import PrimaryButton from "@/Components/PrimaryButton";
+import Footer from "@/Components/Footer";
 export default function CartPage({ auth }) {
     const [cartData, setCartData] = useState([]);
 
@@ -28,7 +29,7 @@ export default function CartPage({ auth }) {
         <div className="dark:bg-zinc-900 min-h-screen">
             <Header auth={auth} />
             <Head title="Cart" />
-            <div className="flex flex-col items-center py-12">
+            <div className="flex flex-col min-h-screen items-center py-12">
                 <h1 className="text-2xl font-bold mb-6 dark:text-gray-200">
                     {" "}
                     Cart:
@@ -54,7 +55,7 @@ export default function CartPage({ auth }) {
                         >
                             Clear Cart
                         </PrimaryButton>
-                        <ul className=" dark:border-zinc-500 flex flex-col border p-6 sm:p-12 gap-6 my-6 rounded-md">
+                        <ul className=" dark:border-zinc-500 flex flex-col border p-6 mx-6 sm:p-12 gap-6 my-6 rounded-md">
                             {cartData.map((product) => (
                                 <CartProductCard
                                     product={product}
@@ -74,6 +75,7 @@ export default function CartPage({ auth }) {
                     </>
                 )}
             </div>
+            <Footer auth={auth} />
         </div>
     );
 }

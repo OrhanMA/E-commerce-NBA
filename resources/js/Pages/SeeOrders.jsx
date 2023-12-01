@@ -1,6 +1,7 @@
 import { Link, Head } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import OrderComponent from "@/Components/OrderComponent";
+import Footer from "@/Components/Footer";
 export default function SeeOrders({ auth, orders }) {
     return (
         <div className="dark:bg-zinc-900">
@@ -32,6 +33,7 @@ export default function SeeOrders({ auth, orders }) {
                     </Link>
                 </div>
             )}
+            <Footer auth={auth} />
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import { Head, Link } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
+import Footer from "@/Components/Footer";
 export default function SeeOrders({ auth, order }) {
     const newOrder = order[0];
     // console.log(newOrder);
@@ -7,7 +8,7 @@ export default function SeeOrders({ auth, order }) {
         <div className="dark:bg-zinc-900 dark:text-gray-200 min-h-screen ">
             <Header auth={auth} />
             <Head title={`Your order n°${newOrder.id}`} />
-            <div className="flex flex-col items-center my-6">
+            <div className="flex flex-col items-center my-6 min-h-screen">
                 <h1 className="max-w-xl text-2xl font-bold mb-6">
                     Your placed order
                 </h1>
@@ -70,6 +71,7 @@ export default function SeeOrders({ auth, order }) {
                     </ul>
                 </div>
             </div>
+            <Footer auth={auth} />
         </div>
     );
 }

@@ -3,6 +3,7 @@ import { ProductCard } from "@/Components/ProductCard";
 import { Head } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import SortFilter from "@/Components/SortFilter";
+import Footer from "@/Components/Footer";
 const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
     const generateSortUrl = (newSortBy, newSortOrder) => {
         return `/products/${category}?sort_by=${newSortBy}&sort_order=${newSortOrder}`;
@@ -12,7 +13,7 @@ const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
         <div className="dark:bg-zinc-900">
             <Header auth={auth} />
             <Head title={`${category}`} />
-            <div>
+            <div className="mb-24">
                 <SearchBar />
 
                 {products.length <= 0 ? (
@@ -39,6 +40,7 @@ const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
                     </>
                 )}
             </div>
+            <Footer auth={auth} />
         </div>
     );
 };

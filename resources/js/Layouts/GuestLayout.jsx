@@ -28,10 +28,10 @@ export default function Guest({ header, children }) {
                                     <SiBigbasket size={40} />
                                 </Link>
                             </div>
-                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink href={"/"} active={url == "/"}>
+                            <div className="hidden space-x-2 md:space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                {/* <NavLink href={"/"} active={url == "/"}>
                                     Home
-                                </NavLink>
+                                </NavLink> */}
                                 {routes.map((route, index) => {
                                     return (
                                         <NavLink
@@ -46,9 +46,9 @@ export default function Guest({ header, children }) {
                                         </NavLink>
                                     );
                                 })}
-                                <NavLink active={url == "/cart"} href={"/cart"}>
+                                {/* <NavLink active={url == "/cart"} href={"/cart"}>
                                     Cart
-                                </NavLink>
+                                </NavLink> */}
                             </div>
                         </div>
                         <div className="hidden sm:flex sm:items-center sm:ms-6">

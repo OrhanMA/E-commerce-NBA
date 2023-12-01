@@ -1,6 +1,7 @@
 import Header from "@/Layouts/Header";
 import React, { useEffect } from "react";
 import { Head, Link } from "@inertiajs/react";
+import Footer from "@/Components/Footer";
 export default function OrderConfirmation({
     auth,
     order,
@@ -16,7 +17,7 @@ export default function OrderConfirmation({
         <div className="dark:bg-zinc-900 dark:text-gray-200">
             <Header auth={auth} />
             <Head title="Order confirmation" />
-            <div className="flex flex-col items-center mt-6">
+            <div className="flex flex-col items-center mt-6 min-h-screen">
                 <h1 className="my-6 font-bold text-2xl">Order Confirmation</h1>
                 <div className="flex flex-col items-center my-6 w-full">
                     <h1 className="max-w-xl text-2xl font-bold mb-6">
@@ -88,6 +89,7 @@ export default function OrderConfirmation({
                     </div>
                 </div>
             </div>
+            <Footer auth={auth} />
         </div>
     );
 }

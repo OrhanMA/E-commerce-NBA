@@ -5,8 +5,9 @@ import InputLabel from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
+import Footer from "@/Components/Footer";
 
-export default function Register() {
+export default function Register({ auth }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
         email: "",
@@ -121,14 +122,12 @@ export default function Register() {
                         Already registered?
                     </Link>
 
-                    <PrimaryButton
-                        className="ms-4 dark:bg-zinc-700"
-                        disabled={processing}
-                    >
+                    <PrimaryButton className="ms-4 " disabled={processing}>
                         Register
                     </PrimaryButton>
                 </div>
             </form>
+            <Footer auth={auth} />
         </GuestLayout>
     );
 }

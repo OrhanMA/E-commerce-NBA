@@ -4,6 +4,7 @@ import UpdatePasswordForm from "./Partials/UpdatePasswordForm";
 import UpdateProfileInformationForm from "./Partials/UpdateProfileInformationForm";
 import Header from "@/Layouts/Header";
 import { Head } from "@inertiajs/react";
+import Footer from "@/Components/Footer";
 export default function Edit({ auth, mustVerifyEmail, status }) {
     return (
         <div className="min-h-screen dark:bg-zinc-900">
@@ -29,6 +30,7 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                     </div>
                 </div>
             </div>
+            <Footer auth={auth} />
         </div>
     );
 }
