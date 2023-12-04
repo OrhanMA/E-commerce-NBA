@@ -4,15 +4,21 @@ import { Head } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import SortFilter from "@/Components/SortFilter";
 import Footer from "@/Components/Footer";
-const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
+
+const CategoryResults = ({ auth, products, category }) => {
     const generateSortUrl = (newSortBy, newSortOrder) => {
         return `/products/${category}?sort_by=${newSortBy}&sort_order=${newSortOrder}`;
     };
-
     return (
         <div className="dark:bg-zinc-900">
             <Header auth={auth} />
-            <Head title={`${category}`} />
+            <Head>
+                <title>{category}</title>
+                <meta
+                    name={`Category results for ${category} products`}
+                    content={`Buy every ${category} items you have on our website.`}
+                />
+            </Head>
             <div className="mb-24">
                 <SearchBar />
 
@@ -45,4 +51,4 @@ const SearchResults = ({ auth, products, category, sort_by, sort_order }) => {
     );
 };
 
-export default SearchResults;
+export default CategoryResults;

@@ -5,7 +5,13 @@ export default function ContactConfirmation({ auth }) {
     return (
         <div className="dark:bg-zinc-900 min-h-screen">
             <Header auth={auth} />
-            <Head title="Email confirmed" />
+            <Head>
+                <title>Email confirmed!</title>
+                <meta
+                    name={`Email confirmation page`}
+                    content={`Page that confirm that an email has been successfuly sent to the support team!`}
+                />
+            </Head>
             <div className=" dark:text-gray-200 min-h-screen ">
                 <div className="bg-green-500 dark:bg-green-600 m-8 p-12">
                     <h1 className="text-2xl font-bold mb-6">Message sent</h1>

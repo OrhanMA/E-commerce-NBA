@@ -1,12 +1,8 @@
-import PrimaryButton from "@/Components/PrimaryButton";
 import { Link, Head } from "@inertiajs/react";
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import Authenticated from "@/Layouts/AuthenticatedLayout";
 import SearchBar from "@/Components/SearchBar";
-import Guest from "@/Layouts/GuestLayout";
 import Header from "@/Layouts/Header";
 import Footer from "@/Components/Footer";
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
+export default function Welcome({ auth }) {
     const routes = [
         { route: "Jerseys", image: "kobe-jersey.jpg" },
         { route: "Basketballs", image: "basketballs.jpg" },
@@ -17,7 +13,13 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
         <>
             <Header auth={auth} />
-            <Head title="Welcome" />
+            <Head>
+                <title>Welcome to JerseyShop</title>
+                <meta
+                    name={`JerseyShop, the best NBA fan E-commerce`}
+                    content={`You can fin all the items you might want to buy on JerseyShop!`}
+                />
+            </Head>
             <div className=" sm:mb-0 relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center dark:bg-zinc-900 dark:text-white bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
                 <div className="flex flex-col items-center">
                     <SearchBar />
@@ -25,7 +27,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         src="/welcome/hero_city_jerseys.avif"
                         alt="City jerseys campagne"
                     />
-                    <div className="w-full px-12 flex flex-col items-center">
+                    <main className="w-full px-12 flex flex-col items-center">
                         <h1 className="text-2xl md:text-4xl lg:text-6xl lg:mb-6 font-bold mt-16">
                             Jersey Shop
                         </h1>
@@ -33,7 +35,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                             Show your love for the game with your favorite NBA
                             team jersey.
                         </h2>
-                        <div className="my-16 w-full flex  gap-6 items-center flex-wrap justify-evenly text-lg md:text-xl font-semibold">
+                        <section className="my-16 w-full flex  gap-6 items-center flex-wrap justify-evenly text-lg md:text-xl font-semibold">
                             {routes.map((route) => {
                                 return (
                                     <Link
@@ -42,9 +44,9 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                         className="lg:w-[20%] duration-200 hover:scale-105 text-gray-400 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white "
                                     >
                                         <div className="flex flex-col items-center">
-                                            <p className="text-lg md:text-2xl mb-6">
+                                            <h3 className="text-lg md:text-2xl mb-6">
                                                 {route.route}
-                                            </p>
+                                            </h3>
                                             <img
                                                 className="rounded-md w-[100px] h-[100px] lg:w-[340px] lg:h-[360px] object-cover"
                                                 src={`/welcome/${route.image}`}
@@ -54,8 +56,8 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     </Link>
                                 );
                             })}
-                        </div>
-                    </div>
+                        </section>
+                    </main>
                 </div>
             </div>
             <Footer auth={auth} />
