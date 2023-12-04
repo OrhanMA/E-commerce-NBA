@@ -4,7 +4,7 @@ import { Head } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 const SearchResults = ({ auth, products }) => {
     return (
-        <>
+        <div className="bg-zinc-900">
             <Header auth={auth} />
             <Head title="All products" />
             <SearchBar />
@@ -31,7 +31,7 @@ const SearchResults = ({ auth, products }) => {
                     </div>
                 </>
             )}
-        </>
+        </div>
     );
 };
 

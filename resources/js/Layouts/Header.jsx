@@ -91,7 +91,7 @@ export default function Authenticated({ auth, header, children }) {
                                         {user ? (
                                             <>
                                                 <Dropdown.Link
-                                                    href={"my-orders"}
+                                                    href={"/my-orders"}
                                                 >
                                                     My Orders
                                                 </Dropdown.Link>
