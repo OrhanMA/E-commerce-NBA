@@ -1,11 +1,12 @@
-import { Head, Link } from "@inertiajs/react";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Head } from "@inertiajs/react";
 import { useForm } from "react-hook-form";
 import { router } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import PrimaryButton from "@/Components/PrimaryButton";
 import Footer from "@/Components/Footer";
-export default function ContactPage({ auth }) {
+
+export default function ContactPage({ auth, errors }) {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
@@ -14,7 +15,13 @@ export default function ContactPage({ auth }) {
     return (
         <div className="dark:bg-zinc-900 dark:text-gray-200 min-h-screen">
             <Header auth={auth} />
-            <Head title="Contact" />
+            <Head>
+                <title>Contact page</title>
+                <meta
+                    name={`Page to contact JerseyShop`}
+                    content={`Page that you can use to contact JerseyShop for any question you may have!`}
+                />
+            </Head>
             <div className="flex flex-col items-center gap-6 my-6 min-h-screen">
                 <h1 className="max-w-xl text-2xl font-bold my-6">
                     Contact page
@@ -37,6 +44,7 @@ export default function ContactPage({ auth }) {
                             required
                             {...register("email")}
                         />
+                        {errors.email && <div>{errors.email}</div>}
                     </div>
                     <div className="flex flex-col gap-2 mb-6 w-full md:w-2/3">
                         <label htmlFor="subject">Subject</label>
@@ -51,6 +59,7 @@ export default function ContactPage({ auth }) {
                             required
                             {...register("subject")}
                         />
+                        {errors.subject && <div>{errors.subject}</div>}
                     </div>
                     <div className="flex flex-col gap-2 mb-6 w-full md:w-2/3">
                         <label htmlFor="message">Message</label>
@@ -64,6 +73,7 @@ export default function ContactPage({ auth }) {
                             required
                             {...register("message")}
                         />
+                        {errors.message && <div>{errors.email}</div>}
                     </div>
                     <PrimaryButton
                         className="bg-black text-white dark:bg-zinc-700 flex justify-center px-4 py-2 rounded-sm w-full md:w-2/3"

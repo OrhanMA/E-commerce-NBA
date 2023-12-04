@@ -1,33 +1,12 @@
 import SearchBar from "@/Components/SearchBar";
 import { ProductCard } from "@/Components/ProductCard";
-import { Head, Link } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import SortFilter from "@/Components/SortFilter";
 import Footer from "@/Components/Footer";
-const SearchResults = ({
-    auth,
-    products,
-    query,
-    category,
-    sortBy,
-    sortOrder,
-}) => {
-    function setSorting(value) {
-        if (value === "name_asc") {
-            setSortBy("name");
-            setSortOrder("asc");
-        } else if (value === "name_desc") {
-            setSortBy("name");
-            setSortOrder("desc");
-        } else if (value === "price_asc") {
-            setSortBy("price");
-            setSortOrder("asc");
-        } else if (value === "price_desc") {
-            setSortBy("price");
-            setSortOrder("desc");
-        }
-    }
+import SearchBackup from "@/Components/search-results/SearchBackup";
 
+const SearchResults = ({ auth, products, query, category }) => {
     const generateSortUrl = (newSortBy, newSortOrder) => {
         if (query === null || category === null) {
             return `/search?sort_by=${newSortBy}&sort_order${newSortOrder}`;
@@ -35,41 +14,20 @@ const SearchResults = ({
         return `/search?query=${query}&category=${category}&sort_by=${newSortBy}&sort_order=${newSortOrder}`;
     };
 
-    const routes = ["Jerseys", "Basketballs", "Clothing", "Goodies", "Other"];
     return (
         <div className="dark:bg-zinc-900">
             <Header auth={auth} />
-            <Head title={`"${query}" ${category}`} />
+            <Head>
+                <title>Search results page</title>
+                <meta
+                    name={`Search results page`}
+                    content={`Search results page for any items you might be looking for in the website!`}
+                />
+            </Head>
             <div>
                 <SearchBar />
                 {products.length <= 0 ? (
-                    <div className="p-6">
-                        <h1 className="text-2xl dark:text-gray-200 font-semibold mb-6 text-center">
-                            No product found. Please make a new search or select
-                            a new product category.
-                        </h1>
-                        <div className="flex flex-col text-2xl gap-2">
-                            <Link
-                                className="duration-200 text-gray-400 dark:text-gray-400 dark:hover:text-white hover:text-gray-900"
-                                href="/"
-                            >
-                                Accueil
-                            </Link>
-                            {routes.map((route) => {
-                                return (
-                                    <>
-                                        <Link
-                                            className="duration-200 text-gray-400 dark:text-gray-400 dark:hover:text-white hover:text-gray-900"
-                                            key={route}
-                                            href={`/products/${route}`}
-                                        >
-                                            {route}
-                                        </Link>
-                                    </>
-                                );
-                            })}
-                        </div>
-                    </div>
+                    <SearchBackup />
                 ) : (
                     <>
                         <div className="pb-[250px] sm:mb-0 justify-between flex flex-col flex-nowrap">
