@@ -19,18 +19,18 @@ function Footer({ auth }) {
     const redirections = user ? logged_redirections : guest_redirections;
     return (
         <div className="dark:bg-zinc-700 border-t dark:border-gray-200 dark:text-gray-200 p-12">
-            <p className="mb-12 text-xl font-bold dark:text-white">
+            <p className="mb-12 text-xl md:text-2xl font-bold dark:text-white">
                 Jersey shop
             </p>
-            <div className="flex h-[200px] w-full justify-between sm:px-12 lg:px-24 items-center">
+            <div className="flex h-[200px] w-full gap-6 justify-between sm:px-12 lg:px-24 items-center">
                 <div className="h-full">
-                    <p className="mb-4">Shop</p>
+                    <p className="mb-4 font-semibold md:text-xl">Shop</p>
                     <div className="flex flex-col gap-1">
                         {routes.map((route, index) => {
                             return (
                                 <Link
                                     href={`/products/${route}`}
-                                    className="text-sm dark:hover:text-white"
+                                    className="text-sm dark:hover:text-white md:text-lg"
                                     key={index}
                                 >
                                     {route}
@@ -40,13 +40,15 @@ function Footer({ auth }) {
                     </div>
                 </div>
                 <div className="h-full">
-                    <p className="mb-4">Useful links</p>
+                    <p className="mb-4 font-semibold md:text-xl">
+                        Useful links
+                    </p>
                     <div className="flex flex-col gap-1">
                         {redirections.map((redir, index) => {
                             return (
                                 <Link
                                     href={`/${redir.route}`}
-                                    className="text-sm dark:hover:text-white"
+                                    className="text-sm dark:hover:text-white md:text-lg"
                                     key={index}
                                 >
                                     {redir.name}
@@ -58,13 +60,21 @@ function Footer({ auth }) {
                 <div className="flex flex-col gap-6">
                     <div className="flex items-center gap-4">
                         <FaGithub />
-                        <a target="_blank" href="https://github.com/OrhanMA">
+                        <a
+                            target="_blank"
+                            className="md:text-lg"
+                            href="https://github.com/OrhanMA"
+                        >
                             OrhanMA
                         </a>
                     </div>
                     <div className="flex items-center gap-4">
                         <FaLink />
-                        <a target="_blank" href="https://orhanma.dev">
+                        <a
+                            target="_blank"
+                            className="md:text-lg"
+                            href="https://orhanma.dev"
+                        >
                             orhanma.dev
                         </a>
                     </div>

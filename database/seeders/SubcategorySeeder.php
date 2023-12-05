@@ -16,13 +16,13 @@ class SubcategorySeeder extends Seeder
     {
         $subcategories = [
             [
-                "name" => 'authentic'
+                "name" => 'Authentic'
             ],
             [
-                "name" => 'city edition'
+                "name" => 'City edition'
             ],
             [
-                "name" => 'pro'
+                "name" => 'Pro'
             ],
             [
                 "name" => 'NBA franchise'
@@ -31,49 +31,49 @@ class SubcategorySeeder extends Seeder
                 "name" => '75th anniversary'
             ],
             [
-                "name" => 'composite'
+                "name" => 'Composite'
             ],
             [
-                "name" => 'hoodie'
+                "name" => 'Hoodie'
             ],
             [
-                "name" => 'shoes'
+                "name" => 'Shoes'
             ],
             [
-                "name" => 'outfit'
+                "name" => 'Outfit'
             ],
             [
-                "name" => 't-shirt'
+                "name" => 'T-shirt'
             ],
             [
-                "name" => 'badge'
+                "name" => 'Badge'
             ],
             [
-                "name" => 'mini-basket'
+                "name" => 'Mini-basket'
             ],
             [
-                "name" => 'umbrella'
+                "name" => 'Umbrella'
             ],
             [
-                "name" => 'pump'
+                "name" => 'Pump'
             ],
             [
-                "name" => 'key strap'
+                "name" => 'Key strap'
             ],
             [
-                "name" => 'pump'
+                "name" => 'Pump'
             ],
             [
-                "name" => 'towel'
+                "name" => 'Towel'
             ],
             [
-                "name" => 'mug'
+                "name" => 'Mug'
             ],
             [
-                "name" => 'pen'
+                "name" => 'Pen'
             ],
             [
-                "name" => 'can opener'
+                "name" => 'Can opener'
             ],
         ];
 

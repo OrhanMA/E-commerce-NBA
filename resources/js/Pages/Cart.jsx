@@ -17,6 +17,11 @@ export default function CartPage({ auth }) {
     const clearCart = () => {
         localStorage.removeItem("cart");
         setCartData([]);
+        scrollToTop();
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
 
     function handleProductDeletion(product) {

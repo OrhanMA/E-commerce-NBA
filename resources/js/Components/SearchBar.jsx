@@ -1,25 +1,28 @@
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import React, { useState } from "react";
 import PrimaryButton from "./PrimaryButton";
 import TextInput from "./TextInput";
+
 export default function SearchBar() {
-    const [category, setCategory] = useState("jerseys");
+    const { url } = usePage();
+    const activeCategory = url.slice(10);
+
+    const [category, setCategory] = useState(activeCategory || "Jerseys");
     const [query, setQuery] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-       
     };
 
     return (
-        <div className="w-full flex justify-center my-4 sm:my-6 pt-6 sm:mb-6">
+        <div className="w-full flex justify-center my-4 py-6 sm:py-0 sm:my-6 sm:mb-6">
             <form
                 className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap sm:m-6 items-center gap-4"
                 onSubmit={handleSubmit}
             >
-                <div className="w-full sm:w-1/3">
+                <div className="w-full sm:h-full sm:w-1/3">
                     <select
-                        className="rounded-md w-full bg-gray-100 dark:bg-white dark:text-black text-sm p-2 lg:w-[150px]"
+                        className="rounded-md w-full bg-gray-100 sm:h-full dark:bg-zinc-500 dark:text-white text-sm p-2 lg:w-[150px] hover:cursor-pointer"
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         name="category"
@@ -34,14 +37,14 @@ export default function SearchBar() {
                 </div>
                 <div className="flex gap-6">
                     <TextInput
-                        className="w-[125px] sm:w-[250px] lg:w-[500px] text-sm md:text-md rounded-md border p-2 dark:text-black"
+                        className="w-[125px] sm:w-[250px] lg:w-[500px] sm:h-full text-sm md:text-md rounded-md border dark:border-2 p-2 dark:text-white dark:bg-zinc-500 dark:border-zinc-500 dark:focus:border-gray-400 duration-200"
                         type="search"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                     />
                     <Link href={`/search?query=${query}&category=${category}`}>
                         <PrimaryButton
-                            className="px-4 py-2 rounded-md disabled:bg-gray-200 dark:bg-zinc-700 disabled:text-black dark:disabled:text-gray-500 duration-200"
+                            className="px-4 py-2 rounded-md sm:h-full disabled:bg-gray-200 dark:bg-zinc-700 disabled:text-black dark:disabled:text-gray-500 disabled:cursor-not-allowed duration-200"
                             disabled={query === "" ? true : false}
                             type="submit"
                         >

@@ -30,22 +30,12 @@ export function ProductCard({ product }) {
                 </Link>
             ),
         });
-
-        // fetch("/api/cart", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         "X-CSRF-TOKEN": document.querySelector(
-        //             'meta[name="csrf-token"]'
-        //         ).content,
-        //     },
-        //     body: JSON.stringify(existingCart),
-        // });
     };
+    console.log(product);
     return (
         <>
             <Toaster />
-            <div className="w-[70%] sm:w-2/5 lg:w-1/4 xl:w-1/5  m-2 hover:scale-105 hover:bg-gray-300 dark:bg-zinc-700 dark:hover:bg-zinc-500 duration-200  flex flex-col items-start rounded-md bg-gray-200 bg-opacity-40 p-6 gap-4 ">
+            <div className="w-[70%] sm:w-2/5 lg:w-1/4 xl:w-1/5 m-6 hover:scale-105 hover:bg-gray-300 dark:bg-zinc-700 dark:hover:bg-zinc-500 duration-200  flex flex-col  items-start rounded-md bg-gray-200 bg-opacity-40 p-6 gap-4 ">
                 <div className="w-full flex justify-center bg-white rounded-md">
                     <img
                         className="my-6"
