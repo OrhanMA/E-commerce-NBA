@@ -17,16 +17,22 @@ export default function SearchBar() {
     return (
         <div className="w-full flex justify-center my-4 py-6 sm:py-0 sm:my-6 sm:mb-6">
             <form
+                role="search"
+                aria-labelledby="searchBarLabel"
                 className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap sm:m-6 items-center gap-4"
                 onSubmit={handleSubmit}
             >
                 <div className="w-full sm:h-full sm:w-1/3">
+                    <label htmlFor="categorySelect" className="sr-only">
+                        Select Category
+                    </label>
                     <select
+                        id="categorySelect"
+                        aria-label="Select Category"
                         className="rounded-md w-full bg-gray-100 sm:h-full dark:bg-zinc-500 dark:text-white text-sm p-2 lg:w-[150px] hover:cursor-pointer"
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         name="category"
-                        id="category"
                     >
                         <option value="Jerseys">Jerseys</option>
                         <option value="Clothing">Clothing</option>
@@ -36,7 +42,11 @@ export default function SearchBar() {
                     </select>
                 </div>
                 <div className="flex gap-6">
+                    <label htmlFor="searchInput" className="sr-only">
+                        Search
+                    </label>
                     <TextInput
+                        id="searchInput"
                         className="w-[125px] sm:w-[250px] lg:w-[500px] sm:h-full text-sm md:text-md rounded-md border dark:border-2 p-2 dark:text-white dark:bg-zinc-500 dark:border-zinc-500 dark:focus:border-gray-400 duration-200"
                         type="search"
                         value={query}
