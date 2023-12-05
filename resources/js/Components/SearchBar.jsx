@@ -1,9 +1,13 @@
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import React, { useState } from "react";
 import PrimaryButton from "./PrimaryButton";
 import TextInput from "./TextInput";
+
 export default function SearchBar() {
-    const [category, setCategory] = useState("jerseys");
+    const { url } = usePage();
+    const activeCategory = url.slice(10);
+
+    const [category, setCategory] = useState(activeCategory || "Jerseys");
     const [query, setQuery] = useState("");
 
     const handleSubmit = (e) => {
