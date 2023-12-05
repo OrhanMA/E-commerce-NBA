@@ -23,7 +23,6 @@ class CheckoutController extends Controller
     public function placeOrder(Request $request)
     {
         $cartData = $request->input('products', []);
-
         $totalPrice = collect($cartData)->sum(function ($product) {
             return $product['quantity'] * $product['price'];
         });

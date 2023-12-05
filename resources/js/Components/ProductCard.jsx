@@ -31,7 +31,6 @@ export function ProductCard({ product }) {
             ),
         });
     };
-    console.log(product);
     return (
         <>
             <Toaster />

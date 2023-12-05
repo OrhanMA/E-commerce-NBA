@@ -19,21 +19,23 @@ export default function Authenticated({ auth, header, children }) {
     let user = auth.user;
     return (
         <div>
-            <nav className="bg-white dark:bg-zinc-700 dark:text-gray-200 border-b border-gray-400">
+            <nav
+                role="navigation"
+                className="bg-white dark:bg-zinc-700 dark:text-gray-200 border-b border-gray-400"
+            >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="mr-6 shrink-0 flex items-center">
-                                <Link href="/">
-                                    {/* <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" /> */}
+                                <Link aria-labelledby="logoLabel" href="/">
                                     <SiBigbasket size={40} />
                                 </Link>
+                                <h1 id="logoLabel" className="sr-only">
+                                    Jersey Shop
+                                </h1>
                             </div>
 
                             <div className="hidden space-x-4 md:space-x-8 sm:-my-px md:ms-10 sm:flex">
-                                {/* <NavLink href={"/"} active={url == "/"}>
-                                    Home
-                                </NavLink> */}
                                 {routes.map((route, index) => {
                                     return (
                                         <NavLink
@@ -42,6 +44,12 @@ export default function Authenticated({ auth, header, children }) {
                                             active={
                                                 url ==
                                                 `/products/${route.route}`
+                                            }
+                                            aria-current={
+                                                url ==
+                                                `/products/${route.route}`
+                                                    ? "page"
+                                                    : undefined
                                             }
                                         >
                                             {route.route}
@@ -56,6 +64,7 @@ export default function Authenticated({ auth, header, children }) {
                                     <Dropdown.Trigger>
                                         <span className="inline-flex rounded-md">
                                             <button
+                                                aria-label="Toggle Navigation"
                                                 type="button"
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white dark:bg-zinc-400 dark:text-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
@@ -138,6 +147,7 @@ export default function Authenticated({ auth, header, children }) {
 
                         <div className="-me-2 flex items-center sm:hidden">
                             <button
+                                aria-label="Toggle Navigation"
                                 onClick={() =>
                                     setShowingNavigationDropdown(
                                         (previousState) => !previousState
@@ -191,6 +201,11 @@ export default function Authenticated({ auth, header, children }) {
                                 <ResponsiveNavLink
                                     key={route.route}
                                     href={`/products/${route.route}`}
+                                    aria-current={
+                                        url == `/products/${route.route}`
+                                            ? "page"
+                                            : undefined
+                                    }
                                 >
                                     {route.route}
                                 </ResponsiveNavLink>
@@ -277,7 +292,7 @@ export default function Authenticated({ auth, header, children }) {
             </nav>
 
             {header && (
-                <header className="bg-white shadow">
+                <header role="banner" className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {header}
                     </div>

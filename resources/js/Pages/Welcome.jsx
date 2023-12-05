@@ -25,7 +25,7 @@ export default function Welcome({ auth }) {
                     <SearchBar />
                     <img
                         src="/welcome/hero_city_jerseys.avif"
-                        alt="City jerseys campagne"
+                        alt="City jerseys campaign - Showcase of NBA city jerseys for the Welcome to JerseyShop"
                     />
                     <main className="w-full px-12 flex flex-col items-center">
                         <h1 className="text-2xl md:text-4xl lg:text-5xl lg:mb-6 font-bold mt-16">
@@ -35,10 +35,14 @@ export default function Welcome({ auth }) {
                             Show your love for the game with your favorite NBA
                             team jersey.
                         </h2>
-                        <section className="my-16 w-full flex  gap-6 items-center flex-wrap justify-evenly text-lg md:text-xl font-semibold">
+                        <nav
+                            role="navigation"
+                            className="my-16 w-full flex  gap-6 items-center flex-wrap justify-evenly text-lg md:text-xl font-semibold"
+                        >
                             {routes.map((route) => {
                                 return (
                                     <Link
+                                        aria-label={`navigate to ${route.route} products`}
                                         key={route.route}
                                         href={`/products/${route.route}`}
                                         className="lg:w-[20%] duration-200 hover:scale-105 text-gray-400 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white "
@@ -56,8 +60,11 @@ export default function Welcome({ auth }) {
                                     </Link>
                                 );
                             })}
-                        </section>
-                        <article className="sm:w-4/5 xl:w-3/5 my-12 flex flex-col gap-6 leading-7 text-justify">
+                        </nav>
+                        <article
+                            aria-label="Presentation of the Jerseyshop website"
+                            className="sm:w-4/5 xl:w-3/5 my-12 flex flex-col gap-6 leading-7 text-justify"
+                        >
                             <h3 className="font-semibold text-lg md:text-xl lg:text-2xl xl:text-3xl text-center mb-6">
                                 Your Ultimate Destination for NBA Merchandise!
                             </h3>
