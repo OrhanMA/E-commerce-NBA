@@ -19,7 +19,7 @@ class ProductSeeder extends Seeder
         $products = [
             [
                 "name" => "Altanta Hawks NBA Jersey",
-                "description" => "Official Jersey of the Atlanta Hawks NBA franchise",
+                "description" => "Official Jersey of the Atlanta Hawks Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -28,7 +28,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Boston Celtics NBA Jersey",
-                "description" => "Official Jersey of the Boston Celtics NBA franchise",
+                "description" => "Official Jersey of the Boston Celtics Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -37,7 +37,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Brooklyn Nets NBA Jersey",
-                "description" => "Official Jersey of the Brooklyn Nets NBA franchise",
+                "description" => "Official Jersey of the Brooklyn Nets Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -46,7 +46,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Charlotte Hornets NBA Jersey",
-                "description" => "Official Jersey of the Charlotte Hornets NBA franchise",
+                "description" => "Official Jersey of the Charlotte Hornets Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -55,7 +55,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Chicago Bulls NBA Jersey",
-                "description" => "Official Jersey of the Chicago Bulls NBA franchise",
+                "description" => "Official Jersey of the Chicago Bulls Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -64,7 +64,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Cleveland Cavaliers NBA Jersey",
-                "description" => "Official Jersey of the Cleveland Cavaliers NBA franchise",
+                "description" => "Official Jersey of the Cleveland Cavaliers Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -73,7 +73,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Dallas Mavericks NBA Jersey",
-                "description" => "Official Jersey of the Dallas Mavericks NBA franchise",
+                "description" => "Official Jersey of the Dallas Mavericks Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -82,7 +82,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Denver Nuggets NBA Jersey",
-                "description" => "Official Jersey of the Denver Nuggets NBA franchise",
+                "description" => "Official Jersey of the Denver Nuggets Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -91,7 +91,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Detroit Pistons NBA Jersey",
-                "description" => "Official Jersey of the Detroit Pistons NBA franchise",
+                "description" => "Official Jersey of the Detroit Pistons Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -100,7 +100,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Golden State Warriors NBA Jersey",
-                "description" => "Official Jersey of the Golden State Warriors NBA franchise",
+                "description" => "Official Jersey of the Golden State Warriors Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -109,7 +109,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Houston Rockets NBA Jersey",
-                "description" => "Official Jersey of the Houston Rockets NBA franchise",
+                "description" => "Official Jersey of the Houston Rockets Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -118,7 +118,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Indiana Pacers NBA Jersey",
-                "description" => "Official Jersey of the Indiana Pacers NBA franchise",
+                "description" => "Official Jersey of the Indiana Pacers Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -127,7 +127,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "LA Clippers NBA Jersey",
-                "description" => "Official Jersey of the LA Clippers NBA franchise",
+                "description" => "Official Jersey of the LA Clippers Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -136,7 +136,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Los Angeles Lakers NBA Jersey",
-                "description" => "Official Jersey of the Los Angeles Lakers NBA franchise",
+                "description" => "Official Jersey of the Los Angeles Lakers Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -145,7 +145,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Memphis Grizzlies NBA Jersey",
-                "description" => "Official Jersey of the Memphis Grizzlies NBA franchise",
+                "description" => "Official Jersey of the Memphis Grizzlies Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -154,7 +154,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Miami Heat NBA Jersey",
-                "description" => "Official Jersey of the Miami Heat NBA franchise",
+                "description" => "Official Jersey of the Miami Heat Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -163,7 +163,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Milwaukee Bucks NBA Jersey",
-                "description" => "Official Jersey of the Milwaukee Bucks NBA franchise",
+                "description" => "Official Jersey of the Milwaukee Bucks Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -172,7 +172,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Minnesota Timberwolves NBA Jersey",
-                "description" => "Official Jersey of the Minnesota Timberwolves NBA franchise",
+                "description" => "Official Jersey of the Minnesota Timberwolves Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -181,7 +181,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "New Orleans Pelicans NBA Jersey",
-                "description" => "Official Jersey of the New Orleans Pelicans NBA franchise",
+                "description" => "Official Jersey of the New Orleans Pelicans Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -190,7 +190,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "New York Knicks NBA Jersey",
-                "description" => "Official Jersey of the New York Knicks NBA franchise",
+                "description" => "Official Jersey of the New York Knicks Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -199,7 +199,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Oklahoma City Thunder NBA Jersey",
-                "description" => "Official Jersey of the Oklahoma City Thunder NBA franchise",
+                "description" => "Official Jersey of the Oklahoma City Thunder Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -208,7 +208,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Orlando Magic NBA Jersey",
-                "description" => "Official Jersey of the Orlando Magic NBA franchise",
+                "description" => "Official Jersey of the Orlando Magic Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -217,7 +217,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Philadelphia 76ers NBA Jersey",
-                "description" => "Official Jersey of the Philadelphia 76ers NBA franchise",
+                "description" => "Official Jersey of the Philadelphia 76ers Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -226,7 +226,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Phoenix Suns NBA Jersey",
-                "description" => "Official Jersey of the Phoenix Suns NBA franchise",
+                "description" => "Official Jersey of the Phoenix Suns Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -235,7 +235,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Portland Trail Blazers NBA Jersey",
-                "description" => "Official Jersey of the Portland Trail Blazers NBA franchise",
+                "description" => "Official Jersey of the Portland Trail Blazers Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -244,7 +244,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Sacramento Kings NBA Jersey",
-                "description" => "Official Jersey of the Sacramento Kings NBA franchise",
+                "description" => "Official Jersey of the Sacramento Kings Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -253,7 +253,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "San Antonio Spurs NBA Jersey",
-                "description" => "Official Jersey of the San Antonio Spurs NBA franchise",
+                "description" => "Official Jersey of the San Antonio Spurs Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -262,7 +262,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Toronto Raptors NBA Jersey",
-                "description" => "Official Jersey of the Toronto Raptors NBA franchise",
+                "description" => "Official Jersey of the Toronto Raptors Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -271,7 +271,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Utah Jazz NBA Jersey",
-                "description" => "Official Jersey of the Utah Jazz NBA franchise",
+                "description" => "Official Jersey of the Utah Jazz Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -280,7 +280,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Washington Wizards NBA Jersey",
-                "description" => "Official Jersey of the Washington Wizards NBA franchise",
+                "description" => "Official Jersey of the Washington Wizards Franchise",
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
@@ -300,8 +300,8 @@ class ProductSeeder extends Seeder
                 "image_path" => "product_images/basketballs/authentic-indoor-wilson.avif"
             ],
             [
-                "name" => "Wilson NBA 75th Anniversary Ball",
-                "description" => "The basketball celebrating the NBA's 75th anniversary",
+                "name" => "Wilson NBA Anniversary Ball",
+                "description" => "The basketball celebrating the NBA's anniversary",
                 "category_id" => 3,
                 "subcategory_id" => 5,
                 "price" => rand(35, 50),

@@ -29,7 +29,10 @@ class ProductController extends Controller
 
         $categoryId = $categoryModel->id;
 
-        $productsQuery = Product::where('category_id', $categoryId);
+        // $productsQuery = Product::where('category_id', $categoryId);
+        $productsQuery = Product::where('category_id', $categoryId)
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->leftJoin('subcategories', 'products.subcategory_id', '=', 'subcategories.id');
 
         if ($sortBy === 'price') {
             $productsQuery->orderBy('price', $sortOrder);
@@ -37,7 +40,12 @@ class ProductController extends Controller
             $productsQuery->orderBy('name', $sortOrder);
         }
 
-        $products = $productsQuery->get();
+        // $products = $productsQuery->get();
+        $products = $productsQuery->get([
+            'products.*',
+            'categories.name as category_name',
+            'subcategories.name as subcategory_name',
+        ]);
         return Inertia::render('CategoryResults', [
             'products' => $products,
             'category' => $category,

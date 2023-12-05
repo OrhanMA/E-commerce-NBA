@@ -15,7 +15,7 @@ export default function SearchBar() {
     };
 
     return (
-        <div className="w-full flex justify-center my-4 sm:my-6 pt-6 sm:mb-6">
+        <div className="w-full flex justify-center my-4 py-6 sm:py-0 sm:my-6 sm:mb-6">
             <form
                 className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap sm:m-6 items-center gap-4"
                 onSubmit={handleSubmit}

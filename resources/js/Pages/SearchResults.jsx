@@ -35,7 +35,7 @@ const SearchResults = ({ auth, products, query, category }) => {
                             <h1 className="text-xl m-6 dark:text-gray-200">
                                 Search Results for "{query}"
                             </h1>
-                            <div className="flex flex-wrap justify-center w-full m-2 p-2 gap-6">
+                            <div className="flex flex-col items-center sm:flex-row flex-wrap justify-center w-full m-2 p-2">
                                 {products.map((product) => (
                                     <ProductCard
                                         key={product.id}
