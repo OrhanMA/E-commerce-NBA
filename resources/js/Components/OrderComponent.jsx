@@ -1,32 +1,32 @@
 import { Link } from "@inertiajs/react";
 export default function OrderComponent({ order }) {
     return (
-        <div className="flex flex-col gap-2 rounded-md border hover:scale-105 duration-150 dark:bg-zinc-700 dark:border-zinc-500 hover:bg-gray-200 hover:border-gray-300 dark:hover:bg-zinc-900 bg-white p-6 m-4">
-            <p className="dark:text-gray-200">
+        <div className="flex flex-col gap-2 rounded-md border hover:scale-105 duration-150 dark:bg-zinc-700 dark:border-zinc-500 q hover:border-gray-300 dark:hover:bg-zinc-900 bg-white p-6 m-4 ">
+            <p className="dark:text-gray-200 border-b pb-4">
                 Order n°{" "}
                 <span className="font-semibold dark:text-gray-400 ">
                     {order.id}
                 </span>
             </p>
-            <p className="dark:text-gray-200">
+            <p className="dark:text-gray-200  border-b py-4">
                 <span className="font-semibold dark:text-gray-400 ">
                     total:{" "}
                 </span>
                 {order.total_price}$
             </p>
-            <p className="dark:text-gray-200">
+            <p className="dark:text-gray-200 border-b py-4">
                 <span className="font-semibold dark:text-gray-400 ">
                     shipping:{" "}
                 </span>
                 {order.delivery_method.name}
             </p>
-            <p className="dark:text-gray-200">
+            <p className="dark:text-gray-200 border-b py-4">
                 <span className="font-semibold dark:text-gray-400 ">
                     paid by:{" "}
                 </span>
                 {order.paiement_method.name}
             </p>
-            <p className="dark:text-gray-200">
+            <p className="dark:text-gray-200 py-4">
                 <span className="font-semibold dark:text-gray-400 ">
                     placed on:{" "}
                 </span>
