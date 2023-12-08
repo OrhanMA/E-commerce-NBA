@@ -1,19 +1,17 @@
-import ApplicationLogo from "@/Components/ApplicationLogo";
 import { Link, usePage } from "@inertiajs/react";
 import { useState } from "react";
 import Dropdown from "@/Components/Dropdown";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import NavLink from "@/Components/NavLink";
-import { SiBigbasket } from "react-icons/si";
 export default function Guest({ header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
     const routes = [
-        { route: "Jerseys", image: "kobe-jersey.jpg" },
-        { route: "Basketballs", image: "basketballs.jpg" },
-        { route: "Clothing", image: "apparel.jpg" },
-        { route: "Goodies", image: "goodies.jpg" },
-        { route: "Other", image: "badges.jpg" },
+        { route: "Jerseys" },
+        { route: "Basketballs" },
+        { route: "Clothing" },
+        { route: "Goodies" },
+        { route: "Other" },
     ];
     const { url } = usePage();
     return (
@@ -23,15 +21,9 @@ export default function Guest({ header, children }) {
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="mr-6 shrink-0 flex items-center">
-                                <Link href="/">
-                                    {/* <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" /> */}
-                                    <SiBigbasket size={40} />
-                                </Link>
+                                <Link href="/">Home</Link>
                             </div>
                             <div className="hidden space-x-2 md:space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                {/* <NavLink href={"/"} active={url == "/"}>
-                                    Home
-                                </NavLink> */}
                                 {routes.map((route, index) => {
                                     return (
                                         <NavLink
@@ -46,9 +38,6 @@ export default function Guest({ header, children }) {
                                         </NavLink>
                                     );
                                 })}
-                                {/* <NavLink active={url == "/cart"} href={"/cart"}>
-                                    Cart
-                                </NavLink> */}
                             </div>
                         </div>
                         <div className="hidden sm:flex sm:items-center sm:ms-6">

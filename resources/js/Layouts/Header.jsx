@@ -1,6 +1,4 @@
 import { useState } from "react";
-// import ApplicationLogo from "@/Components/ApplicationLogo";
-import { SiBigbasket } from "react-icons/si";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
@@ -9,11 +7,11 @@ export default function Authenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
     const routes = [
-        { route: "Jerseys", image: "kobe-jersey.jpg" },
-        { route: "Basketballs", image: "basketballs.jpg" },
-        { route: "Clothing", image: "apparel.jpg" },
-        { route: "Goodies", image: "goodies.jpg" },
-        { route: "Other", image: "badges.jpg" },
+        { route: "Jerseys" },
+        { route: "Basketballs" },
+        { route: "Clothing" },
+        { route: "Goodies" },
+        { route: "Other" },
     ];
     const { url } = usePage();
     let user = auth.user;
@@ -21,15 +19,23 @@ export default function Authenticated({ auth, header, children }) {
         <div>
             <nav
                 role="navigation"
-                className="bg-white dark:bg-zinc-700 dark:text-gray-200 border-b border-gray-400"
+                className="bg-white dark:bg-zinc-800 dark:text-gray-200 border-b border-gray-400 border-opacity-25 dark:border-opacity-100"
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="mr-6 shrink-0 flex items-center">
-                                <Link aria-labelledby="logoLabel" href="/">
-                                    <SiBigbasket size={40} />
-                                </Link>
+                                <NavLink
+                                    className="h-full"
+                                    href={`/`}
+                                    active={url == `/`}
+                                    aria-current={
+                                        url == `/` ? "page" : undefined
+                                    }
+                                >
+                                    Home
+                                </NavLink>
+
                                 <h1 id="logoLabel" className="sr-only">
                                     Jersey Shop
                                 </h1>

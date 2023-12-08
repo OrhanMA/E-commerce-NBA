@@ -29,7 +29,7 @@ export default function SearchBar() {
                     <select
                         id="categorySelect"
                         aria-label="Select Category"
-                        className="rounded-md w-full bg-gray-100 sm:h-full dark:bg-zinc-500 dark:text-white text-sm p-2 lg:w-[150px] hover:cursor-pointer"
+                        className="rounded-md w-full bg-gray-100 sm:h-full dark:bg-zinc-500 dark:text-white text-sm  p-3 sm:p-2 lg:w-[150px] hover:cursor-pointer"
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         name="category"
@@ -54,7 +54,7 @@ export default function SearchBar() {
                     />
                     <Link href={`/search?query=${query}&category=${category}`}>
                         <PrimaryButton
-                            className="px-4 py-2 rounded-md sm:h-full disabled:bg-gray-200 dark:bg-zinc-700 disabled:text-black dark:disabled:text-gray-500 disabled:cursor-not-allowed duration-200"
+                            className="h-full px-4 py-2 rounded-md sm:h-full disabled:bg-gray-200 dark:bg-zinc-700 disabled:text-black dark:disabled:text-gray-500 disabled:cursor-not-allowed duration-200"
                             disabled={query === "" ? true : false}
                             type="submit"
                         >

@@ -8,11 +8,11 @@ export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
     const routes = [
-        { route: "Jerseys", image: "kobe-jersey.jpg" },
-        { route: "Basketballs", image: "basketballs.jpg" },
-        { route: "Clothing", image: "apparel.jpg" },
-        { route: "Goodies", image: "goodies.jpg" },
-        { route: "Other", image: "badges.jpg" },
+        { route: "Jerseys" },
+        { route: "Basketballs" },
+        { route: "Clothing" },
+        { route: "Goodies" },
+        { route: "Other" },
     ];
     const { url } = usePage();
     return (

@@ -2,13 +2,14 @@ import { Link, Head } from "@inertiajs/react";
 import SearchBar from "@/Components/SearchBar";
 import Header from "@/Layouts/Header";
 import Footer from "@/Components/Footer";
+
 export default function Welcome({ auth }) {
     const routes = [
-        { route: "Jerseys", image: "kobe-jersey.jpg" },
-        { route: "Basketballs", image: "basketballs.jpg" },
-        { route: "Clothing", image: "apparel.jpg" },
-        { route: "Goodies", image: "goodies.jpg" },
-        { route: "Other", image: "badges.jpg" },
+        { route: "Jerseys", image: "kobe-jersey.webp" },
+        { route: "Basketballs", image: "basketballs.webp" },
+        { route: "Clothing", image: "apparel.webp" },
+        { route: "Goodies", image: "goodies.webp" },
+        { route: "Other", image: "badges.webp" },
     ];
     return (
         <>
@@ -22,13 +23,15 @@ export default function Welcome({ auth }) {
             </Head>
             <div className=" sm:mb-0 relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center dark:bg-zinc-900 dark:text-white bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
                 <div className="flex flex-col items-center">
-                    <SearchBar />
-                    <img
+                    <div className="w-full border-b">
+                        <SearchBar />
+                    </div>
+                    {/* <img
                         src="/welcome/hero_city_jerseys.avif"
-                        alt="City jerseys campaign - Showcase of NBA city jerseys for the Welcome to JerseyShop"
-                    />
+                        alt="hero banner"
+                    /> */}
                     <main className="w-full px-12 flex flex-col items-center">
-                        <h1 className="text-2xl md:text-4xl lg:text-5xl lg:mb-6 font-bold mt-16">
+                        <h1 className="text-4xl lg:text-5xl lg:mb-6 font-bold mt-16">
                             Jersey Shop
                         </h1>
                         <h2 className="font-semibold text-lg md:text-xl lg:text-xl xl:text-2xl text-center mt-6">
@@ -54,7 +57,8 @@ export default function Welcome({ auth }) {
                                             <img
                                                 className="rounded-md w-[125px] h-[125px] lg:w-[275px] lg:h-[360px] object-cover"
                                                 src={`/welcome/${route.image}`}
-                                                alt=""
+                                                alt={`category ${route.route} image`}
+                                                loading="lazy"
                                             />
                                         </div>
                                     </Link>

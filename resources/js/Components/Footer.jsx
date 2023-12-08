@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "@inertiajs/react";
-import { FaGithub } from "react-icons/fa";
-import { FaLink } from "react-icons/fa6";
 
 const routes = ["Jerseys", "Basketballs", "Clothing", "Goodies", "Other"];
 const logged_redirections = [
@@ -57,9 +55,9 @@ function Footer({ auth }) {
                         })}
                     </div>
                 </div>
-                <div className="flex flex-col gap-6">
+                <div className="hidden sm:flex flex-col gap-6">
                     <div className="flex items-center gap-4">
-                        <FaGithub />
+                        <p>Github</p>
                         <a
                             target="_blank"
                             className="md:text-lg"
@@ -69,7 +67,7 @@ function Footer({ auth }) {
                         </a>
                     </div>
                     <div className="flex items-center gap-4">
-                        <FaLink />
+                        <p>Site perso</p>
                         <a
                             target="_blank"
                             className="md:text-lg"
