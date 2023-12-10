@@ -6,7 +6,7 @@ function CheckoutOrderRecap({ cartData, calculateTotalPrice }) {
     return (
         <div className="w-full sm:w-1/2 flex flex-col items-center">
             <h2 className="text-xl">Order Summary:</h2>
-            <ul className="flex flex-col gap-6 my-6">
+            <ul className="dark:bg-zinc-700 rounded-md flex flex-col gap-6 p-6 my-6">
                 {cartData.map((product) => (
                     <CheckoutProductCard product={product} key={product.id} />
                 ))}
@@ -18,7 +18,7 @@ function CheckoutOrderRecap({ cartData, calculateTotalPrice }) {
 
             <Link
                 href="/cart"
-                className="w-2/3 text-center text-md px-4 py-2 duration-200 dark:bg-zinc-700 text-white bg-blue-500 hover:bg-gray-400 hover:text-white "
+                className="w-2/3 lg:w-1/2 xl:w-1/4 text-center text-md px-4 py-2 duration-200 dark:bg-zinc-700 text-white bg-blue-500 hover:bg-gray-400 hover:text-white "
             >
                 Edit order?
             </Link>

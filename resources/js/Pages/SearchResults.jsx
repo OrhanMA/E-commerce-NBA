@@ -32,7 +32,7 @@ const SearchResults = ({ auth, products, query, category }) => {
                     <>
                         <div className="pb-[250px] sm:mb-0 justify-between flex flex-col flex-nowrap">
                             <SortFilter generateSortUrl={generateSortUrl} />
-                            <h1 className="text-xl m-6 dark:text-gray-200">
+                            <h1 className="text-center sm:text-left text-xl m-6 dark:text-gray-200">
                                 Search Results for "{query}"
                             </h1>
                             <div className="flex items-center sm:flex-row flex-wrap justify-center w-full m-2 p-2">

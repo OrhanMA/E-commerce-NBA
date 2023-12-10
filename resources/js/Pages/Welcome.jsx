@@ -48,7 +48,7 @@ export default function Welcome({ auth }) {
                                         aria-label={`navigate to ${route.route} products`}
                                         key={route.route}
                                         href={`/products/${route.route}`}
-                                        className="lg:w-[20%] duration-200 hover:scale-105 text-gray-400 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white "
+                                        className="lg:w-1/6 duration-200 hover:scale-105 text-gray-400 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white "
                                     >
                                         <div className="flex flex-col items-center">
                                             <h4 className="text-lg md:text-2xl mb-6">
@@ -72,7 +72,7 @@ export default function Welcome({ auth }) {
                             <h3 className="font-semibold text-lg md:text-xl lg:text-2xl xl:text-3xl text-center mb-6">
                                 Your Ultimate Destination for NBA Merchandise!
                             </h3>
-                            <p className="xl:text-xl md:text-lg ">
+                            <p className="xl:text-xl md:text-lg dark:text-zinc-400">
                                 Welcome to JerseyShop, where passion for
                                 basketball meets the highest quality NBA
                                 merchandise. As avid fans of the NBA, we
@@ -83,10 +83,10 @@ export default function Welcome({ auth }) {
                                 NBA-inspired products.
                             </p>
                             <div className="flex flex-col gap-4 mt-2">
-                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-zinc-400">
+                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Jerseys
                                 </h4>
-                                <p className="xl:text-xl md:text-lg ">
+                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
                                     At JerseyShop, we pride ourselves on
                                     offering a diverse selection of authentic
                                     NBA jerseys, each crafted with precision and
@@ -100,10 +100,10 @@ export default function Welcome({ auth }) {
                                 </p>
                             </div>
                             <div className="flex flex-col gap-4 mt-2">
-                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-zinc-400">
+                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Apparel and accesories
                                 </h4>
-                                <p className="xl:text-xl md:text-lg ">
+                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
                                     But we're not just about jerseys – we offer
                                     a comprehensive collection of NBA-themed
                                     apparel and accessories to complement your
@@ -114,10 +114,10 @@ export default function Welcome({ auth }) {
                                 </p>
                             </div>
                             <div className="flex flex-col gap-4 mt-2">
-                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-zinc-400">
+                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Quality and authenticity
                                 </h4>
-                                <p className="xl:text-xl md:text-lg ">
+                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
                                     What sets JerseyShop apart is our commitment
                                     to quality and authenticity. We source our
                                     products from reputable suppliers to ensure
@@ -129,10 +129,10 @@ export default function Welcome({ auth }) {
                                 </p>
                             </div>
                             <div className="flex flex-col gap-4 mt-2">
-                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-zinc-400">
+                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Customer-first
                                 </h4>
-                                <p className="xl:text-xl md:text-lg ">
+                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
                                     As a customer-centric company, we prioritize
                                     your shopping experience. Our user-friendly
                                     website makes it easy for you to browse
@@ -144,10 +144,10 @@ export default function Welcome({ auth }) {
                                 </p>
                             </div>
                             <div className="flex flex-col gap-4 mt-2">
-                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-zinc-400">
+                                <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Check it out!
                                 </h4>
-                                <p className="xl:text-xl md:text-lg ">
+                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
                                     Whether you're looking to update your
                                     wardrobe with the latest NBA fashion or
                                     searching for the perfect gift for a fellow

@@ -49,14 +49,16 @@ export function ProductCard({ product }) {
                 <p className="hidden sm:block text-md text-gray-500 dark:text-gray-200  h-[50px]">
                     {product.description}
                 </p>
-                <div className="hidden sm:flex items-center gap-4 mt-4">
-                    <p className="bg-gray-400 text-sm text-white py-1.5 px-2 rounded-md dark:text-black">
-                        {product.category_name}
-                    </p>
-                    <p className="bg-gray-400 text-sm text-white py-1.5 px-2 rounded-md dark:text-black">
-                        {product.subcategory_name}
-                    </p>
-                </div>
+                {product.category_name && product.subcategory_name && (
+                    <div className="hidden sm:flex items-center gap-4 mt-4">
+                        <p className="bg-gray-400 text-sm text-white py-1.5 px-2 rounded-md dark:text-black">
+                            {product.category_name}
+                        </p>
+                        <p className="bg-gray-400 text-sm text-white py-1.5 px-2 rounded-md dark:text-black">
+                            {product.subcategory_name}
+                        </p>
+                    </div>
+                )}
 
                 <div className="mt-4 flex items-center w-full justify-evenly gap-6 sm:gap-0 sm:justify-between">
                     <p className="text-lg dark:text-white font-semibold ">

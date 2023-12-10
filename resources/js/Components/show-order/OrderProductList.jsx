@@ -10,7 +10,7 @@ export default function OrderProductList({ newOrder }) {
                         <img
                             src={`/${product.image_path}`}
                             alt={`image for product:${product.name}`}
-                            className="h-[50px] max-w-1/3"
+                            className="rounded-md h-[75px] md:h-[125px]"
                         />
                         <p className="font-semibold w-1/3">{product.name}</p>
                         <p>x{product.pivot.quantity}</p>

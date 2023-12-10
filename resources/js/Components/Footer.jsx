@@ -28,7 +28,7 @@ function Footer({ auth }) {
                             return (
                                 <Link
                                     href={`/products/${route}`}
-                                    className="text-sm dark:hover:text-white md:text-lg"
+                                    className="text-sm dark:hover:text-white hover:underline duration-200 md:text-lg"
                                     key={index}
                                 >
                                     {route}
@@ -46,7 +46,7 @@ function Footer({ auth }) {
                             return (
                                 <Link
                                     href={`/${redir.route}`}
-                                    className="text-sm dark:hover:text-white md:text-lg"
+                                    className="text-sm dark:hover:text-white hover:underline duration-200 md:text-lg"
                                     key={index}
                                 >
                                     {redir.name}

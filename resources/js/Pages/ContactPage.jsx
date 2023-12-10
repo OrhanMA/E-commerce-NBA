@@ -31,7 +31,7 @@ export default function ContactPage({ auth, errors }) {
                 </h2>
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="flex flex-col items-center p-6 w-full"
+                    className="flex flex-col items-center p-6 w-full xl:w-2/3"
                 >
                     <div className="flex flex-col gap-2 mb-6 w-full md:w-2/3">
                         <label htmlFor="email">Your email address</label>

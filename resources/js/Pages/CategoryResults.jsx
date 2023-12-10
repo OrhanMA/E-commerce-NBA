@@ -33,7 +33,9 @@ const CategoryResults = ({ auth, products, category }) => {
                     <>
                         <div className="mb-[250px] sm:mb-0 h-full justify-between flex flex-col flex-nowrap">
                             <SortFilter generateSortUrl={generateSortUrl} />
-
+                            <h1 className="text-center sm:text-left text-xl m-6 dark:text-gray-200">
+                                {category} products
+                            </h1>
                             <div className="flex items-center sm:flex-row flex-wrap justify-center w-full sm:m-2 p-2 ">
                                 {products.map((product) => (
                                     <ProductCard

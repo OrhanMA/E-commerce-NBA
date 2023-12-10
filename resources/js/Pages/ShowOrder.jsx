@@ -20,7 +20,7 @@ export default function SeeOrders({ auth, order }) {
                 >
                     Click here to contact the support
                 </Link>
-                <div className="border dark:bg-zinc-700 dark:border-gray-400 rounded-md p-6 flex flex-col gap-6 m-6 md:w-2/3">
+                <div className="border dark:bg-zinc-700 dark:border-gray-400 rounded-md p-6 flex flex-col gap-6 m-6 md:w-2/3 xl:w-1/2">
                     <MainInfo newOrder={newOrder} />
                     <OrderProductList newOrder={newOrder} />
                 </div>
