@@ -2,15 +2,15 @@ import { Link, Head } from "@inertiajs/react";
 import SearchBar from "@/Components/SearchBar";
 import Header from "@/Layouts/Header";
 import Footer from "@/Components/Footer";
+const routes = [
+    { route: "Jerseys", image: "kobe-jersey.webp" },
+    { route: "Basketballs", image: "basketballs.webp" },
+    { route: "Clothing", image: "apparel.webp" },
+    { route: "Goodies", image: "goodies.webp" },
+    { route: "Other", image: "badges.webp" },
+];
 
 export default function Welcome({ auth }) {
-    const routes = [
-        { route: "Jerseys", image: "kobe-jersey.webp" },
-        { route: "Basketballs", image: "basketballs.webp" },
-        { route: "Clothing", image: "apparel.webp" },
-        { route: "Goodies", image: "goodies.webp" },
-        { route: "Other", image: "badges.webp" },
-    ];
     return (
         <>
             <Header auth={auth} />

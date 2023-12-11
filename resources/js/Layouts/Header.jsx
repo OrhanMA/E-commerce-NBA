@@ -1,27 +1,53 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link, usePage } from "@inertiajs/react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+
+const routes = [
+    { route: "Jerseys" },
+    { route: "Basketballs" },
+    { route: "Clothing" },
+    { route: "Goodies" },
+    { route: "Other" },
+];
+
 export default function Authenticated({ auth, header, children }) {
-    const [showingNavigationDropdown, setShowingNavigationDropdown] =
-        useState(false);
-    const routes = [
-        { route: "Jerseys" },
-        { route: "Basketballs" },
-        { route: "Clothing" },
-        { route: "Goodies" },
-        { route: "Other" },
-    ];
     const { url } = usePage();
     let user = auth.user;
+    const [showingNavigationDropdown, setShowingNavigationDropdown] =
+        useState(false);
+
+    const [hidden, setHidden] = useState(false);
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious();
+        console.log("previous", previous);
+        console.log("latest", latest);
+        if (latest > previous && latest > 150) {
+            setHidden(true);
+        } else {
+            setHidden(false);
+        }
+    });
+
     return (
-        <div>
+        <motion.nav
+            className="sticky top-0 z-20"
+            variants={{
+                visible: { y: 0 },
+                hidden: { y: "-100%" },
+            }}
+            animate={hidden ? "hidden" : "visible"}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+        >
             <nav
                 role="navigation"
-                className="bg-white dark:bg-zinc-800 dark:text-gray-200 border-b border-gray-400 border-opacity-25 dark:border-opacity-100"
+                className=" bg-white dark:bg-zinc-800 dark:text-gray-200 border-b border-gray-400 border-opacity-25 dark:border-opacity-100"
             >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="mr-6 shrink-0 flex items-center">
@@ -96,7 +122,11 @@ export default function Authenticated({ auth, header, children }) {
                                         </span>
                                     </Dropdown.Trigger>
 
-                                    <Dropdown.Content>
+                                    <Dropdown.Content
+                                        contentClasses={`
+                                        ${hidden ? "hidden" : "visible"}
+                                    bg-white dark:bg-zinc-700 dark:border dark:border-opacity-25 dark:border-gray-200`}
+                                    >
                                         <Dropdown.Link href={"/cart"}>
                                             Cart
                                         </Dropdown.Link>
@@ -193,13 +223,15 @@ export default function Authenticated({ auth, header, children }) {
                             </button>
                         </div>
                     </div>
-                </div>
+                </nav>
 
                 <div
-                    className={
-                        (showingNavigationDropdown ? "block" : "hidden") +
-                        " sm:hidden"
-                    }
+                    className={`
+                      ${
+                          (showingNavigationDropdown ? "block" : "hidden") +
+                          " sm:hidden"
+                      } ${hidden ? "hidden" : "visible"}
+                    duration-200`}
                 >
                     <div className="pt-2 pb-3 space-y-1">
                         {routes.map((route) => {
@@ -306,6 +338,6 @@ export default function Authenticated({ auth, header, children }) {
             )}
 
             <main>{children}</main>
-        </div>
+        </motion.nav>
     );
 }

@@ -3,6 +3,8 @@ import { Toaster } from "@/Components/ui/toaster";
 import { ToastAction } from "@/components/ui/toast";
 import { Link } from "@inertiajs/react";
 import PrimaryButton from "./PrimaryButton";
+import ProductImageModal from "./ProductImageModal";
+
 export function ProductCard({ product }) {
     const { toast } = useToast();
 
@@ -34,15 +36,15 @@ export function ProductCard({ product }) {
     return (
         <>
             <Toaster />
-            <div className="w-[90%] sm:w-2/5 lg:w-1/4 xl:w-1/5 m-6 hover:scale-105 hover:bg-gray-200  dark:bg-zinc-700 dark:hover:bg-zinc-600 duration-200  flex flex-col items-center sm:items-start rounded-md bg-gray-300 bg-opacity-40 p-6 sm:gap-4 ">
-                <div className="w-full flex justify-center bg-white rounded-md">
+            <div className="w-[90%] sm:w-2/5 lg:w-1/4 xl:w-1/5 m-6 hover:scale-105 hover:bg-gray-50 bg-gray-200  dark:bg-zinc-700 dark:hover:bg-zinc-600 duration-200  flex flex-col items-center sm:items-start rounded-md border border-opacity-40 hover:border-black/40 bg-opacity-40 p-6 sm:gap-4 ">
+                <ProductImageModal product={product}>
                     <img
                         className="my-6"
                         width={200}
                         src={`/${product.image_path}`}
                         alt={product.name}
                     />
-                </div>
+                </ProductImageModal>
                 <p className="h-[50px] dark:text-white text-lg pt-4 sm:pt-0">
                     {product.name}
                 </p>
