@@ -41,7 +41,7 @@ export default function ContactPage({ auth, errors }) {
                     <div className="flex flex-col gap-2 mb-6 w-full md:w-2/3">
                         <label htmlFor="email">Your email address</label>
                         <input
-                            className="border p-2 rounded-sm dark:text-black focus:outline-none focus:border-black"
+                            className="border p-2 rounded-md dark:text-black focus:outline-none focus:border-black"
                             type="email"
                             name="email"
                             id="email"
@@ -54,7 +54,7 @@ export default function ContactPage({ auth, errors }) {
                     <div className="flex flex-col gap-2 mb-6 w-full md:w-2/3">
                         <label htmlFor="subject">Subject</label>
                         <input
-                            className="border p-2 rounded-sm dark:text-black focus:outline-none focus:border-black"
+                            className="border p-2 rounded-md dark:text-black focus:outline-none focus:border-black"
                             type="text"
                             name="subject"
                             id="subject"
@@ -69,7 +69,7 @@ export default function ContactPage({ auth, errors }) {
                     <div className="flex flex-col gap-2 mb-6 w-full md:w-2/3">
                         <label htmlFor="message">Message</label>
                         <textarea
-                            className="border p-2 rounded-sm dark:text-black focus:outline-none focus:border-black"
+                            className="border p-2 rounded-md dark:text-black focus:outline-none focus:border-black"
                             type="text"
                             name="message"
                             id="message"
@@ -82,7 +82,7 @@ export default function ContactPage({ auth, errors }) {
                     </div>
                     <PrimaryButton
                         disabled={isSubmitting}
-                        className="bg-black text-white dark:bg-zinc-700 flex justify-center px-4 py-2 rounded-sm w-full md:w-2/3"
+                        className="rounded-md bg-black text-white dark:bg-zinc-700 flex justify-center px-4 py-2  w-full md:w-2/3"
                         type="submit"
                     >
                         {isSubmitting == true ? (

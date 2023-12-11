@@ -7,9 +7,11 @@ import {
     DialogDescription,
 } from "./ui/dialog";
 
-export default function ProductImageModal({ product, children }) {
+export default function ProductImageModal({ product, children, className }) {
     return (
-        <div className="w-full flex justify-center bg-white rounded-md border">
+        <div
+            className={`${className} w-full flex justify-center bg-white rounded-md border`}
+        >
             <Dialog>
                 <DialogTrigger asChild>{children}</DialogTrigger>
                 <DialogContent className="max-w-[350px] sm:max-w-[525px] lg:max-w-[700px] flex flex-col items-center gap-6 py-12">
