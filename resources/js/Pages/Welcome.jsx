@@ -24,7 +24,7 @@ export default function Welcome({ auth }) {
             </Head>
             <div className=" sm:mb-0 relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center dark:bg-zinc-900 dark:text-white bg-white dark:bg-dots-lighter  selection:bg-red-500 selection:text-white flex flex-col box-border">
                 <div className="flex flex-col items-center">
-                    <div className="w-full border-b">
+                    <div className="w-full">
                         <SearchBar />
                     </div>
                     {/* <img
@@ -32,13 +32,22 @@ export default function Welcome({ auth }) {
                         alt="hero banner"
                     /> */}
                     <main className="w-full px-12 flex flex-col items-center">
-                        <h1 className="text-4xl lg:text-5xl lg:mb-6 font-bold mt-16">
+                        <h1 className="text-4xl md:text-5xl lg:mb-6 font-bold mt-16">
                             Jersey Shop
                         </h1>
-                        <h2 className="font-semibold text-lg md:text-xl lg:text-xl xl:text-2xl text-center mt-6">
+                        <h2 className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-2xl text-center mt-12">
                             Show your love for the game with your favorite NBA
                             team jersey.
                         </h2>
+                        <p className="text-center my-12 px-12 xl:text-xl md:text-lg dark:text-zinc-400 lg:w-3/4 xl:w-2/3">
+                            Welcome to JerseyShop, where passion for basketball
+                            meets the highest quality NBA merchandise. As avid
+                            fans of the NBA, we understand the thrill and
+                            excitement that comes with supporting your favorite
+                            teams and players. That's why we've created
+                            JerseyShop – your go-to online store for an
+                            extensive range of NBA-inspired products.
+                        </p>
                         <nav
                             role="navigation"
                             className="my-16 w-full flex  gap-6 items-center flex-wrap justify-evenly text-lg md:text-xl font-semibold"
@@ -68,21 +77,12 @@ export default function Welcome({ auth }) {
                         </nav>
                         <article
                             aria-label="Presentation of the Jerseyshop website"
-                            className="sm:w-4/5 xl:w-3/5 my-12 flex flex-col gap-6 leading-7 text-justify"
+                            className="sm:w-4/5 xl:w-3/5 2xl:w-1/2 my-12 flex flex-col gap-6 leading-7 text-justify"
                         >
                             <h3 className="font-semibold text-lg md:text-xl lg:text-2xl xl:text-3xl text-center mb-6">
                                 Your Ultimate Destination for NBA Merchandise!
                             </h3>
-                            <p className="xl:text-xl md:text-lg dark:text-zinc-400">
-                                Welcome to JerseyShop, where passion for
-                                basketball meets the highest quality NBA
-                                merchandise. As avid fans of the NBA, we
-                                understand the thrill and excitement that comes
-                                with supporting your favorite teams and players.
-                                That's why we've created JerseyShop – your go-to
-                                online store for an extensive range of
-                                NBA-inspired products.
-                            </p>
+
                             <div className="flex flex-col gap-4 mt-2">
                                 <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Jerseys

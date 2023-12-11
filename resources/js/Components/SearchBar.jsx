@@ -15,7 +15,7 @@ export default function SearchBar() {
     };
 
     return (
-        <div className="w-full flex justify-center my-4 py-6 sm:py-0 sm:my-6 sm:mb-6">
+        <div className="w-full flex justify-center mx-2 mt-2 py-2 sm:border-b dark:border-b-gray-400">
             <form
                 role="search"
                 aria-labelledby="searchBarLabel"

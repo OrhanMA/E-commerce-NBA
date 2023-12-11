@@ -6,7 +6,7 @@ import Footer from "@/Components/Footer";
 import SortFilter from "@/Components/SortFilter";
 const AllProducts = ({ auth, products }) => {
     return (
-        <div className="bg-zinc-900">
+        <div className="dark:bg-zinc-900">
             <Header auth={auth} />
             <Head>
                 <title>Search results page</title>

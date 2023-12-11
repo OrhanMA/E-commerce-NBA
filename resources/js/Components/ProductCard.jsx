@@ -36,7 +36,7 @@ export function ProductCard({ product }) {
     return (
         <>
             <Toaster />
-            <div className="w-[90%] sm:w-2/5 lg:w-1/4 xl:w-1/5 m-6 hover:scale-105 hover:bg-gray-50 bg-gray-200  dark:bg-zinc-700 dark:hover:bg-zinc-600 duration-200  flex flex-col items-center sm:items-start rounded-md border border-opacity-40 dark:border-0 dark:hover:border dark:hover:border-gray-200 hover:border-black/40 bg-opacity-40 p-6 sm:gap-4 group">
+            <div className="w-[90%] sm:w-2/5 lg:w-1/4 xl:w-1/5 m-6 hover:scale-105 hover:bg-gray-50 bg-gray-200/20  dark:bg-zinc-700 dark:hover:bg-zinc-600 duration-200  flex flex-col items-center sm:items-start rounded-md border border-opacity-40 dark:border-0 dark:hover:border dark:hover:border-gray-200 hover:border-black/40 bg-opacity-40 p-6 sm:gap-4 group">
                 <ProductImageModal
                     className="group-hover:border-black/40 duration-200"
                     product={product}
@@ -56,10 +56,10 @@ export function ProductCard({ product }) {
                 </p>
                 {product.category_name && product.subcategory_name && (
                     <div className="hidden sm:flex items-center gap-4 mt-4">
-                        <p className="bg-gray-400/60 group-hover:bg-gray-500/50 duration-200 group-hover:dark:bg-gray-400/60 group-hover:dark:text-white text-sm text-white py-1.5 px-2 rounded-md dark:text-black">
+                        <p className="bg-gray-400/60 group-hover:bg-gray-500/50 duration-200 group-hover:dark:bg-gray-400/60 group-hover:dark:text-white text-sm text-white py-1.5 px-2 rounded-md dark:text-gray-200">
                             {product.category_name}
                         </p>
-                        <p className="bg-gray-400/60 group-hover:bg-gray-500/50 duration-200 group-hover:dark:bg-gray-400/60 group-hover:dark:text-white text-sm text-white py-1.5 px-2 rounded-md dark:text-black">
+                        <p className="bg-gray-400/60 group-hover:bg-gray-500/50 duration-200 group-hover:dark:bg-gray-400/60 group-hover:dark:text-white text-sm text-white py-1.5 px-2 rounded-md dark:text-gray-200">
                             {product.subcategory_name}
                         </p>
                     </div>

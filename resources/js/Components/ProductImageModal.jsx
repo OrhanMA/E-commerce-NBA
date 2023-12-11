@@ -1,13 +1,45 @@
+import PrimaryButton from "./PrimaryButton";
 import {
     Dialog,
     DialogTrigger,
     DialogContent,
     DialogTitle,
     DialogHeader,
+    DialogFooter,
     DialogDescription,
 } from "./ui/dialog";
+import { useToast } from "./ui/use-toast";
+import { ToastAction } from "@/components/ui/toast";
+
+import { Link } from "@inertiajs/react";
 
 export default function ProductImageModal({ product, children, className }) {
+    const { toast } = useToast();
+    const addToCart = () => {
+        const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const existingProduct = existingCart.find(
+            (item) => item.id === product.id
+        );
+
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            existingCart.push({ ...product, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(existingCart));
+
+        toast({
+            variant: "success",
+            title: `${product.name} added successfully to the cart !`,
+            action: (
+                <Link href={"/cart"}>
+                    <ToastAction altText="See cart">cart</ToastAction>
+                </Link>
+            ),
+        });
+    };
     return (
         <div
             className={`${className} w-full flex justify-center bg-white rounded-md border`}
@@ -30,6 +62,11 @@ export default function ProductImageModal({ product, children, className }) {
                             />
                         </div>
                     </DialogHeader>
+                    <DialogFooter>
+                        <PrimaryButton onClick={addToCart}>
+                            Add to cart
+                        </PrimaryButton>
+                    </DialogFooter>
                 </DialogContent>
             </Dialog>
         </div>

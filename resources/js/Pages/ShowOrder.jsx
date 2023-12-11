@@ -7,7 +7,7 @@ import OrderProductList from "@/Components/show-order/OrderProductList";
 export default function SeeOrders({ auth, order }) {
     const newOrder = order[0];
     return (
-        <div className="dark:bg-zinc-900 dark:text-gray-200 min-h-screen ">
+        <div className="bg-gray-50 dark:bg-zinc-900 dark:text-gray-200 min-h-screen ">
             <Header auth={auth} />
             <Head title={`Your order n°${newOrder.id}`} />
             <div className="flex flex-col items-center my-6 min-h-screen">
@@ -20,7 +20,7 @@ export default function SeeOrders({ auth, order }) {
                 >
                     Click here to contact the support
                 </Link>
-                <div className="border dark:bg-zinc-700 dark:border-gray-400 rounded-md p-6 flex flex-col gap-6 m-6 md:w-2/3 xl:w-1/2">
+                <div className="border bg-white dark:bg-zinc-700 dark:border-gray-400 rounded-md p-6 flex flex-col gap-6 m-6 md:w-2/3 xl:w-1/2">
                     <MainInfo newOrder={newOrder} />
                     <OrderProductList newOrder={newOrder} />
                 </div>

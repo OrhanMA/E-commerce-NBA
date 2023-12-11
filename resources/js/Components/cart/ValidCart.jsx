@@ -15,7 +15,7 @@ export default function ValidCart({
             >
                 Clear Cart
             </PrimaryButton>
-            <ul className="bg-white flex flex-col border w-[90%] lg:w-2/3 2xl:w-1/2 p-6 mx-6 sm:p-12 gap-6 my-6 rounded-md">
+            <ul className="bg-white dark:bg-zinc-700 flex flex-col border w-[90%] lg:w-2/3 2xl:w-1/2 p-6 mx-6 sm:p-12 gap-6 my-6 rounded-md">
                 {cartData.map((product) => (
                     <CartProductCard
                         product={product}
