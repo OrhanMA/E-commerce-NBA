@@ -2,14 +2,14 @@ import { Link, usePage } from "@inertiajs/react";
 import React, { useState } from "react";
 import PrimaryButton from "./PrimaryButton";
 import TextInput from "./TextInput";
-
+import { Loader2 } from "lucide-react";
 export default function SearchBar() {
     const { url } = usePage();
     const activeCategory = url.slice(10);
 
     const [category, setCategory] = useState(activeCategory || "Jerseys");
     const [query, setQuery] = useState("");
-
+    const [isLoading, setLoading] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault();
     };
@@ -52,14 +52,31 @@ export default function SearchBar() {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                     />
-                    <Link href={`/search?query=${query}&category=${category}`}>
-                        <PrimaryButton
-                            className="h-full px-4 py-2 rounded-md sm:h-full disabled:bg-gray-200 dark:bg-zinc-700 disabled:text-black dark:disabled:text-gray-500 disabled:cursor-not-allowed duration-200"
-                            disabled={query === "" ? true : false}
-                            type="submit"
-                        >
-                            Search
-                        </PrimaryButton>
+                    <Link
+                        onClick={() => {
+                            setLoading(true);
+                        }}
+                        href={`/search?query=${query}&category=${category}`}
+                    >
+                        {" "}
+                        {isLoading ? (
+                            <PrimaryButton className="flex gap-4 items-center">
+                                <Loader2 />
+                                <>Wait...</>
+                            </PrimaryButton>
+                        ) : (
+                            <PrimaryButton
+                                className="h-full px-4 py-2 rounded-md sm:h-full disabled:bg-gray-200 dark:bg-zinc-700 disabled:text-black dark:disabled:text-gray-500 disabled:cursor-not-allowed duration-200"
+                                disabled={
+                                    query === "" || isLoading == true
+                                        ? true
+                                        : false
+                                }
+                                type="submit"
+                            >
+                                Search
+                            </PrimaryButton>
+                        )}
                     </Link>
                 </div>
             </form>

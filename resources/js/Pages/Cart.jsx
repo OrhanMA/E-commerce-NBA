@@ -42,7 +42,7 @@ export default function CartPage({ auth }) {
                     content={`There is currently ${cartData.length} products in your cart.`}
                 />
             </Head>
-            <div className="flex flex-col min-h-screen items-center py-12">
+            <div className="flex bg-gray-50 flex-col min-h-screen items-center py-12">
                 <h1 className="text-2xl font-bold mb-6 dark:text-gray-200">
                     {" "}
                     Cart:

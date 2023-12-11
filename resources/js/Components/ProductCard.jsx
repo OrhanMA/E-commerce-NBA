@@ -36,7 +36,7 @@ export function ProductCard({ product }) {
     return (
         <>
             <Toaster />
-            <div className="w-[90%] sm:w-2/5 lg:w-1/4 xl:w-1/5 m-6 hover:scale-105 hover:bg-gray-50 bg-gray-200  dark:bg-zinc-700 dark:hover:bg-zinc-600 duration-200  flex flex-col items-center sm:items-start rounded-md border border-opacity-40 hover:border-black/40 bg-opacity-40 p-6 sm:gap-4 ">
+            <div className="w-[90%] sm:w-2/5 lg:w-1/4 xl:w-1/5 m-6 hover:scale-105 hover:bg-gray-50 bg-gray-200  dark:bg-zinc-700 dark:hover:bg-zinc-600 duration-200  flex flex-col items-center sm:items-start rounded-md border border-opacity-40 dark:border-0 dark:hover:border dark:hover:border-gray-200 hover:border-black/40 bg-opacity-40 p-6 sm:gap-4 ">
                 <ProductImageModal product={product}>
                     <img
                         className="my-6"
@@ -63,7 +63,7 @@ export function ProductCard({ product }) {
                 )}
 
                 <div className="mt-4 flex items-center w-full justify-evenly gap-6 sm:gap-0 sm:justify-between">
-                    <p className="text-lg dark:text-white font-semibold ">
+                    <p className="text-lg dark:text-white font-bold ">
                         {product.price}$
                     </p>
                     <PrimaryButton onClick={addToCart}>Buy</PrimaryButton>

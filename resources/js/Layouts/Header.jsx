@@ -24,8 +24,8 @@ export default function Authenticated({ auth, header, children }) {
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious();
-        console.log("previous", previous);
-        console.log("latest", latest);
+        // console.log("previous", previous);
+        // console.log("latest", latest);
         if (latest > previous && latest > 150) {
             setHidden(true);
         } else {

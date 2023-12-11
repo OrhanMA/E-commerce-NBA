@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Head } from "@inertiajs/react";
 import { useForm } from "react-hook-form";
 import { router } from "@inertiajs/react";
 import Header from "@/Layouts/Header";
 import PrimaryButton from "@/Components/PrimaryButton";
 import Footer from "@/Components/Footer";
+import { Loader2 } from "lucide-react";
 
 export default function ContactPage({ auth, errors }) {
+    const [isSubmitting, setSubmitting] = useState(false);
+
     const { register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
+        setSubmitting(true);
         await router.post("/contact", { ...data });
     };
+
     return (
         <div className="dark:bg-zinc-900 dark:text-gray-200 min-h-screen">
             <Header auth={auth} />
@@ -76,10 +81,18 @@ export default function ContactPage({ auth, errors }) {
                         {errors.message && <div>{errors.email}</div>}
                     </div>
                     <PrimaryButton
+                        disabled={isSubmitting}
                         className="bg-black text-white dark:bg-zinc-700 flex justify-center px-4 py-2 rounded-sm w-full md:w-2/3"
                         type="submit"
                     >
-                        Send
+                        {isSubmitting == true ? (
+                            <div className="flex items-center gap-4">
+                                <Loader2 />
+                                <>Please wait...</>
+                            </div>
+                        ) : (
+                            <>Send</>
+                        )}
                     </PrimaryButton>
                 </form>
             </div>
