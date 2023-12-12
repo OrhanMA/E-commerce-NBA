@@ -39,7 +39,7 @@ export default function Welcome({ auth }) {
                             Show your love for the game with your favorite NBA
                             team jersey.
                         </h2>
-                        <p className="text-center my-12 px-12 xl:text-xl md:text-lg dark:text-zinc-400 lg:w-3/4 xl:w-2/3">
+                        <p className="text-center my-12 sm:px-12 xl:text-2xl md:text-lg dark:text-zinc-400 lg:w-3/4 xl:w-2/3">
                             Welcome to JerseyShop, where passion for basketball
                             meets the highest quality NBA merchandise. As avid
                             fans of the NBA, we understand the thrill and
@@ -87,7 +87,7 @@ export default function Welcome({ auth }) {
                                 <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Jerseys
                                 </h4>
-                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
+                                <p className="xl:text-lg md:text-lg dark:text-zinc-400">
                                     At JerseyShop, we pride ourselves on
                                     offering a diverse selection of authentic
                                     NBA jerseys, each crafted with precision and
@@ -104,7 +104,7 @@ export default function Welcome({ auth }) {
                                 <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Apparel and accesories
                                 </h4>
-                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
+                                <p className="xl:text-lg md:text-lg dark:text-zinc-400">
                                     But we're not just about jerseys – we offer
                                     a comprehensive collection of NBA-themed
                                     apparel and accessories to complement your
@@ -118,7 +118,7 @@ export default function Welcome({ auth }) {
                                 <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Quality and authenticity
                                 </h4>
-                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
+                                <p className="xl:text-lg md:text-lg dark:text-zinc-400">
                                     What sets JerseyShop apart is our commitment
                                     to quality and authenticity. We source our
                                     products from reputable suppliers to ensure
@@ -133,7 +133,7 @@ export default function Welcome({ auth }) {
                                 <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Customer-first
                                 </h4>
-                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
+                                <p className="xl:text-lg md:text-lg dark:text-zinc-400">
                                     As a customer-centric company, we prioritize
                                     your shopping experience. Our user-friendly
                                     website makes it easy for you to browse
@@ -148,7 +148,7 @@ export default function Welcome({ auth }) {
                                 <h4 className="text-xl xl:text-2xl font-semibold dark:text-white">
                                     Check it out!
                                 </h4>
-                                <p className="xl:text-xl md:text-lg dark:text-zinc-400">
+                                <p className="xl:text-lg md:text-lg dark:text-zinc-400">
                                     Whether you're looking to update your
                                     wardrobe with the latest NBA fashion or
                                     searching for the perfect gift for a fellow

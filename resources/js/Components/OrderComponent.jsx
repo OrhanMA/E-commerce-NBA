@@ -41,7 +41,7 @@ export default function OrderComponent({ order }) {
                 }).format(new Date(order.created_at))}
             </p>
             <Link
-                className="text-center py-2 dark:bg-zinc-600 dark:hover:bg-zinc-400 bg-gray-300 hover:bg-black text-white duration-150 rounded-md mt-2"
+                className="text-center py-2 dark:bg-zinc-600 dark:hover:bg-zinc-400 bg-gray-500 hover:bg-black text-white duration-150 rounded-md mt-2"
                 href={`/order/${order.id}`}
             >
                 Order details

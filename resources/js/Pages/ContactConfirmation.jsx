@@ -13,13 +13,16 @@ export default function ContactConfirmation({ auth }) {
                 />
             </Head>
             <div className=" dark:text-gray-200 min-h-screen ">
-                <div className="bg-green-500 dark:bg-green-600 m-8 p-12">
+                <div className="bg-green-600 text-white m-8 p-12">
                     <h1 className="text-2xl font-bold mb-6">Message sent</h1>
                     <p className="font-semibold mb-6">
                         Your message has been successfuly sent to the support.{" "}
                         <br /> We'll get back to you ASAP!
                     </p>
-                    <Link className="underline hover:text-white" href="/">
+                    <Link
+                        className="underline text-gray-300 hover:text-white duration-200"
+                        href="/"
+                    >
                         Go back to landing page
                     </Link>
                 </div>

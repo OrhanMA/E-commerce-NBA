@@ -6,11 +6,11 @@ function SearchBackup() {
 
     return (
         <div className="p-6">
-            <h1 className="text-2xl dark:text-gray-200 font-semibold mb-6 text-center">
+            <h1 className="text-xl sm:text-2xl dark:text-gray-200 font-semibold mb-6 text-center">
                 No product found. Please make a new search or select a new
                 product category.
             </h1>
-            <div className="flex flex-col text-2xl gap-2">
+            <div className="flex flex-col text-xl sm:text-2xl gap-2 xl:ml-8">
                 <Link
                     className="duration-200 text-gray-400 dark:text-gray-400 dark:hover:text-white hover:text-gray-900"
                     href="/"
