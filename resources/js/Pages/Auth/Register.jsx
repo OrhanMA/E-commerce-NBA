@@ -79,6 +79,7 @@ export default function Register({ auth }) {
                         id="password"
                         type="password"
                         name="password"
+                        minLength="16"
                         value={data.password}
                         className="mt-1 block w-full p-2 border"
                         autoComplete="new-password"

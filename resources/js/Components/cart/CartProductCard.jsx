@@ -5,8 +5,12 @@ export default function CartProductCard({ product, handleProductDeletion }) {
     const [quantity, setQuantity] = useState(product.quantity);
 
     const handleIncrement = () => {
-        setQuantity(quantity + 1);
-        updateCart(product.id, quantity + 1);
+        if (quantity + 1 <= product.stock) {
+            setQuantity(quantity + 1);
+            updateCart(product.id, quantity + 1);
+        } else {
+            alert("Stock limit reached for", product.name);
+        }
     };
 
     const handleDecrement = () => {

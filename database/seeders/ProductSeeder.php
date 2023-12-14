@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/hawks-jersey.jpg"
             ],
             [
@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/celtics-jersey.avif"
             ],
             [
@@ -41,7 +41,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/nets-jersey.avif"
             ],
             [
@@ -50,7 +50,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/hornets-jersey.avif"
             ],
             [
@@ -59,7 +59,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/bulls-jersey.jpg"
             ],
             [
@@ -68,7 +68,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/cavs-jersey.avif"
             ],
             [
@@ -77,7 +77,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/mavs-jersey.avif"
             ],
             [
@@ -86,7 +86,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/nuggets-jersey.avif"
             ],
             [
@@ -95,7 +95,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/pistons-jersey.jpg"
             ],
             [
@@ -104,7 +104,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/warriors-jersey.webp"
             ],
             [
@@ -113,7 +113,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/rockets-jersey.webp"
             ],
             [
@@ -122,7 +122,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/pacers-jersey.avif"
             ],
             [
@@ -131,7 +131,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/clippers-jersey.avif"
             ],
             [
@@ -140,7 +140,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/lakers-jersey.webp"
             ],
             [
@@ -149,7 +149,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/grizzlies-jersey.avif"
             ],
             [
@@ -158,7 +158,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/heat-jersey.avif"
             ],
             [
@@ -167,7 +167,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/bucks-jersey.avif"
             ],
             [
@@ -176,7 +176,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/wolves-jersey.webp"
             ],
             [
@@ -185,7 +185,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/pelicans-jersey.webp"
             ],
             [
@@ -194,7 +194,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/knicks-jersey.avif"
             ],
             [
@@ -203,7 +203,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/thunder-jersey.webp"
             ],
             [
@@ -212,7 +212,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/magic-jersey.avif"
             ],
             [
@@ -221,7 +221,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/sixers-jersey.webp"
             ],
             [
@@ -230,7 +230,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/suns-jersey.webp"
             ],
             [
@@ -239,7 +239,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/blazers-jersey.avif"
             ],
             [
@@ -248,7 +248,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/kings-jersey.avif"
             ],
             [
@@ -257,7 +257,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/spurs-jersey.webp"
             ],
             [
@@ -266,7 +266,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/raptors-jersey.avif"
             ],
             [
@@ -275,7 +275,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/jazz-jersey.avif"
             ],
             [
@@ -284,7 +284,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "subcategory_id" => 4,
                 "price" => rand(60, 120),
-                "stock" => 100,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/jerseys/wizards-jersey.webp"
             ],
 
@@ -296,7 +296,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 1,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/authentic-indoor-wilson.avif"
             ],
             [
@@ -305,7 +305,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 5,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/wilson-75-anniversary.avif"
             ],
             [
@@ -314,7 +314,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/lakers-composite.avif"
             ],
             [
@@ -323,7 +323,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/warriors-composite.webp"
             ],
             [
@@ -332,7 +332,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 3,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/authentic-indoor-wilson.avif"
             ],
             [
@@ -341,7 +341,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/bulls-wilson.avif"
             ],
             [
@@ -350,7 +350,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/celtics-wilson.avif"
             ],
             [
@@ -359,7 +359,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/lakers-wilson.webp"
             ],
             [
@@ -368,7 +368,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 4,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/nets-wilson.webp"
             ],
             [
@@ -377,7 +377,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 2,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/bucks-city.webp"
             ],
             [
@@ -386,7 +386,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 2,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/spurs-city.jpg"
             ],
             [
@@ -395,7 +395,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "subcategory_id" => 2,
                 "price" => rand(35, 50),
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/basketballs/suns-city.jpg"
             ],
 
@@ -408,7 +408,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "subcategory_id" => 7,
                 "price" => 80,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/clothing/hoodie-bulls.avif"
             ],
             [
@@ -417,7 +417,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "subcategory_id" => 7,
                 "price" => 80,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/clothing/hoodie-suns.avif"
             ],
             [
@@ -426,7 +426,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "subcategory_id" => 8,
                 "price" => 120,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/clothing/shoes-zoom-freak.avif"
             ],
             [
@@ -435,7 +435,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "subcategory_id" => 9,
                 "price" => 140,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/clothing/survetement-celtics.avif"
             ],
             [
@@ -444,7 +444,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "subcategory_id" => 10,
                 "price" => 40,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/clothing/t-shirt-heat.avif"
             ],
             [
@@ -453,7 +453,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "subcategory_id" => 10,
                 "price" => 40,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/clothing/t-shirt-hornets.avif"
             ],
             [
@@ -462,7 +462,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "subcategory_id" => 10,
                 "price" => 40,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/clothing/t-shirt-nets.avif"
             ],
 
@@ -474,7 +474,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "subcategory_id" => 11,
                 "price" => 10.00,
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/goodies/badge-celtics.avif"
             ],
             [
@@ -483,7 +483,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "subcategory_id" => 12,
                 "price" => 35.00,
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/goodies/mini-basket-warriors.avif"
             ],
             [
@@ -492,7 +492,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "subcategory_id" => 13,
                 "price" => 15.00,
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/goodies/parapluie-warriors.avif"
             ],
             [
@@ -501,7 +501,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "subcategory_id" => 15,
                 "price" => 7.00,
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/goodies/sangle-cles-lakers.avif"
             ],
             [
@@ -510,7 +510,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "subcategory_id" => 14,
                 "price" => 15.00,
-                "stock" => 50,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/goodies/pompe-nba.webp"
             ],
 
@@ -521,7 +521,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 5,
                 "subcategory_id" => 17,
                 "price" => 15.00,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/other/bulls-towel.avif"
             ],
             [
@@ -530,7 +530,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 5,
                 "subcategory_id" => 17,
                 "price" => 15.00,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/other/thunder-towel.jpg"
             ],
             [
@@ -539,7 +539,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 5,
                 "subcategory_id" => 20,
                 "price" => 5.00,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/other/can-opener-nets.avif"
             ],
             [
@@ -548,7 +548,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 5,
                 "subcategory_id" => 18,
                 "price" => 10.00,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/other/lakers-mug.avif"
             ],
             [
@@ -557,7 +557,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 5,
                 "subcategory_id" => 18,
                 "price" => 10.00,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/other/mavs-mug.avif"
             ],
             [
@@ -566,7 +566,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 5,
                 "subcategory_id" => 18,
                 "price" => 15.00,
-                "stock" => 150,
+                "stock" => rand(1, 20),
                 "image_path" => "product_images/other/lakers-pen.avif"
             ],
 

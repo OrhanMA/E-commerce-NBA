@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
-import { Link, usePage } from "@inertiajs/react";
+import { usePage } from "@inertiajs/react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const routes = [
@@ -21,18 +21,44 @@ export default function Authenticated({ auth, header, children }) {
 
     const [hidden, setHidden] = useState(false);
     const { scrollY } = useScroll();
+    const [windowWidth, setWindowWidth] = useState(null);
+
+    useEffect(() => {
+        const updateWindowWidth = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        // Initial update
+        updateWindowWidth();
+
+        // Event listener for window resize
+        window.addEventListener("resize", updateWindowWidth);
+
+        // Cleanup function to remove the event listener when the component unmounts
+        return () => {
+            window.removeEventListener("resize", updateWindowWidth);
+        };
+    }, [windowWidth]);
+
+    // console.log(windowWidth);
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious();
-        // console.log("previous", previous);
-        // console.log("latest", latest);
+
+        // console.log(previous, latest);
+        // quand scroll si scroll en bas
         if (latest > previous && latest > 150) {
+            // cache header
             setHidden(true);
         } else {
+            // sinon c'est un scroll en haut et donc montre header
             setHidden(false);
         }
+
+        console.log(showingNavigationDropdown);
     });
 
+    console.log(showingNavigationDropdown);
     return (
         <motion.nav
             className="sticky top-0 z-20"
@@ -227,11 +253,11 @@ export default function Authenticated({ auth, header, children }) {
 
                 <div
                     className={`
-                      ${
-                          (showingNavigationDropdown ? "block" : "hidden") +
-                          " sm:hidden"
-                      } ${hidden ? "hidden" : "visible"}
-                    duration-200`}
+                   ${
+                       (showingNavigationDropdown ? "block" : "hidden") +
+                       " sm:hidden"
+                   }
+                 duration-200`}
                 >
                     <div className="pt-2 pb-3 space-y-1">
                         {routes.map((route) => {

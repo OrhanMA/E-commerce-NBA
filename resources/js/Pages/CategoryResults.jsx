@@ -9,6 +9,7 @@ const CategoryResults = ({ auth, products, category }) => {
     const generateSortUrl = (newSortBy, newSortOrder) => {
         return `/products/${category}?sort_by=${newSortBy}&sort_order=${newSortOrder}`;
     };
+
     return (
         <div className="dark:bg-zinc-900">
             <Header auth={auth} />

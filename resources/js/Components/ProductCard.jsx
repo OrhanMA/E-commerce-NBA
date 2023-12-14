@@ -54,8 +54,23 @@ export function ProductCard({ product }) {
                 <p className="hidden sm:block text-md text-gray-500 dark:text-gray-200  h-[50px]">
                     {product.description}
                 </p>
+                {product.stock > 0 ? (
+                    <p
+                        className={`hidden md:block mt-8 md:mt-4 ${
+                            product.stock <= 10
+                                ? "text-red-500 dark:text-red-500"
+                                : "text-gray-500 dark:text-gray-200"
+                        } `}
+                    >
+                        <span>{product.stock}</span> in stock
+                    </p>
+                ) : (
+                    <p className="text-red-500 dark:text-red-500 hidden md:block mt-8 md:mt-4">
+                        out of stock
+                    </p>
+                )}
                 {product.category_name && product.subcategory_name && (
-                    <div className="hidden sm:flex items-center gap-4 mt-4">
+                    <div className="hidden sm:flex sm:mt-4 items-center gap-4">
                         <p className="bg-gray-400/60 group-hover:bg-gray-500/50 duration-200 group-hover:dark:bg-gray-400/60 group-hover:dark:text-white text-sm text-white py-1.5 px-2 rounded-md dark:text-gray-200">
                             {product.category_name}
                         </p>
@@ -65,13 +80,28 @@ export function ProductCard({ product }) {
                     </div>
                 )}
 
-                <div className="mt-4 flex items-center w-full justify-evenly gap-6 sm:gap-0 sm:justify-between">
+                <div className="mt-6 flex items-center w-full justify-evenly gap-6 sm:gap-0 sm:justify-between">
                     <p className="text-lg dark:text-white font-bold ">
                         {product.price}$
                     </p>
-                    <PrimaryButton onClick={addToCart}>Buy</PrimaryButton>
+                    <PrimaryButton
+                        disabled={
+                            product.stock <= 0 ||
+                            product.stock <= getQuantityInCart(product.id)
+                        }
+                        onClick={addToCart}
+                        className="disabled:cursor-not-allowed"
+                    >
+                        Buy
+                    </PrimaryButton>
                 </div>
             </div>
         </>
     );
+}
+
+function getQuantityInCart(productId) {
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProduct = existingCart.find((item) => item.id === productId);
+    return existingProduct ? existingProduct.quantity : 0;
 }

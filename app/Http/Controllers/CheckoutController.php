@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use App\Mail\OrderPlaced;
+use App\Models\Product;
 
 class CheckoutController extends Controller
 {
@@ -51,6 +52,17 @@ class CheckoutController extends Controller
                 'product_id' => $product['id'],
                 'quantity' => $product['quantity'],
             ]);
+
+            $productModel = Product::findOrFail($product['id']);
+
+            $newStock = $productModel->stock - $product['quantity'];
+
+            if ($newStock < 0) {
+                throw new \Exception("Not enough stock for product: {$productModel->name}");
+            }
+
+            $productModel->update(['stock' => $newStock]);
+
         }
 
         $orderId = $order->id;
