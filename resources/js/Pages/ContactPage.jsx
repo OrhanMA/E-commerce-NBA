@@ -12,10 +12,10 @@ export default function ContactPage({ auth, errors }) {
     const { register, handleSubmit, setValue } = useForm();
 
     useEffect(() => {
-        if (auth.user.email) {
+        if (auth.user !== null) {
             setValue("email", auth.user.email);
         }
-    }, [auth.user.email, setValue]);
+    }, [auth, setValue]);
 
     const onSubmit = async (data) => {
         setSubmitting(true);
