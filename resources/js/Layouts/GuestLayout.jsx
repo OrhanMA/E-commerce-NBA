@@ -15,7 +15,7 @@ export default function Guest({ header, children }) {
     ];
     const { url } = usePage();
     return (
-        <div className="bg-gray-200">
+        <>
             <nav className="bg-white border-b border-gray-100 dark:border-gray-500 dark:bg-zinc-700 dark:text-gray-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -186,6 +186,6 @@ export default function Guest({ header, children }) {
             )}
 
             <main>{children}</main>
-        </div>
+        </>
     );
 }

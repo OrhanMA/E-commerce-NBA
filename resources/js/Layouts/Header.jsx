@@ -67,7 +67,7 @@ export default function Authenticated({ auth, header, children }) {
                 role="navigation"
                 className=" bg-white dark:bg-zinc-800 dark:text-gray-200 border-b border-gray-400 border-opacity-25 dark:border-opacity-100"
             >
-                <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+                <nav className="max-w-7xl mx-auto px-4  lg:px-8 ">
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="mr-6 shrink-0 flex items-center">
@@ -119,17 +119,6 @@ export default function Authenticated({ auth, header, children }) {
                                 >
                                     Cart
                                 </NavLink>
-                                <NavLink
-                                    href={"/contact"}
-                                    active={url == `/contact`}
-                                    aria-current={
-                                        url == `/contact`
-                                            ? "page contact"
-                                            : undefined
-                                    }
-                                >
-                                    Contact
-                                </NavLink>
                             </div>
                         </div>
                         <div className="hidden sm:flex sm:items-center sm:ms-6">
@@ -138,7 +127,7 @@ export default function Authenticated({ auth, header, children }) {
                                     <Dropdown.Trigger>
                                         <span className="inline-flex rounded-md">
                                             <button
-                                                aria-label="Toggle Navigation"
+                                                aria-label={user && user.name}
                                                 type="button"
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white dark:bg-zinc-400 dark:text-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
@@ -184,6 +173,7 @@ export default function Authenticated({ auth, header, children }) {
                                                 </Dropdown.Link>
                                                 {user.is_admin == 1 && (
                                                     <Dropdown.Link
+                                                        className="text-violet-500"
                                                         href={"/admin"}
                                                     >
                                                         Admin dashboard
@@ -225,7 +215,6 @@ export default function Authenticated({ auth, header, children }) {
 
                         <div className="-me-2 flex items-center sm:hidden">
                             <button
-                                aria-label="Toggle Navigation"
                                 onClick={() =>
                                     setShowingNavigationDropdown(
                                         (previousState) => !previousState
@@ -319,6 +308,7 @@ export default function Authenticated({ auth, header, children }) {
                                         <>
                                             {user.is_admin == 1 && (
                                                 <ResponsiveNavLink
+                                                    className="text-violet-500"
                                                     href={"/admin"}
                                                 >
                                                     Admin dashboard

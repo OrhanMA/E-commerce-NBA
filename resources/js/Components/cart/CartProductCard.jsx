@@ -10,7 +10,7 @@ export default function CartProductCard({ product, handleProductDeletion }) {
             updateCart(product.id, quantity + 1);
         } else {
             alert(
-                `Stock limit reached for ${product.name}. You cannot add more than stock`
+                `Stock limit reached for ${product.name}. You cannot add more than the quantity currently available in stock`
             );
         }
     };
