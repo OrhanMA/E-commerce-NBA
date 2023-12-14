@@ -31,14 +31,11 @@ class CheckoutController extends Controller
         $paiementInput = $request->paiementMethod;
         $deliveryInput = $request->deliveryMethod;
 
-
         $paiementMethod = PaiementMethod::findOrFail($paiementInput);
         $deliveryMethod = DeliveryMethod::findOrFail($deliveryInput);
 
         $paiementMethodId = $paiementMethod->id;
         $deliveryMethodId = $deliveryMethod->id;
-
-
 
         $order = Order::create([
             'total_price' => $totalPrice,
@@ -54,15 +51,11 @@ class CheckoutController extends Controller
             ]);
 
             $productModel = Product::findOrFail($product['id']);
-
             $newStock = $productModel->stock - $product['quantity'];
-
             if ($newStock < 0) {
                 throw new \Exception("Not enough stock for product: {$productModel->name}");
             }
-
             $productModel->update(['stock' => $newStock]);
-
         }
 
         $orderId = $order->id;

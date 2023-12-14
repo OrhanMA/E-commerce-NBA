@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Head } from "@inertiajs/react";
 import { useForm } from "react-hook-form";
 import { router } from "@inertiajs/react";
@@ -9,8 +9,13 @@ import { Loader2 } from "lucide-react";
 
 export default function ContactPage({ auth, errors }) {
     const [isSubmitting, setSubmitting] = useState(false);
+    const { register, handleSubmit, setValue } = useForm();
 
-    const { register, handleSubmit } = useForm();
+    useEffect(() => {
+        if (auth.user.email) {
+            setValue("email", auth.user.email);
+        }
+    }, [auth.user.email, setValue]);
 
     const onSubmit = async (data) => {
         setSubmitting(true);

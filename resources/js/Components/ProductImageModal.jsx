@@ -63,7 +63,14 @@ export default function ProductImageModal({ product, children, className }) {
                         </div>
                     </DialogHeader>
                     <DialogFooter>
-                        <PrimaryButton onClick={addToCart}>
+                        <PrimaryButton
+                            disabled={
+                                product.stock <= 0 ||
+                                product.stock <= getQuantityInCart(product.id)
+                            }
+                            onClick={   addToCart}
+                            className="disabled:cursor-not-allowed"
+                        >
                             Add to cart
                         </PrimaryButton>
                     </DialogFooter>
@@ -71,4 +78,10 @@ export default function ProductImageModal({ product, children, className }) {
             </Dialog>
         </div>
     );
+}
+
+function getQuantityInCart(productId) {
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProduct = existingCart.find((item) => item.id === productId);
+    return existingProduct ? existingProduct.quantity : 0;
 }

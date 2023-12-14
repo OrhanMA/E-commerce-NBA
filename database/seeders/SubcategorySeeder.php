@@ -25,7 +25,7 @@ class SubcategorySeeder extends Seeder
                 "name" => 'Pro'
             ],
             [
-                "name" => 'NBA franchise'
+                "name" => 'Franchise'
             ],
             [
                 "name" => '75th anniversary'

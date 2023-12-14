@@ -9,7 +9,9 @@ export default function CartProductCard({ product, handleProductDeletion }) {
             setQuantity(quantity + 1);
             updateCart(product.id, quantity + 1);
         } else {
-            alert("Stock limit reached for", product.name);
+            alert(
+                `Stock limit reached for ${product.name}. You cannot add more than stock`
+            );
         }
     };
 
@@ -33,7 +35,6 @@ export default function CartProductCard({ product, handleProductDeletion }) {
                     ? { ...item, quantity: updatedQuantity }
                     : item
         );
-
         localStorage.setItem("cart", JSON.stringify(updatedCart));
     };
 

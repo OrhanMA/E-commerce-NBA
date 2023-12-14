@@ -40,12 +40,9 @@ export default function Authenticated({ auth, header, children }) {
         };
     }, [windowWidth]);
 
-    // console.log(windowWidth);
-
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious();
 
-        // console.log(previous, latest);
         // quand scroll si scroll en bas
         if (latest > previous && latest > 150) {
             // cache header
@@ -54,11 +51,8 @@ export default function Authenticated({ auth, header, children }) {
             // sinon c'est un scroll en haut et donc montre header
             setHidden(false);
         }
-
-        console.log(showingNavigationDropdown);
     });
 
-    console.log(showingNavigationDropdown);
     return (
         <motion.nav
             className="sticky top-0 z-20"
@@ -93,7 +87,7 @@ export default function Authenticated({ auth, header, children }) {
                                 </h1>
                             </div>
 
-                            <div className="hidden space-x-4 md:space-x-8 sm:-my-px md:ms-10 sm:flex">
+                            <div className="hidden space-x-1 md:space-x-8 sm:-my-px md:ms-10 sm:flex">
                                 {routes.map((route, index) => {
                                     return (
                                         <NavLink
@@ -106,7 +100,7 @@ export default function Authenticated({ auth, header, children }) {
                                             aria-current={
                                                 url ==
                                                 `/products/${route.route}`
-                                                    ? "page"
+                                                    ? `page ${route.route}`
                                                     : undefined
                                             }
                                         >
@@ -114,10 +108,32 @@ export default function Authenticated({ auth, header, children }) {
                                         </NavLink>
                                     );
                                 })}
+                                <NavLink
+                                    href={"/cart"}
+                                    active={url == `/cart`}
+                                    aria-current={
+                                        url == `/cart`
+                                            ? "page contact"
+                                            : undefined
+                                    }
+                                >
+                                    Cart
+                                </NavLink>
+                                <NavLink
+                                    href={"/contact"}
+                                    active={url == `/contact`}
+                                    aria-current={
+                                        url == `/contact`
+                                            ? "page contact"
+                                            : undefined
+                                    }
+                                >
+                                    Contact
+                                </NavLink>
                             </div>
                         </div>
                         <div className="hidden sm:flex sm:items-center sm:ms-6">
-                            <div className="ms-3 relative">
+                            <div className="md:sm-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>
                                         <span className="inline-flex rounded-md">

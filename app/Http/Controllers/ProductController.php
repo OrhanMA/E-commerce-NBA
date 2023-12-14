@@ -98,6 +98,27 @@ class ProductController extends Controller
             'subcategories.name as subcategory_name',
         ]);
 
+        // Équivalent de la requête SQL pure: 
+//         SELECT products.*,
+//                categories.name AS category_name,
+//                subcategories.name AS subcategory_name
+//         FROM   products
+//         JOIN categories ON products.category_id = categories.id
+//         LEFT JOIN subcategories ON products.subcategory_id = subcategories.id
+//         WHERE (products.name LIKE "%<query>%" OR products.description LIKE "%<query>%")
+//         AND (
+//              (IS_NUMERIC(<category>) AND products.category_id = <category>)
+//              OR 
+//              (NOT IS_NUMERIC(<category>) AND products.category_id = (SELECT id FROM categories WHERE name = '<category>'))
+//              )
+//         ORDER BY 
+//           CASE 
+//              WHEN <sort_by> = 'price' THEN products.price 
+//              ELSE products.name 
+//         END 
+//         <sort_order>;
+
+
         return Inertia::render('SearchResults', [
             'products' => $products,
             'query' => $query,
